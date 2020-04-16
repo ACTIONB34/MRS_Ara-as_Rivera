@@ -1,0 +1,40 @@
+@font-face{
+    font-family: "GreatVibes-Regular";
+    src: url('../font/GreatVibes-Regular.ttf');
+}
+@font-face{
+    font-family: "Monoton-Regular";
+    src: url('../font/Monoton-Regular.ttf'),
+
+    /*url('Thonburi-Bold.eot');*/ /* IE */
+}
+
+.mrs-section > h2{
+	text-align: center;
+    margin-top: 32px;
+    margin-bottom: 24px;
+    font-family: "GreatVibes-Regular";
+    font-size: 2.5em;
+    border-bottom: 1px dashed #D8A47F;
+    display: block;
+}
+
+.mrs-now-showing > h2{
+	color: rgba(255, 255, 255, 0.8);
+    position: absolute;
+    top: 24px;
+    padding: 8px 8px;
+    width: 100%;
+    text-align: center;
+    display: inline;
+    z-index: 500;
+    font-size: 2.5em;
+    font-family: "GreatVibes-Regular";
+    background-color: rgba(0, 0, 0, 0.33);
+    border-bottom: none;
+    max-height: 320px
+}
+
+.mrs-section > .mrs-featured-content > .card{
+	margin-top: 16px;
+}
