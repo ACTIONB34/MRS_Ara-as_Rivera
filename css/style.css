@@ -2,11 +2,16 @@
     font-family: "GreatVibes-Regular";
     src: url('../font/GreatVibes-Regular.ttf');
 }
+
 @font-face{
     font-family: "Monoton-Regular";
     src: url('../font/Monoton-Regular.ttf'),
-
     /*url('Thonburi-Bold.eot');*/ /* IE */
+}
+
+.mrs-navigation-list > .mrs-navigation-link, .mrs-nav-search{
+	text-align-last: center;
+    display: block;
 }
 
 .mrs-section > h2{
