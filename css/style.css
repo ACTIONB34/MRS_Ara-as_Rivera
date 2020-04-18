@@ -15,356 +15,397 @@
     /*url('Thonburi-Bold.eot');*/ /* IE */
 }
 
+*{
+    margin: 0;
+}
+
+html{
+    width: 100%;
+    overflow-x: hidden;
+}
+
+body{
+    background-image: url('../img/admission-2974645_1920.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 1000px;
+    color: white;
+    font-family: acumin-pro, system-ui, sans-serif;
+    margin: 0;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    font-size: 14px;
+    align-items: start;
+    min-height: 100vh;
+    width: 100%;
+}
+
+main{
+  width: 100%;
+  margin-top: 32px;
+}
+
+main.mrs-home{
+  margin-top: 0px;
+}
+
+.mrs-section{
+    margin-top: 32px;
+    margin-bottom: 24px;
+}
+
+.mrs-navigation{
+    z-index: 501;
+    font-size: 1.1rem;
+}
+
+.mrs-brand{
+    font-family: "GreatVibes-Regular" !important;
+    font-size: 2.0rem;
+}
+
+.mr-brand.nav-brand{  
+    margin-left: 24px;
+    margin-right: 24px; 
+}
+
+.mrs-navigation-list > .mrs-navigation-link{
+  alignment-baseline: baseline;
+}
+
 .mrs-navigation-list > .mrs-navigation-link, .mrs-nav-search{
-	text-align-last: right;
+    text-align-last: right;
     display: block;
 }
 
+.mrs-navigation-link.mrs-navigation-link-reserve > a{
+    color: #28965A !important;
+}
+
 .mrs-section > h2{
-	text-align: center;
+    text-align: center;
     margin-top: 32px;
     margin-bottom: 24px;
     font-family: "Anton-Regular";
     font-size: 2.5em;
-    border-bottom: 1px dashed #D8A47F;
+    border-bottom: 2px solid #CCCCCC;
     display: block;
 }
 
+.mrs-paragraph{
+    text-indent: 24px;
+}
+
+.mrs-now-showing{
+    margin: 0;
+}
+
 .mrs-now-showing > h2{
-	color: rgba(255, 255, 255, 0.8);
+    color: rgba(255, 255, 255, 0.8);
     position: absolute;
-    top: 24px;
+    top: 42px;
     padding: 8px 8px;
     width: 100%;
     text-align: center;
     display: inline;
     z-index: 500;
-    font-size: 2.5em;
-    font-family: "Anton-Regular";
+    font-size: 5.0rem !important;
     background-color: rgba(0, 0, 0, 0.33);
     border-bottom: none;
     max-height: 320px
 }
 
-.mrs-section > .mrs-featured-content > .card{
-	margin-top: 15px;
-    margin-left: 22px;
-    margin-right: 22px;
+.mrs-featured-content > .card{
+    margin: 8px;
+    padding: 0;
 }
 
-.main{
-    background-color: #FFFFFF;
-    width: 80%;
+.mrs-featured-film a{
+    display: block;
+}
+
+.mrs-reserve-cta-content > p{
+    font-size: 1.4rem;
+}
+
+.mrs-reserve-cta-btn{
+    padding: 8px 32px;
+    background-color: #28965A;
+    border-radius: 36px;
+    font-size: 1.2rem;
+    color: white;
+    border: 2px solid #28965A;
+    width: fit-content;
+    display: block;
     margin: 0 auto;
-    padding: 20px;
 }
 
-.body{
-    background-image: url('../img/cinema.jfif');
-    background-repeat: no-repeat;
-    background-size: cover;
+.mrs-reserve-cta-btn:hover{
+    text-decoration: none;
+    color: #28965A;
+    background-color: transparent;
 }
 
-.card-container{
-    width: 15rem;
+.mrs-films{  
+    margin: 24px;
 }
 
-/*FILM CARDS*/
+.mrs-films > .card.mrs-film{  
+    background: transparent!important;
+    border: none;
+}
 
-.card{
+.card.mrs-film {
+    position: relative;
     overflow: hidden;
 }
 
-/*.card {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%,-50%);
-  background: #000;
-  overflow: hidden;
-  box-shadow: 0 5px 10px rgba(0,0,0, 0.5);
-  width: 300px;
-  height: 450px;
-}*/
-
-.card .poster {
-  position: relative;
-  overflow: hidden;
+.card:hover .mrs-film-img:before {
+    bottom: 0;
 }
 
-.card .poster:before {
-  content: "";
-  position: absolute ;
-  bottom: -190px;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(0deg,#000 50%, transparent);
-  transition: 0.5s;
-  z-index: 1;
+.card .mrs-film-img img {
+    width: 100%;
+    transition: 0.5s;
 }
 
-.card:hover .poster:before {
-  bottom: 0;
+.card:hover .mrs-film-img img {
+    filter: blur(2px);
+    transform: translateY(-30px);
 }
 
-.card .poster img {
-  width: 100%;
-  transition: 0.5s;
+.mrs-film-details {
+    position: absolute;
+    padding: 24px;
+    width: 100%;
+    height: 74%;
+    bottom: -264px;
+    left: 0;
+    box-sizing: border-box;
+    transition: 0.5s;
+    z-index: 2;
 }
 
-.card:hover .poster img {
-  filter: blur(2px);
-  transform: translateY(-30px);
+.card:hover .mrs-film-details {
+    bottom: 0;
 }
 
-.details {
-  position: absolute;
-  padding: 20px;
-  width: 100%;
-  height: 74%;
-  bottom: -190px;
-  left: 0;
-  box-sizing: border-box;
-  transition: 0.5s;
-  z-index: 2;
+.mrs-film-details h2 {
+    color: #fff;
+    margin: 0;
+    padding: 0;
+    font-size: 20px;
 }
 
-.card:hover .details {
-  bottom: 0;
+.mrs-film-details h2 span {
+    font-size: 14px;
+    color: #ff9800;
 }
 
-.details h2 {
-  color: #fff;
-  margin: 0;
-  padding: 0;
-  font-size: 20px;
+.mrs-film-rating {
+    position: relative;
+    padding: 5px, 0;
 }
 
-.details h2 span {
-  font-size: 14px;
-  color: #ff9800;
+.mrs-film-rating .fa {
+    color: #f7f406;
+    margin-right: 2px;
+    font-size: 16px;
 }
 
-.rating {
-  position: relative;
-  padding: 5px, 0;
+.mrs-film-rating span {
+    color: #fff;
+    padding: 0 5px;
 }
 
-.rating .fa {
-  color: #f7f406;
-  margin-right: 2px;
-  font-size: 16px;
+.mrs-film-tags {
+    position: relative;
+    margin-top: 5px;
 }
 
-.rating span {
-  color: #fff;
-  padding: 0 5px;
+.mrs-film-tags span {
+    padding: 2px 5px;
+    margin-right: 2px;
+    color: #fff;
+    display: inline-block;
+    border-radius: 4px;
 }
 
-.tags {
-  position: relative;
-  margin-top: 5px;
+.mrs-film-tags span.fantasy {
+    background: #7206f7;
 }
 
-.tags span {
-  padding: 2px 5px;
-  margin-right: 2px;
-  color: #fff;
-  display: inline-block;
-  border-radius: 4px;
+.mrs-film-tags span.scifi {
+    background: #f70661;
 }
 
-.tags span.fantasy {
-  background: #7206f7;
+.mrs-film-info {
+    margin-top: 8px;
+    color: #fff;
 }
 
-.tags span.scifi {
-  background: #f70661;
-}
-
-.info {
-  color: #fff;
-}
-
-.info p {
-  margin: 15px, 0, 10px;
+.mrs-film-info p {
+    margin: 15px, 10px;
 }
 
 /*.star {
-  position: relative;
+    position: relative;
 }
 
 .star h4 {
-  margin: 0;
-  padding: 0;
-  font-size: 20px;
-  color: #f7f406
+    margin: 0;
+    padding: 0;
+    font-size: 20px;
+    color: #f7f406
 }
 
 .star ul {
-  margin: 10px 0 0;
-  padding: 0;
-  display: flex;
+    margin: 10px 0 0;
+    padding: 0;
+    display: flex;
 }
 
 .star ul li {
-  list-style: none;
-  width: 45px;
-  height: 45px;
-  background: #fff;
-  border-radius: 50%;
-  overflow: hidden;
-  margin-right: 6px;
-  border: 2px solid #fff;
+    list-style: none;
+    width: 45px;
+    height: 45px;
+    background: #fff;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-right: 6px;
+    border: 2px solid #fff;
 }
 
 .star ul li img {
-  width: 100%;
+    width: 100%;
 }*/
 
 /*FOOTER CSS*/
-*, *:before, *:after {
-  box-sizing: border-box;
+
+.mrs-footer {
+    display: flex;
+    flex-flow: row wrap;
+    padding: 30px 30px 20px 30px;
+    background-color: black;
+    border-top: 1px solid #e5e5e5;
 }
 
-html {
-  font-size: 100%;
+.mrs-footer > * {
+    flex:  1 100%;
 }
 
-body {
-  font-family: acumin-pro, system-ui, sans-serif;
-  margin: 0;
-  display: grid;
-  grid-template-rows: auto 1fr auto;
-  font-size: 14px;
-  background-color: #f4f4f4;
-  align-items: start;
-  min-height: 100vh;
+.mrs-footer-addr {
+    margin-right: 1.25em;
+    margin-bottom: 2em;
 }
 
-.footer {
-  display: flex;
-  flex-flow: row wrap;
-  padding: 30px 30px 20px 30px;
-  color: #2f2f2f;
-  background-color: #000000;
-  border-top: 1px solid #e5e5e5;
+.mrs-footer-logo {
+    font-family: 'Pacifico', cursive;
+    font-weight: 400;
+    font-size: 1.5rem;
 }
 
-.footer > * {
-  flex:  1 100%;
+.mrs-footer-addr h2 {
+    margin-top: 1.3em;
+    font-size: 15px;
+    font-weight: 400;
 }
 
-.footer__addr {
-  margin-right: 1.25em;
-  margin-bottom: 2em;
+.nav-title {
+    font-weight: 400;
+    font-size: 15px;
 }
 
-.footer__logo {
-  font-family: 'Pacifico', cursive;
-  font-weight: 400;
-  font-size: 1.5rem;
+.mrs-footer address {
+    font-style: normal;
+    color: #999;
 }
 
-.footer__addr h2 {
-  margin-top: 1.3em;
-  font-size: 15px;
-  font-weight: 400;
+.mrs-footer-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 36px;
+    max-width: max-content;
+    border-radius: 100px;
+    line-height: 0;
+    margin: 0.6em 0;
+    font-size: 1rem;
+    padding: 0 1.3em;
 }
 
-.nav__title {
-  font-weight: 400;
-  font-size: 15px;
+.mrs-footer ul {
+    list-style: none;
+    padding-left: 0;
 }
 
-.footer address {
-  font-style: normal;
-  color: #999;
+.mrs-footer li {
+    line-height: 2em;
 }
 
-.footer__btn {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 36px;
-  max-width: max-content;
-  background-color: rgb(33, 33, 33, 0.07);
-  border-radius: 100px;
-  color: #2f2f2f;
-  line-height: 0;
-  margin: 0.6em 0;
-  font-size: 1rem;
-  padding: 0 1.3em;
+.mrs-footer a {
+    text-decoration: none;
 }
 
-.footer ul {
-  list-style: none;
-  padding-left: 0;
-}
-
-.footer li {
-  line-height: 2em;
-}
-
-.footer a {
-  text-decoration: none;
-}
-
-.footer__nav {
-  display: flex;
+.mrs-footer-nav {
+    display: flex;
     flex-flow: row wrap;
 }
 
-.footer__nav > * {
-  flex: 1 50%;
-  margin-right: 1.25em;
+.mrs-footer-nav > * {
+    flex: 1 50%;
+    margin-right: 1.25em;
 }
 
-.nav__ul a {
-  color: #999;
+.nav-ul a {
+    color: #999;
 }
 
-.nav__ul--extra {
-  column-count: 2;
-  column-gap: 1.25em;
+.nav-ul-extra {
+    column-count: 2;
+    column-gap: 1.25em;
 }
 
-.legal {
-  display: flex;
-  flex-wrap: wrap;
-  color: #999;
+.mrs-footer-copy {
+    display: block;
+    color: #999;
+    text-align: center;
+}
+
+.mrs-footer-copy .mrs-brand{
+  font-size: 1.2rem;
+  margin-right: 4px;
 }
   
-.legal__links {
-  display: flex;
-  align-items: center;
+.mrs-footer-copy-links {
+    display: flex;
+    align-items: center;
 }
 
 .heart {
-  color: #2f2f2f;
+    color: #2f2f2f;
 }
 
 @media screen and (min-width: 24.375em) {
-  .legal .legal__links {
-    margin-left: auto;
-  }
+    .mrs-footer-legal .mrs-footer-legal-links {
+      margin-left: auto;
+    }
 }
 
 @media screen and (min-width: 40.375em) {
-  .footer__nav > * {
-    flex: 1;
-  }
-  
-  .nav__item--extra {
-    flex-grow: 2;
-  }
-  
-  .footer__addr {
-    flex: 1 0px;
-  }
-  
-  .footer__nav {
-    flex: 2 0px;
-  }
+    .mrs-footer-nav > * {
+        flex: 1;
+    }
+    
+    .nav-item-extra {
+        flex-grow: 2;
+    }
+    
+    .mrs-footer-addr {
+        flex: 1 0px;
+    }
+    
+    .mrs-footer-nav {
+        flex: 2 0px;
+    }
 }

@@ -9,103 +9,105 @@
 </head>
 
 <body class="body">
-    <nav class="navbar navbar-dark bg-dark sticky-top mrs-navigation">
-        <a class="navbar-brand" href="#">SsiaKing Movie Reservation</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+    <nav class="mrs-navigation navbar navbar-expand-lg navbar-dark bg-dark ">
+        <a class="mrs-brand navbar-brand" href="#">Reserved</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggle" aria-controls="navbarToggle" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
-            <ul class="navbar-nav mr-auto mt-2 mt-lg-0 mrs-navigation-list">
-                <li class="nav-item mrs-navigation-link">
+
+        <div class="collapse navbar-collapse" id="navbarToggle">
+            <ul class="mrs-navigation-list navbar-nav mr-auto">
+                <li class="mrs-navigation-link nav-item">
                     <a class="nav-link" href="index.html">Home</a>
                 </li>
-                <li class="nav-item mrs-navigation-link">
-                    <a class="nav-link" href="#">Now Showing</a>
-                </li>
-                <li class="nav-item active mrs-navigation-link">
+                <li class="mrs-navigation-link nav-item active">
                     <a class="nav-link" href="films.html">Films<span class="sr-only">(current)</span></a>
                 </li>
-                <li class="nav-item mrs-navigation-link">
-                    <a class="nav-link" href="#" class="mrs-navigation-link-reserve">Reserve a Ticket</a>
+                <li class="mrs-navigation-link mrs-navigation-link-reserve nav-item">
+                    <a class="nav-link" href="#">Reserve a Ticket</a>
                 </li>
+                <!--li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      Dropdown
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="#">Action</a>
+                        <a class="dropdown-item" href="#">Another action</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#">Something else here</a>
+                    </div>
+                </li-->
             </ul>
-            <form class="form-inline my-2 my-lg-0 mrs-nav-search">
+            <form class="mrs-nav-search form-inline my-2 my-lg-0">
                 <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
                 <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
             </form>
         </div>
     </nav>
-    <main class="main">
-        <div class="mrs-section">
-            <h2>FILMS</h2>
-        </div>
-        <div class="mrs-section container">
-            <div class="row mrs-featured-content">
-
-                <div class="card card-container">
-                    <div class="poster"><img src="https://vignette.wikia.nocookie.net/marvelcinematicuniverse/images/1/11/Avengers_Infinity_war_poster.jpeg/revision/latest/scale-to-width-down/324?cb=20180316141550"></div>
-                    <div class="details">
-                        <h2>Avengers Infinity War<br>
-                        <!-- <span>Juiced By Jimmy Heuangpangna</span> -->
-                      </h2>
-                        <div class="tags">
-                            <span class="fantasy">Fantasy</span>
-                            <span class="scifi">Sci Fi</span>
-                        </div>
-                        <div class="info">
-                            <p>Iron Man, Thor, the Hulk and the rest of the Avengers unite to battle their most powerful enemy yet</p>
-                        </div>
+    <main class="">
+        <div class="row mrs-films">
+            <div class="card mrs-film col-md">
+                <div class="mrs-film-img"><img src="img/ae/ae-lo.jpg"></div>
+                <div class="mrs-film-details">
+                    <h2>Avengers Infinity War<br>
+                    <!-- <span>Juiced By Jimmy Heuangpangna</span> -->
+                  </h2>
+                    <div class="mrs-film-tags">
+                        <span class="fantasy">Fantasy</span>
+                        <span class="scifi">Sci Fi</span>
+                    </div>
+                    <div class="mrs-film-info mrs-paragraph">
+                        <p>Iron Man, Thor, the Hulk and the rest of the Avengers unite to battle their most powerful enemy yet</p>
                     </div>
                 </div>
+            </div>
 
-                <div class="card card-container">
-                    <div class="poster"><img src="https://i.pinimg.com/originals/70/c1/41/70c1415658b7a2dcd8f2505a771d53c4.jpg"></div>
-                    <div class="details">
-                        <h2>Harry Potter and the Deathly Hollows Part 1<br>
-                        <!-- <span>Juiced By Jimmy Heuangpangna</span> -->
-                        </h2>
-                        <div class="tags">
-                            <span class="fantasy">Fantasy</span>
-                            <span class="scifi">Sci Fi</span>
-                        </div>
-                        <div class="info">
-                             <p>After Voldemort takes over the Ministry of Magic, Harry, Ron and Hermione are forced into hiding. They try to decipher the clues left to them by Dumbledore to find and destroy Voldemort's Horcruxes.</p>
-                        </div>
+            <div class="card mrs-film col-md">
+                <div class="mrs-film-img"><img src="img/dh/dh1-lo.jfif"></div>
+                <div class="mrs-film-details">
+                    <h2>Harry Potter and the Deathly Hollows Part 1<br>
+                    <!-- <span>Juiced By Jimmy Heuangpangna</span> -->
+                    </h2>
+                    <div class="mrs-film-tags">
+                        <span class="fantasy">Fantasy</span>
+                        <span class="scifi">Sci Fi</span>
+                    </div>
+                    <div class="mrs-film-info mrs-paragraph">
+                         <p>After Voldemort takes over the Ministry of Magic, Harry, Ron and Hermione are forced into hiding. They try to decipher the clues left to them by Dumbledore to find and destroy Voldemort's Horcruxes.</p>
                     </div>
                 </div>
+            </div>
 
-                <div class="card card-container">
-                    <div class="poster"><img src="https://m.media-amazon.com/images/M/MV5BMjIyZGU4YzUtNDkzYi00ZDRhLTljYzctYTMxMDQ4M2E0Y2YxXkEyXkFqcGdeQXVyNTIzOTk5ODM@._V1_.jpg"></div>
-                    <div class="details">
-                        <h2>Harry Potter and the Deathly Hollows Part 2<br>
-                        <!-- <span>Juiced By Jimmy Heuangpangna</span> -->
-                      </h2>
-                        <div class="tags">
-                            <span class="fantasy">Fantasy</span>
-                            <span class="scifi">Sci Fi</span>
-                        </div>
-                        <div class="info">
-                            <p>Harry, Ron, and Hermione search for Voldemort's remaining Horcruxes in their effort to destroy the Dark Lord as the final battle rages on at Hogwarts.</p>
-                        </div>
+            <div class="card mrs-film col-md">
+                <div class="mrs-film-img"><img src="img/dh/dh2-lo.jpg"></div>
+                <div class="mrs-film-details">
+                    <h2>Harry Potter and the Deathly Hollows Part 2<br>
+                    <!-- <span>Juiced By Jimmy Heuangpangna</span> -->
+                  </h2>
+                    <div class="mrs-film-tags">
+                        <span class="fantasy">Fantasy</span>
+                        <span class="scifi">Sci Fi</span>
+                    </div>
+                    <div class="mrs-film-info mrs-paragraph">
+                        <p>Harry, Ron, and Hermione search for Voldemort's remaining Horcruxes in their effort to destroy the Dark Lord as the final battle rages on at Hogwarts.</p>
                     </div>
                 </div>
+            </div>
 
-                <div class="card card-container">
-                    <div class="poster"><img src="https://i.pinimg.com/originals/eb/e3/39/ebe339b16b8d30efe3beec28e52955e6.jpg"></div>
-                    <div class="details">
-                        <h2>La Famille Belier<br>
-                        <!-- <span>Juiced By Jimmy Heuangpangna</span> -->
-                      </h2>
-                        <div class="tags">
-                            <span class="fantasy">Comedy</span>
-                            <span class="scifi">Drama</span>
-                        </div>
-                        <div class="info">
-                            <p>A young woman with deaf parents discovers she has an amazing singing voice.</p>
-                        </div>
+            <div class="card mrs-film col-md">
+                <div class="mrs-film-img"><img src="img/lfb/lfb-lo.jpg"></div>
+                <div class="mrs-film-details">
+                    <h2>La Famille Belier<br>
+                    <!-- <span>Juiced By Jimmy Heuangpangna</span> -->
+                  </h2>
+                    <div class="mrs-film-tags">
+                        <span class="fantasy">Comedy</span>
+                        <span class="scifi">Drama</span>
+                    </div>
+                    <div class="mrs-film-info mrs-paragraph">
+                        <p>A young woman with deaf parents discovers she has an amazing singing voice.</p>
                     </div>
                 </div>
-
             </div>
         </div>
     </main>
@@ -123,24 +125,22 @@ Harry Potter and the Deathly Hallows - Part 2
     <script src="js/popper.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
 
-    <footer class="footer">
-        <div class="footer__addr">
-            <h1 class="footer__logo">SSIAKING Movie Reservation</h1>
-
+    <footer class="mrs-footer row">
+        <div class="mrs-footer-addr col-sm">
+            <h1 class="mrs-brand footer-logo">Reserved</h1>
+            <p class="mrs-footer-desc mrs-paragraph">Provides online reservation services for cinemas here in the City.</p>
             <h2>Contact</h2>
-
             <address>
-          4 Privet Drive, Little Whinging, SURREY<br>
-
-          <a class="footer__btn" href="mailto:jalane.rivera.aws@gmail.com">Email Us</a>
-        </address>
+                  4 Privet Drive, Little Whinging, SURREY<br>
+                  <a class="mrs-footer-btn btn btn-primary" href="mailto:jalane.rivera.aws@gmail.com">Email Us</a>
+            </address>
         </div>
 
-        <ul class="footer__nav">
-            <li class="nav__item">
-                <h2 class="nav__title">Developers</h2>
+        <ul class="mrs-footer-nav col-sm">
+            <li class="nav-item">
+                <h2 class="nav-title">Developers</h2>
 
-                <ul class="nav__ul">
+                <ul class="nav-ul">
                     <li>
                         <a>Mary Beth Arañas</a>
                     </li>
@@ -150,57 +150,30 @@ Harry Potter and the Deathly Hallows - Part 2
                     </li>
                 </ul>
             </li>
-            <li class="nav__item nav__item--extra">
-                <h2 class="nav__title">Technology</h2>
-
-                <ul class="nav__ul nav__ul--extra">
-                    <li>
-                        <a href="#">Hardware Design</a>
-                    </li>
-
-                    <li>
-                        <a href="#">Software Design</a>
-                    </li>
-
-                    <li>
-                        <a href="#">Digital Signage</a>
-                    </li>
-
-                    <li>
-                        <a href="#">Automation</a>
-                    </li>
-
-                    <li>
-                        <a href="#">Artificial Intelligence</a>
-                    </li>
-
-                    <li>
-                        <a href="#">IoT</a>
-                    </li>
+            <li class="nav-item nav-item-extra">
+                <h2 class="nav-title">Technology</h2>
+                <ul class="nav-ul nav-ul-extra">
+                    <li><a href="#">Hardware Design</a></li>
+                    <li><a href="#">Software Design</a></li>
+                    <li><a href="#">Digital Signage</a></li>
+                    <li><a href="#">Automation</a></li>
+                    <li><a href="#">Artificial Intelligence</a></li>
+                    <li><a href="#">IoT</a></li>
                 </ul>
             </li>
 
-            <li class="nav__item">
-                <h2 class="nav__title">Legal</h2>
-
-                <ul class="nav__ul">
-                    <li>
-                        <a href="#">Privacy Policy</a>
-                    </li>
-
-                    <li>
-                        <a href="#">Terms of Use</a>
-                    </li>
-
-                    <li>
-                        <a href="#">Sitemap</a>
-                    </li>
+            <li class="nav-item">
+                <h2 class="nav-title">Legal</h2>
+                <ul class="nav-ul">
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms of Use</a></li>
+                    <li><a href="#">Sitemap</a></li>
                 </ul>
             </li>
         </ul>
 
-        <div class="legal">
-            <p>&copy; 2020 SsiaKing Movie Reservation All rights reserved.</p>
+        <div class="mrs-footer-copy">
+            <span>&copy; 2020 <span class="mrs-brand">Reserved</span> All rights reserved.</span>
         </div>
     </footer>
 </body>
