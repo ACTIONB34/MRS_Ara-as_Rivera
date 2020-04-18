@@ -79,7 +79,15 @@ main.mrs-home{
 
 .mrs-navigation-link.mrs-navigation-link-reserve > a{
     color: #FFFD82 !important;
-    font-weight: 500;
+}
+
+.mrs-navigation-link.mrs-navigation-link-reserve:hover > a{
+    text-decoration: underline;
+    color: #FFFFE8 !important;
+}
+
+.mrs-navigation-link.mrs-navigation-link-reserve.active > a{
+    text-decoration: underline;
 }
 
 .mrs-section > h2{
