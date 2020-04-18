@@ -12,11 +12,6 @@
 @font-face{
     font-family: "Anton-Regular";
     src: url('../font/Anton-Regular.ttf'),
-    /*url('Thonburi-Bold.eot');*/ /* IE */
-}
-
-*{
-    margin: 0;
 }
 
 html{
@@ -28,7 +23,6 @@ body{
     background-image: url('../img/admission-2974645_1920.jpg');
     background-repeat: no-repeat;
     background-size: cover;
-    min-height: 1000px;
     color: white;
     font-family: acumin-pro, system-ui, sans-serif;
     margin: 0;
@@ -57,11 +51,13 @@ main.mrs-home{
 .mrs-navigation{
     z-index: 501;
     font-size: 1.1rem;
+    line-height: 1.0em
 }
 
 .mrs-brand{
     font-family: "GreatVibes-Regular" !important;
     font-size: 2.0rem;
+    margin-top: 8px;
 }
 
 .mr-brand.nav-brand{  
@@ -70,7 +66,10 @@ main.mrs-home{
 }
 
 .mrs-navigation-list > .mrs-navigation-link{
-  alignment-baseline: baseline;
+    alignment-baseline: baseline;
+    font-size: 1.2rem;
+    /*font-weight: 600;
+    margin: auto 4px;*/
 }
 
 .mrs-navigation-list > .mrs-navigation-link, .mrs-nav-search{
@@ -79,7 +78,8 @@ main.mrs-home{
 }
 
 .mrs-navigation-link.mrs-navigation-link-reserve > a{
-    color: #28965A !important;
+    color: #FFFD82 !important;
+    font-weight: 500;
 }
 
 .mrs-section > h2{
@@ -103,7 +103,7 @@ main.mrs-home{
 .mrs-now-showing > h2{
     color: rgba(255, 255, 255, 0.8);
     position: absolute;
-    top: 42px;
+    top: 22px;
     padding: 8px 8px;
     width: 100%;
     text-align: center;
@@ -130,11 +130,11 @@ main.mrs-home{
 
 .mrs-reserve-cta-btn{
     padding: 8px 32px;
-    background-color: #28965A;
+    background-color: #FFFD82;
     border-radius: 36px;
     font-size: 1.2rem;
-    color: white;
-    border: 2px solid #28965A;
+    color: #444444;
+    border: 2px solid #FFFD82;
     width: fit-content;
     display: block;
     margin: 0 auto;
@@ -142,7 +142,7 @@ main.mrs-home{
 
 .mrs-reserve-cta-btn:hover{
     text-decoration: none;
-    color: #28965A;
+    color: #FFFD82;
     background-color: transparent;
 }
 
@@ -287,7 +287,7 @@ main.mrs-home{
     flex-flow: row wrap;
     padding: 30px 30px 20px 30px;
     background-color: black;
-    border-top: 1px solid #e5e5e5;
+    border-top: 4px solid #BAD9B5;
 }
 
 .mrs-footer > * {
@@ -296,7 +296,6 @@ main.mrs-home{
 
 .mrs-footer-addr {
     margin-right: 1.25em;
-    margin-bottom: 2em;
 }
 
 .mrs-footer-logo {
