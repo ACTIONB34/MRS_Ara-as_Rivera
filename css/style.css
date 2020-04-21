@@ -190,7 +190,7 @@ main.mrs-home{
     padding: 24px;
     width: 100%;
     height: 74%;
-    bottom: -264px;
+    bottom: -290px;
     left: 0;
     box-sizing: border-box;
     transition: 0.5s;
@@ -206,7 +206,21 @@ main.mrs-home{
     margin: 0;
     padding: 0;
     font-size: 20px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
 }
+
+.card:hover .mrs-film-details h2 {
+    color: #fff;
+    margin: 0;
+    padding: 0;
+    font-size: 20px;
+    text-overflow: unset;
+    white-space: unset;
+    overflow: unset;
+}
+
 
 .mrs-film-details h2 span {
     font-size: 14px;
@@ -357,12 +371,32 @@ main.mrs-home{
     border: none;
 }
 
+.mrs-reserve-search-results{
+    font-size: 0.8rem;
+}
+
+.mrs-reserve-search-results .mrs-film-details {
+    position: absolute;
+    padding: 24px;
+    width: 100%;
+    height: 74%;
+    bottom: -180px;
+    left: 0;
+    box-sizing: border-box;
+    transition: 0.5s;
+    z-index: 2;
+}
+
 .mrs-reserve-search-results > p{
     font-size: 1.4rem;
     display: block;
     text-align: center;
     text-transform: uppercase;
 }
+
+/**.mrs-film-details {
+    bottom: -290px;
+}**/
 
 /*FOOTER CSS*/
 
