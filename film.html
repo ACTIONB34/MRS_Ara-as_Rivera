@@ -22,7 +22,7 @@
                     <a class="nav-link" href="films.html">Films</a>
                 </li>
                 <li class="mrs-navigation-link mrs-navigation-link-reserve nav-item active">
-                    <a class="nav-link" href="reserve-search.html">Reserve Seats<span class="sr-only">(current)</span></a>
+                    <a class="nav-link" href="reserve.html">Reserve Seats<span class="sr-only">(current)</span></a>
                 </li>
                 <!--li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -45,17 +45,61 @@
 
     <main>
         <div class="mrs-reserve mrs-section container">
-            <h2 class="mrs-reserve-title">Search a Film</h2>
-
-            <form class="mrs-reserve-search form-inline">
-                <div class="form-group d-flex flex-row">                    
-                    <input class="form-control form-control-lg flex-grow-1 mr-2" type="search" placeholder="Type in a film title..." aria-label="Search">
-                    <button class="btn btn-lg btn-success" type="submit">Search</button>
+            <h2 class="mrs-reserve-title">Schedules</h2>
+            <div class="row">
+                <div class="mrs-reserve-film col-md-4">
+                    <div class="card col-sm bg-dark">
+                        <img src="img/ar/ar-sm.jpeg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Card title</h5>
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        </div>
+                    </div>
                 </div>
-            </form>
-
-            <div class="mrs-reserve-search-results">
-                <span>No result</span>
+                <div class="mrs-reserve-sched col-md-8">
+                    <table class="mrs-reserve-sched-table table">
+                        <thead class="thead">
+                            <tr>
+                                <th scope="col">Time</th>
+                                <th scope="col">Date</th>
+                                <th scope="col">Availability</th>
+                                <th scope="col">Want a Seat?</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th scope="row">12:00PM</th>
+                                <td>Today</td>
+                                <td>16/40</td>
+                                <td><a href="#">Reserve</a></td>
+                            </tr>
+                            <tr>
+                                <th scope="row">02:15PM</th>
+                                <td>Today</td>
+                                <td>8/40</td>
+                                <td><a href="#">Reserve</a></td>
+                            </tr>
+                            <tr>
+                                <th scope="row">12:00PM</th>
+                                <td>Tomorrow</td>
+                                <td>23/40</td>
+                                <td><a href="#">Reserve</a></td>
+                            </tr>
+                            <tr>
+                                <th scope="row">12:00PM</th>
+                                <td>Friday</td>
+                                <td>31/40</td>
+                                <td><a href="#">Reserve</a></td>
+                            </tr>
+                            <tr>
+                                <th scope="row">12:00PM</th>
+                                <td>05-02-2020</td>
+                                <td>40/40</td>
+                                <td><a href="#">Reserve</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
             </div>
         </div>
     </main>
