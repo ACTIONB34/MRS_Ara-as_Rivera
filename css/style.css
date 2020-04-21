@@ -5,13 +5,13 @@
 
 @font-face{
     font-family: "Monoton-Regular";
-    src: url('../font/Monoton-Regular.ttf'),
+    src: url('../font/Monoton-Regular.ttf');
     /*url('Thonburi-Bold.eot');*/ /* IE */
 }
 
 @font-face{
     font-family: "Anton-Regular";
-    src: url('../font/Anton-Regular.ttf'),
+    src: url('../font/Anton-Regular.ttf');
 }
 
 html{
@@ -36,16 +36,11 @@ body{
 
 main{
   width: 100%;
-  margin-top: 32px;
+  margin: 64px 0 32px 0;
 }
 
 main.mrs-home{
   margin-top: 0px;
-}
-
-.mrs-section{
-    margin-top: 32px;
-    margin-bottom: 24px;
 }
 
 .mrs-navigation{
@@ -55,7 +50,7 @@ main.mrs-home{
 }
 
 .mrs-brand{
-    font-family: "GreatVibes-Regular" !important;
+    font-family: "GreatVibes-Regular",sans-serif !important;
     font-size: 2.0rem;
     margin-top: 8px;
 }
@@ -90,10 +85,16 @@ main.mrs-home{
     text-decoration: underline;
 }
 
+.mrs-section{
+    margin-top: 16px;
+    margin-bottom: 16px;
+}
+
 .mrs-section > h2{
     text-align: center;
-    margin-top: 32px;
+    margin-top: 16px;
     margin-bottom: 24px;
+    padding-bottom: 8px;
     font-family: "Anton-Regular";
     font-size: 2.5em;
     border-bottom: 2px solid #CCCCCC;
@@ -133,7 +134,9 @@ main.mrs-home{
 }
 
 .mrs-reserve-cta-content > p{
-    font-size: 1.4rem;
+    width: 92%;
+    font-size: 1.2rem;
+    text-indent: 5.0rem;
 }
 
 .mrs-reserve-cta-btn{
@@ -288,6 +291,79 @@ main.mrs-home{
     width: 100%;
 }*/
 
+.mrs-reserve-film > div{
+    padding: 0;
+}
+
+.mrs-reserve-sched{
+    /*background-color: #343a40d6;*/
+    border: none;
+}
+
+.mrs-reserve-sched-table{
+    margin: 0 auto;
+}
+
+.mrs-reserve-title{
+    font-size: 2.0rem;
+    color: white;
+    text-transform: capitalize;
+}
+
+.mrs-reserve-sched-table thead tr{
+    color: #444444;
+    background-color: #FFFD82;
+}
+
+.mrs-reserve-sched-table tbody{
+    color: white;
+}
+
+.mrs-reserve-sched-table tr{
+    text-align: center;
+    line-height: 1.4em;
+}
+
+.mrs-reserve-sched-table a{
+    text-decoration: none;
+    padding: .2rem 1.2rem;
+    color: #444444;
+    background-color: #FFFD82;
+    border-radius: 1.0rem;
+    border: 2px solid #FFFD82;
+}
+
+.mrs-reserve-search{
+    margin-top: 64px;
+    margin-bottom: 64px;
+}
+
+.mrs-reserve-search .form-group {
+    width: 100%;
+}
+
+.mrs-reserve-search input[type="search"]{
+    background-color: transparent;
+    border-left: 0px;
+    border-right: 0px;
+    border-top: 0px;
+    border-radius: 0px;
+    text-align: center;
+    color: white;
+    font-size: 1.4rem;
+}
+
+.mrs-reserve-search input[type="search"]:focus{
+    border: none;
+}
+
+.mrs-reserve-search-results > p{
+    font-size: 1.4rem;
+    display: block;
+    text-align: center;
+    text-transform: uppercase;
+}
+
 /*FOOTER CSS*/
 
 .mrs-footer {
@@ -304,12 +380,6 @@ main.mrs-home{
 
 .mrs-footer-addr {
     margin-right: 1.25em;
-}
-
-.mrs-footer-logo {
-    font-family: 'Pacifico', cursive;
-    font-weight: 400;
-    font-size: 1.5rem;
 }
 
 .mrs-footer-addr h2 {
