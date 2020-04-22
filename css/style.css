@@ -68,7 +68,7 @@ main.mrs-home{
 }
 
 .mrs-navigation-list > .mrs-navigation-link, .mrs-nav-search{
-    text-align-last: right;
+    text-align-last: left;
     display: block;
 }
 
@@ -83,6 +83,28 @@ main.mrs-home{
 
 .mrs-navigation-link.mrs-navigation-link-reserve.active > a{
     text-decoration: underline;
+}
+
+.mrs-user{
+    /*text-align: right;*/
+    padding: 0 16px;
+}
+
+.mrs-user > span{
+    vertical-align: middle;
+}
+
+.mrs-user-avatar{
+    width: 2.4rem;
+    padding-right: 4px;
+}
+
+@media (max-width: 992px){
+    section.mrs-user{
+        padding: 8px;
+        background-color: #FFFD82;
+        color: #555;
+    } 
 }
 
 .mrs-section{
@@ -220,7 +242,6 @@ main.mrs-home{
     white-space: unset;
     overflow: unset;
 }
-
 
 .mrs-film-details h2 span {
     font-size: 14px;
