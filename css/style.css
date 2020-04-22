@@ -541,3 +541,12 @@ main.mrs-home{
         flex: 2 0px;
     }
 }
+
+.film-button a{
+    text-decoration: none;
+    padding: .2rem 1.2rem;
+    color: #444444;
+    background-color: #FFFD82;
+    border-radius: 1.0rem;
+    border: 2px solid #FFFD82;
+}
