@@ -299,7 +299,34 @@ main.mrs-home{
     margin: 15px 10px;
 }
 
+.reservation-list-button{ display: inline-block; }
 
+.cancel-list-button {  text-decoration: none;
+    padding: .2rem 1.2rem;
+    color: #444444;
+    background-color: #FFFD82 ;
+    border-radius: 1.0rem;
+    border: 2px solid #FFFD82;
+}
+
+button.cancel-list-button:hover {   background: #ff0000;
+    border-color: #ff0000;
+    color: white; 
+}
+
+.edit-list-button {     text-decoration: none;
+    padding: .2rem 1.2rem;
+    color: #444444;
+    background-color: #FFFD82;
+    border-radius: 1.0rem;
+    border: 2px solid #FFFD82; 
+}
+
+button.edit-list-button:hover {  
+    background: #2C2CE2;
+    border-color: #2C2CE2;
+    color: white; 
+}
 
 /*.star {
     position: relative;
