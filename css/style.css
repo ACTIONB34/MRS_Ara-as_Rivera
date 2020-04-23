@@ -43,6 +43,9 @@ main.mrs-home{
   margin-top: 0px;
 }
 
+.row > div{
+    padding-top: 24px;
+}
 .mrs-navigation{
     z-index: 501;
     font-size: 1.1rem;
@@ -97,14 +100,6 @@ main.mrs-home{
 .mrs-user-avatar{
     width: 2.4rem;
     padding-right: 4px;
-}
-
-@media (max-width: 992px){
-    section.mrs-user{
-        padding: 8px;
-        background-color: #FFFD82;
-        color: #555;
-    } 
 }
 
 .mrs-section{
@@ -211,8 +206,8 @@ main.mrs-home{
     position: absolute;
     padding: 24px;
     width: 100%;
-    height: 74%;
-    bottom: -290px;
+    height: 52%;
+    bottom: -60%;
     left: 0;
     box-sizing: border-box;
     transition: 0.5s;
@@ -222,6 +217,16 @@ main.mrs-home{
 .card:hover .mrs-film-details {
     bottom: 0;
 }
+
+.mrs-film-details  .mrs-film-info, .mrs-film-reserve{
+    display: none;
+}
+
+.card:hover .mrs-film-details .mrs-film-info, .mrs-film-reserve{
+    bottom: 0;
+    display: unset;
+}
+
 
 .mrs-film-details h2 {
     color: #fff;
@@ -291,7 +296,7 @@ main.mrs-home{
 }
 
 .mrs-film-info p {
-    margin: 15px, 10px;
+    margin: 15px 10px;
 }
 
 /*.star {
@@ -542,7 +547,7 @@ main.mrs-home{
     }
 }
 
-.film-button a{
+.mrs-film-reserve a{
     text-decoration: none;
     padding: .2rem 1.2rem;
     color: #444444;
@@ -942,4 +947,33 @@ span.month.focused.active
         -webkit-border-radius: 0 0 15px 15px;
     }
     
+}
+
+
+
+
+/* Adjustments using Bootstrap breakpoints */
+
+@media (min-width: 576px) {
+
+}
+
+@media (min-width: 768px) {
+
+
+}
+
+@media (min-width: 992px) {    
+    section.mrs-user{
+        padding: 8px;
+        background-color: #FFFD82;
+        color: #555;
+    }
+
+
+}
+
+@media (min-width: 1200px) {
+
+
 }
