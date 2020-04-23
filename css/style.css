@@ -333,6 +333,10 @@ main.mrs-home{
     width: 100%;
 }*/
 
+.mrs-reserve-film p.mrs-rating{
+    color: #FFFD82;
+}
+
 .mrs-reserve-film > div{
     padding: 0;
 }
@@ -364,6 +368,7 @@ main.mrs-home{
 .mrs-table tr{
     text-align: center;
     line-height: 1.4em;
+    vertical-align: middle;
 }
 
 .mrs-table a{
@@ -420,6 +425,15 @@ main.mrs-home{
     display: block;
     text-align: center;
     text-transform: uppercase;
+}
+
+.mrs-seat{    
+    padding-top: 4px;
+    padding-bottom: 4px;
+}
+
+.mrs-seat > span{
+    display: none;
 }
 
 /**.mrs-film-details {
@@ -957,24 +971,33 @@ span.month.focused.active
 /* Adjustments using Bootstrap breakpoints */
 
 @media (min-width: 576px) {
-
+    .mrs-seat > span{
+        display: inline;
+    }
 }
 
 @media (min-width: 768px) {
+    section.mrs-user{
+        padding: 8px;
+        margin: 8px 0px;
+        background-color: #BBBBBB;
+        color: #555;
+        border-radius: 4px;
+        width: fit-content;
+    }
 
 
 }
 
-@media (min-width: 992px) {    
+@media (min-width: 992px) {
     section.mrs-user{
-        padding: 8px;
-        background-color: #FFFD82;
-        color: #555;
+        padding: unset;
+        background-color: transparent;
+        color: unset;
+        padding-right: 8px;
     }
-
 }
 
 @media (min-width: 1200px) {
-
 
 }
