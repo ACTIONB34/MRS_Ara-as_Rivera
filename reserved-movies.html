@@ -4,7 +4,34 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/style.css">
-    <title>Film</title>
+    <title>Reserved Movies</title>
+    <style type="text/css">
+        .reservation-list-button{ display: inline-block; }
+
+        .cancel-list-button {  text-decoration: none;
+                                padding: .2rem 1.2rem;
+                                color: #444444;
+                                background-color: #FFFD82 ;
+                                border-radius: 1.0rem;
+                                border: 2px solid #FFFD82; }
+
+        button.cancel-list-button:hover {   background: #ff0000;
+                                            border-color: #ff0000;
+                                            color: white; }
+
+        .edit-list-button {     text-decoration: none;
+                                padding: .2rem 1.2rem;
+                                color: #444444;
+                                background-color: #FFFD82;
+                                border-radius: 1.0rem;
+                                border: 2px solid #FFFD82; }
+
+        button.edit-list-button:hover {   background: #2C2CE2;
+                                            border-color: #2C2CE2;
+                                            color: white; }
+
+
+    </style>
 </head>
 
 <body>    
@@ -46,64 +73,86 @@
 
     <main>
         <div class="mrs-reserve mrs-section container">
-            <h2 class="mrs-reserve-title">Schedules</h2>
+            <h2 class="mrs-reserve-title">Reserved Movies</h2>
             <div class="row">
-                <div class="mrs-reserve-film col-md-4">
-                    <div class="card col-sm bg-dark">
-                        <img src="img/ar/ar-sm.jpeg" class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <h5 class="card-title">Argo</h5>
-                            <p class="mrs-rating">PG-13</p>
-                            <p class="card-text mrs-paragraph">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="mrs-reserve-sched col-md-8">
-                    <table class="mrs-table table">
+                <div class="mrs-reserve-sched col-md-12">
+                    <table class="mrs-reserve-sched-table table">
                         <thead class="thead">
                             <tr>
-                                <th scope="col">Cinema</th>
-                                <th scope="col">Time</th>
+                                <th scope="col">Movie</th>
                                 <th scope="col">Date</th>
-                                <th scope="col">Availability</th>
-                                <th scope="col">Want a Seat?</th>
+                                <th scope="col">Time</th>
+                                <th scope="col">Cinema</th>
+                                <th scope="col">Qty</th>
+                                <th scope="col"></th>
+                                <th scope="col"></th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
-                                <th scope="row">1</th>
-                                <td>12:00PM</td>
-                                <td>Today</td>
-                                <td>16/40</td>
-                                <td><a href="#">Reserve</a></td>
+                                <th scope="row">Harry Potter and the Deathly Hallows Part 1</th>
+                                <td>5/1/2020</td>
+                                <td>16:00</td>
+                                <td>Cinema 2</td>
+                                <td>2</td>
+                                <td class="reservation-list-button">
+                                    <button class="edit-reservation edit-list-button">Edit</button>
+                                </td>
+                                <td class="reservation-list-button">
+                                    <button class="cancel-reservation cancel-list-button">Cancel</button>
+                                </td>
                             </tr>
                             <tr>
-                                <th scope="row">1</th>
-                                <td>02:15PM</td>
-                                <td>Today</td>
-                                <td>8/40</td>
-                                <td><a href="#">Reserve</a></td>
+                                <th scope="row">Harry Potter and the Deathly Hallows Part 2</th>
+                                <td>5/2/2020</td>
+                                <td>12:00</td>
+                                <td>Cinema 3</td>
+                                <td>1</td>
+                                <td class="reservation-list-button">
+                                    <button class="edit-reservation edit-list-button">Edit</button>
+                                </td>
+                                <td class="reservation-list-button">
+                                    <button class="cancel-reservation cancel-list-button">Cancel</button>
+                                </td>
                             </tr>
                             <tr>
-                                <th scope="row">2</th>
-                                <td>12:00PM</td>
-                                <td>Tomorrow</td>
-                                <td>23/40</td>
-                                <td><a href="#">Reserve</a></td>
+                                <th scope="row">Avatar The Last Airbended</th>
+                                <td>5/3/2020</td>
+                                <td>8:00</td>
+                                <td>Cinema 5</td>
+                                <td>3</td>
+                                <td class="reservation-list-button">
+                                    <button class="edit-reservation edit-list-button">Edit</button>
+                                </td>
+                                <td class="reservation-list-button">
+                                    <button class="cancel-reservation cancel-list-button">Cancel</button>
+                                </td>
                             </tr>
                             <tr>
-                                <th scope="row">3</th>
-                                <td>12:00PM</td>
-                                <td>Friday</td>
-                                <td>31/40</td>
-                                <td><a href="#">Reserve</a></td>
+                                <th scope="row">The Mechanic</th>
+                                <td>5/3/2020</td>
+                                <td>9:00</td>
+                                <td>Cinema 2</td>
+                                <td>5</td>
+                                <td class="reservation-list-button">
+                                    <button class="edit-reservation edit-list-button">Edit</button>
+                                </td>
+                                <td class="reservation-list-button">
+                                    <button class="cancel-reservation cancel-list-button">Cancel</button>
+                                </td>
                             </tr>
                             <tr>
-                                <th scope="row">3</th>
-                                <td>12:00PM</td>
-                                <td>05-02-2020</td>
-                                <td>40/40</td>
-                                <td><a href="#">Reserve</a></td>
+                                <th scope="row">John Wick</th>
+                                <td>5/1/2020</td>
+                                <td>8:00</td>
+                                <td>Cinema 5</td>
+                                <td>1</td>
+                                <td class="reservation-list-button">
+                                    <button class="edit-reservation edit-list-button">Edit</button>
+                                </td>
+                                <td class="reservation-list-button">
+                                    <button class="cancel-reservation cancel-list-button">Cancel</button>
+                                </td>
                             </tr>
                         </tbody>
                     </table>
