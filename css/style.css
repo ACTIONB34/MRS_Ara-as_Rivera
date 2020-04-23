@@ -299,6 +299,8 @@ main.mrs-home{
     margin: 15px 10px;
 }
 
+
+
 /*.star {
     position: relative;
 }
@@ -340,7 +342,7 @@ main.mrs-home{
     border: none;
 }
 
-.mrs-reserve-sched-table{
+.mrs-table{
     margin: 0 auto;
 }
 
@@ -350,21 +352,21 @@ main.mrs-home{
     text-transform: capitalize;
 }
 
-.mrs-reserve-sched-table thead tr{
+.mrs-table thead tr{
     color: #444444;
     background-color: #FFFD82;
 }
 
-.mrs-reserve-sched-table tbody{
+.mrs-table tbody{
     color: white;
 }
 
-.mrs-reserve-sched-table tr{
+.mrs-table tr{
     text-align: center;
     line-height: 1.4em;
 }
 
-.mrs-reserve-sched-table a{
+.mrs-table a{
     text-decoration: none;
     padding: .2rem 1.2rem;
     color: #444444;
@@ -969,7 +971,6 @@ span.month.focused.active
         background-color: #FFFD82;
         color: #555;
     }
-
 
 }
 
