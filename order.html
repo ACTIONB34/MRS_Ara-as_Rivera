@@ -4,8 +4,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/style.css">
-    <script src="scripts/script.js"></script>
-    <title>Reserved</title>
+    <title>Order Form</title>
 </head>
 
 <body>    
@@ -69,12 +68,12 @@
                         </div>
                     </div>
                     <div class="form-group row">
-                        <label for="mrs-order-date" class="col-sm-2 col-form-label">Time/Date</label>
-                        <div class="col-sm-3">
-                            <input type="date" class="form-control" id="mrs-order-date" value="2020-05-20" disabled>
-                        </div>
+                        <label for="mrs-order-datetime" class="col-sm-2 col-form-label">Time/Date</label>
                         <div class="col-sm-3">
                             <input type="time" class="form-control" id="mrs-order-time" value="12:00" disabled>
+                        </div>
+                        <div class="col-sm-3">
+                            <input type="date" class="form-control" id="mrs-order-date" value="2020-05-20" disabled>
                         </div>
                     </div>
                     <div class="form-group row">
@@ -108,102 +107,102 @@
                                 <tbody>
                                     <tr>
                                         <th scope="row">A</th>
-                                        <td><button type="button" class="mrs-seat btn-danger" disabled><span>A1</span></button></td>
-                                        <td><button type="button" class="mrs-seat btn-danger" disabled><span>A2</button></td>
-                                        <td><button type="button" class="mrs-seat btn-success"><span>A3</button></td>
-                                        <td><button type="button" class="mrs-seat btn-danger" disabled><span>A4</button></td>
-                                        <td><button type="button" class="mrs-seat btn-danger" disabled><span>A5</button></td>
-                                        <td><button type="button" class="mrs-seat btn-danger" disabled><span>A6</button></td>
-                                        <td><button type="button" class="mrs-seat btn-danger" disabled><span>A7</button></td>
-                                        <td><button type="button" class="mrs-seat btn-danger" disabled><span>A8</button></td>
+                                        <td><button type="button" class="mrs-seat mrs-seat-taken" disabled><span>A1</span></button></td>
+                                        <td><button type="button" class="mrs-seat mrs-seat-taken" disabled><span>A2</button></td>
+                                        <td><button type="button" class="mrs-seat mrs-seat-available"><span>A3</button></td>
+                                        <td><button type="button" class="mrs-seat mrs-seat-taken" disabled><span>A4</button></td>
+                                        <td><button type="button" class="mrs-seat mrs-seat-taken" disabled><span>A5</button></td>
+                                        <td><button type="button" class="mrs-seat mrs-seat-taken" disabled><span>A6</button></td>
+                                        <td><button type="button" class="mrs-seat mrs-seat-taken" disabled><span>A7</button></td>
+                                        <td><button type="button" class="mrs-seat mrs-seat-taken" disabled><span>A8</button></td>
                                     </tr>
                                     <tr>
                                         <th scope="row">B</th>
-                                        <td><button type="button" class="mrs-seat btn-success"><span>B1</button></td>
-                                        <td><button type="button" class="mrs-seat btn-success"><span>B2</button></td>
-                                        <td><button type="button" class="mrs-seat btn-success"><span>B3</button></td>
-                                        <td><button type="button" class="mrs-seat btn-success"><span>B4</button></td>
-                                        <td><button type="button" class="mrs-seat btn-success"><span>B5</button></td>
-                                        <td><button type="button" class="mrs-seat btn-success"><span>B6</button></td>
-                                        <td><button type="button" class="mrs-seat btn-success"><span>B7</button></td>
-                                        <td><button type="button" class="mrs-seat btn-success"><span>B8</button></td>
+                                        <td><button type="button" class="mrs-seat mrs-seat-available"><span>B1</button></td>
+                                        <td><button type="button" class="mrs-seat mrs-seat-available"><span>B2</button></td>
+                                        <td><button type="button" class="mrs-seat mrs-seat-available"><span>B3</button></td>
+                                        <td><button type="button" class="mrs-seat mrs-seat-available"><span>B4</button></td>
+                                        <td><button type="button" class="mrs-seat mrs-seat-available"><span>B5</button></td>
+                                        <td><button type="button" class="mrs-seat mrs-seat-available"><span>B6</button></td>
+                                        <td><button type="button" class="mrs-seat mrs-seat-available"><span>B7</button></td>
+                                        <td><button type="button" class="mrs-seat mrs-seat-available"><span>B8</button></td>
                                     </tr>
                                     <tr>
                                         <th scope="row">C</th>
-                                        <td><button type="button" class="mrs-seat btn-success"><span>C1</button></td>
-                                        <td><button type="button" class="mrs-seat btn-success"><span>C2</button></td>
-                                        <td><button type="button" class="mrs-seat btn-danger" disabled><span>C3</button></td>
-                                        <td><button type="button" class="mrs-seat btn-danger" disabled><span>C4</button></td>
-                                        <td><button type="button" class="mrs-seat btn-danger" disabled><span>C5</button></td>
-                                        <td><button type="button" class="mrs-seat btn-danger" disabled><span>C6</button></td>
-                                        <td><button type="button" class="mrs-seat btn-success"><span>C7</button></td>
-                                        <td><button type="button" class="mrs-seat btn-success"><span>C8</button></td>
+                                        <td><button type="button" class="mrs-seat mrs-seat-available"><span>C1</button></td>
+                                        <td><button type="button" class="mrs-seat mrs-seat-available"><span>C2</button></td>
+                                        <td><button type="button" class="mrs-seat mrs-seat-taken" disabled><span>C3</button></td>
+                                        <td><button type="button" class="mrs-seat mrs-seat-taken" disabled><span>C4</button></td>
+                                        <td><button type="button" class="mrs-seat mrs-seat-taken" disabled><span>C5</button></td>
+                                        <td><button type="button" class="mrs-seat mrs-seat-taken" disabled><span>C6</button></td>
+                                        <td><button type="button" class="mrs-seat mrs-seat-available"><span>C7</button></td>
+                                        <td><button type="button" class="mrs-seat mrs-seat-available"><span>C8</button></td>
                                     </tr>
                                     <tr>
                                         <th scope="row">D</th>
-                                        <td><button type="button" class="mrs-seat btn-success"><span>D1</span></button></td>
-                                        <td><button type="button" class="mrs-seat btn-success"><span>D2</span></button></td>
-                                        <td><button type="button" class="mrs-seat btn-success"><span>D3</span></button></td>
-                                        <td><button type="button" class="mrs-seat btn-success"><span>D4</span></button></td>
-                                        <td><button type="button" class="mrs-seat btn-success"><span>D5</span></button></td>
-                                        <td><button type="button" class="mrs-seat btn-success"><span>D6</span></button></td>
-                                        <td><button type="button" class="mrs-seat btn-danger" disabled><span>D7</span></button></td>
-                                        <td><button type="button" class="mrs-seat btn-danger" disabled><span>D8</span></button></td>
+                                        <td><button type="button" class="mrs-seat mrs-seat-available"><span>D1</span></button></td>
+                                        <td><button type="button" class="mrs-seat mrs-seat-available"><span>D2</span></button></td>
+                                        <td><button type="button" class="mrs-seat mrs-seat-available"><span>D3</span></button></td>
+                                        <td><button type="button" class="mrs-seat mrs-seat-available"><span>D4</span></button></td>
+                                        <td><button type="button" class="mrs-seat mrs-seat-available"><span>D5</span></button></td>
+                                        <td><button type="button" class="mrs-seat mrs-seat-available"><span>D6</span></button></td>
+                                        <td><button type="button" class="mrs-seat mrs-seat-taken" disabled><span>D7</span></button></td>
+                                        <td><button type="button" class="mrs-seat mrs-seat-taken" disabled><span>D8</span></button></td>
                                     </tr>
                                     <tr>
                                         <th scope="row">E</th>
-                                        <td><button type="button" type="button" class="mrs-seat btn-success"><span>E1</span></button></td>
-                                        <td><button type="button" class="mrs-seat btn-success"><span>E2</span></button></td>
-                                        <td><button type="button" class="mrs-seat btn-success"><span>E3</span></button></td>
-                                        <td><button type="button" class="mrs-seat btn-danger" disabled><span>E4</span></button></td>
-                                        <td><button type="button" class="mrs-seat btn-success"><span>E5</span></button></td>
-                                        <td><button type="button" class="mrs-seat btn-success"><span>E6</span></button></td>
-                                        <td><button type="button" class="mrs-seat btn-success"><span>E7</span></button></td>
-                                        <td><button type="button" class="mrs-seat btn-success"><span>E8</span></button></td>
+                                        <td><button type="button" type="button" class="mrs-seat mrs-seat-available"><span>E1</span></button></td>
+                                        <td><button type="button" class="mrs-seat mrs-seat-available"><span>E2</span></button></td>
+                                        <td><button type="button" class="mrs-seat mrs-seat-available"><span>E3</span></button></td>
+                                        <td><button type="button" class="mrs-seat mrs-seat-taken" disabled><span>E4</span></button></td>
+                                        <td><button type="button" class="mrs-seat mrs-seat-available"><span>E5</span></button></td>
+                                        <td><button type="button" class="mrs-seat mrs-seat-available"><span>E6</span></button></td>
+                                        <td><button type="button" class="mrs-seat mrs-seat-available"><span>E7</span></button></td>
+                                        <td><button type="button" class="mrs-seat mrs-seat-available"><span>E8</span></button></td>
                                     </tr>
                                     <tr>
                                         <th scope="row">F</th>
-                                        <td><button type="button" class="mrs-seat btn-danger" disabled><span>F1</button></td>
-                                        <td><button type="button" class="mrs-seat btn-danger" disabled><span>F2</button></td>
-                                        <td><button type="button" class="mrs-seat btn-danger" disabled><span>F3</button></td>
-                                        <td><button type="button" class="mrs-seat btn-danger" disabled><span>F4</button></td>
-                                        <td><button type="button" class="mrs-seat btn-danger" disabled><span>F5</button></td>
-                                        <td><button type="button" class="mrs-seat btn-danger" disabled><span>F6</button></td>
-                                        <td><button type="button" class="mrs-seat btn-success"><span>F7</button></td>
-                                        <td><button type="button" class="mrs-seat btn-success"><span>F8</button></td>
+                                        <td><button type="button" class="mrs-seat mrs-seat-taken" disabled><span>F1</button></td>
+                                        <td><button type="button" class="mrs-seat mrs-seat-taken" disabled><span>F2</button></td>
+                                        <td><button type="button" class="mrs-seat mrs-seat-taken" disabled><span>F3</button></td>
+                                        <td><button type="button" class="mrs-seat mrs-seat-taken" disabled><span>F4</button></td>
+                                        <td><button type="button" class="mrs-seat mrs-seat-taken" disabled><span>F5</button></td>
+                                        <td><button type="button" class="mrs-seat mrs-seat-taken" disabled><span>F6</button></td>
+                                        <td><button type="button" class="mrs-seat mrs-seat-available"><span>F7</button></td>
+                                        <td><button type="button" class="mrs-seat mrs-seat-available"><span>F8</button></td>
                                     </tr>
                                     <tr>
                                         <th scope="row">G</th>
-                                        <td><button type="button" class="mrs-seat btn-success"><span>G1</button></td>
-                                        <td><button type="button" class="mrs-seat btn-success"><span>G2</button></td>
-                                        <td><button type="button" class="mrs-seat btn-success"><span>G3</button></td>
-                                        <td><button type="button" class="mrs-seat btn-success"><span>G4</button></td>
-                                        <td><button type="button" class="mrs-seat btn-success"><span>G5</button></td>
-                                        <td><button type="button" class="mrs-seat btn-success"><span>G6</button></td>
-                                        <td><button type="button" class="mrs-seat btn-danger" disabled><span>G7</button></td>
-                                        <td><button type="button" class="mrs-seat btn-danger" disabled><span>G8</button></td>
+                                        <td><button type="button" class="mrs-seat mrs-seat-available"><span>G1</button></td>
+                                        <td><button type="button" class="mrs-seat mrs-seat-available"><span>G2</button></td>
+                                        <td><button type="button" class="mrs-seat mrs-seat-available"><span>G3</button></td>
+                                        <td><button type="button" class="mrs-seat mrs-seat-available"><span>G4</button></td>
+                                        <td><button type="button" class="mrs-seat mrs-seat-available"><span>G5</button></td>
+                                        <td><button type="button" class="mrs-seat mrs-seat-available"><span>G6</button></td>
+                                        <td><button type="button" class="mrs-seat mrs-seat-taken" disabled><span>G7</button></td>
+                                        <td><button type="button" class="mrs-seat mrs-seat-taken" disabled><span>G8</button></td>
                                     </tr>
                                     <tr>
                                         <th scope="row">H</th>
-                                        <td><button type="button" class="mrs-seat btn-success"><span>H1</span></button></td>
-                                        <td><button type="button" class="mrs-seat btn-success"><span>H2</span></button></td>
-                                        <td><button type="button" class="mrs-seat btn-success"><span>H3</span></button></td>
-                                        <td><button type="button" class="mrs-seat btn-danger" disabled><span>H4</span></button></td>
-                                        <td><button type="button" class="mrs-seat btn-danger" disabled><span>H5</span></button></td>
-                                        <td><button type="button" class="mrs-seat btn-success"><span>H6</span></button></td>
-                                        <td><button type="button" class="mrs-seat btn-success"><span>H7</span></button></td>
-                                        <td><button type="button" class="mrs-seat btn-success"><span>H8</span></button></td>
+                                        <td><button type="button" class="mrs-seat mrs-seat-available"><span>H1</span></button></td>
+                                        <td><button type="button" class="mrs-seat mrs-seat-available"><span>H2</span></button></td>
+                                        <td><button type="button" class="mrs-seat mrs-seat-available"><span>H3</span></button></td>
+                                        <td><button type="button" class="mrs-seat mrs-seat-taken" disabled><span>H4</span></button></td>
+                                        <td><button type="button" class="mrs-seat mrs-seat-taken" disabled><span>H5</span></button></td>
+                                        <td><button type="button" class="mrs-seat mrs-seat-available"><span>H6</span></button></td>
+                                        <td><button type="button" class="mrs-seat mrs-seat-available"><span>H7</span></button></td>
+                                        <td><button type="button" class="mrs-seat mrs-seat-available"><span>H8</span></button></td>
                                     </tr>
                                     <tr>
                                         <th scope="row">I</th>
-                                        <td><button type="button" class="mrs-seat btn-danger" disabled><span>I1</span></button></td>
-                                        <td><button type="button" class="mrs-seat btn-danger" disabled><span>I2</span></button></td>
-                                        <td><button type="button" class="mrs-seat btn-success"><span>I3</span></button></td>
-                                        <td><button type="button" class="mrs-seat btn-success"><span>I4</span></button></td>
-                                        <td><button type="button" class="mrs-seat btn-success"><span>I5</span></button></td>
-                                        <td><button type="button" class="mrs-seat btn-danger" disabled><span>I6</span></button></td>
-                                        <td><button type="button" class="mrs-seat btn-danger" disabled><span>I7</span></button></td>
-                                        <td><button type="button" class="mrs-seat btn-danger" disabled><span>I8</span></button></td>
+                                        <td><button type="button" class="mrs-seat mrs-seat-taken" disabled><span>I1</span></button></td>
+                                        <td><button type="button" class="mrs-seat mrs-seat-taken" disabled><span>I2</span></button></td>
+                                        <td><button type="button" class="mrs-seat mrs-seat-available"><span>I3</span></button></td>
+                                        <td><button type="button" class="mrs-seat mrs-seat-available"><span>I4</span></button></td>
+                                        <td><button type="button" class="mrs-seat mrs-seat-available"><span>I5</span></button></td>
+                                        <td><button type="button" class="mrs-seat mrs-seat-taken" disabled><span>I6</span></button></td>
+                                        <td><button type="button" class="mrs-seat mrs-seat-taken" disabled><span>I7</span></button></td>
+                                        <td><button type="button" class="mrs-seat mrs-seat-taken" disabled><span>I8</span></button></td>
                                     </tr>
                                 </tbody>
                             </table>
@@ -419,6 +418,7 @@
     <script src="js/jquery-3.4.1.slim.min.js"></script>
     <script src="js/popper.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
+    <script src="js/script.js"></script>
 
     <footer class="mrs-footer row">
         <div class="mrs-footer-addr col-sm">

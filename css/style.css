@@ -34,6 +34,10 @@ body{
     width: 100%;
 }
 
+input[type="date"]{
+    min-width: fit-content
+}
+
 main{
   width: 100%;
   margin: 64px 0 32px 0;
@@ -174,11 +178,8 @@ main.mrs-home{
     background-color: transparent;
 }
 
-.mrs-films{  
-    margin: 24px;
-}
-
 .mrs-films > .card.mrs-film{  
+    padding-top: 36px;
     background: transparent!important;
     border: none;
 }
@@ -206,23 +207,41 @@ main.mrs-home{
     position: absolute;
     padding: 24px;
     width: 100%;
-    height: 52%;
-    bottom: -60%;
+    height: 72%;
+    bottom: -54%;
     left: 0;
     box-sizing: border-box;
     transition: 0.5s;
     z-index: 2;
+    background-color: rgba(0,0,0,0.4);
+    font-size: 0.6rem;
+}
+
+a.mrs-film-reserve{ 
+    text-decoration: none;
+    padding: 0.1rem 0.8rem;
+    color: #FFFFFF;
+    font-size: 0.6rem;
+    background-color: #1bb55f;
+    border-radius: 1.0rem;
+    border: 2px solid #1bb55f;
+    float: right;
+}
+
+a.mrs-table:hover{
+    color: white;
+    background-color: transparent;
 }
 
 .card:hover .mrs-film-details {
     bottom: 0;
 }
 
-.mrs-film-details  .mrs-film-info, .mrs-film-reserve{
+.mrs-film-details .mrs-film-info, .mrs-film-details .mrs-film-reserve{
     display: none;
 }
 
-.card:hover .mrs-film-details .mrs-film-info, .mrs-film-reserve{
+.card:hover .mrs-film-details .mrs-film-info, .card:hover .mrs-film-reserve{
     bottom: 0;
     display: unset;
 }
@@ -303,28 +322,27 @@ main.mrs-home{
 
 .cancel-list-button {  text-decoration: none;
     padding: .2rem 1.2rem;
-    color: #444444;
-    background-color: #FFFD82 ;
+    color: #FFFFFF;
+    background-color: #ff5b6b ;
     border-radius: 1.0rem;
-    border: 2px solid #FFFD82;
+    border: 2px solid #ff5b6b;
 }
 
 button.cancel-list-button:hover {   background: #ff0000;
-    border-color: #ff0000;
+    background: transparent;
     color: white; 
 }
 
 .edit-list-button {     text-decoration: none;
     padding: .2rem 1.2rem;
-    color: #444444;
-    background-color: #FFFD82;
+    color: #FFFFFF;
+    background-color: #007bff;
     border-radius: 1.0rem;
-    border: 2px solid #FFFD82; 
+    border: 2px solid #007bff; 
 }
 
 button.edit-list-button:hover {  
-    background: #2C2CE2;
-    border-color: #2C2CE2;
+    background: transparent;
     color: white; 
 }
 
@@ -375,6 +393,7 @@ button.edit-list-button:hover {
 
 .mrs-table{
     margin: 0 auto;
+    background-color: rgba(0,0,0,0.4);
 }
 
 .mrs-reserve-title{
@@ -401,10 +420,15 @@ button.edit-list-button:hover {
 .mrs-table a{
     text-decoration: none;
     padding: .2rem 1.2rem;
-    color: #444444;
-    background-color: #FFFD82;
+    color: #FFFFFF;
+    background-color: #1bb55f;
     border-radius: 1.0rem;
-    border: 2px solid #FFFD82;
+    border: 2px solid #1bb55f;
+}
+
+.mrs-table a:hover{
+    color: white;
+    background-color: transparent;
 }
 
 .mrs-reserve-search{
@@ -461,6 +485,25 @@ button.edit-list-button:hover {
 
 .mrs-seat > span{
     display: none;
+    font-weight: bold;
+}
+
+.mrs-seat-selected{
+    background-color: #FFFD82; 
+    color: #333333;
+    border-color: #FFFD82; 
+}
+
+.mrs-seat-taken{
+    background-color: #9999FF; 
+    color: #333333;
+    border-color: #9999FF; 
+}
+
+.mrs-seat-available{
+    background-color: #FFFFFF; 
+    color: #333333;
+    border-color: #FFFFFF; 
 }
 
 /**.mrs-film-details {
@@ -998,13 +1041,16 @@ span.month.focused.active
 }
 
 
-
-
 /* Adjustments using Bootstrap breakpoints */
 
 @media (min-width: 576px) {
     .mrs-seat > span{
         display: inline;
+    }
+
+    .mrs-film-details {
+        bottom: -62%;
+        font-size: 0.7rem;
     }
 }
 
@@ -1018,7 +1064,10 @@ span.month.focused.active
         width: fit-content;
     }
 
-
+    .mrs-film-details {
+        bottom: -56%;
+        font-size: 0.7rem;
+    }
 }
 
 @media (min-width: 992px) {
@@ -1027,6 +1076,15 @@ span.month.focused.active
         background-color: transparent;
         color: unset;
         padding-right: 8px;
+    }
+
+    .mrs-film-details {
+        bottom: -50%;
+        font-size: 0.8rem;
+    }
+
+    a.mrs-film-reserve{ 
+        font-size: 1.0rem;
     }
 }
 
