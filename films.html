@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/films.css">
     <title>Films</title>
 </head>
 
@@ -22,17 +22,6 @@
                 <li class="mrs-navigation-link mrs-navigation-link-reserve nav-item">
                     <a class="nav-link" href="reserve.html">Reserve Seats</a>
                 </li>
-                <!--li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                      Dropdown
-                    </a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="#">Action</a>
-                        <a class="dropdown-item" href="#">Another action</a>
-                        <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="#">Something else here</a>
-                    </div>
-                </li-->
             </ul>
             <section class="mrs-user navigation-link">
                 <img class="mrs-user-avatar" src="img/user-avatar.png">
@@ -45,47 +34,11 @@
         </div>
     </nav>
     <main class="container">
-        <div class="row mrs-films">
-            <div class="card mrs-film col-lg-3 col-md-6">
-                <div class="mrs-film-img"><img src="img/ae/ae-lo.jpg"></div>
-                <div class="mrs-film-details">
-                    <h2>Avengers Infinity War<br>
-                    <!-- <span>Juiced By Jimmy Heuangpangna</span> -->
-                  </h2>
-                    <div class="mrs-film-tags">
-                        <span class="fantasy">Fantasy</span>
-                        <span class="scifi">Sci Fi</span>
-                    </div>
-                    <div class="mrs-film-info mrs-paragraph">
-                        <p>Iron Man, Thor, the Hulk and the rest of the Avengers unite to battle their most powerful enemy yet</p>
-                    </div>
-                    <a class="mrs-film-reserve btn" href="film.html">Reserve</a>
-                </div>
-            </div>
-
-            <div class="card mrs-film col-lg-3 col-md-6">
-                <div class="mrs-film-img"><img src="img/dh/dh1-lo.jfif"></div>
-                <div class="mrs-film-details">
-                    <h2>Harry Potter and the Deathly Hollows Part 1<br>
-                    <!-- <span>Juiced By Jimmy Heuangpangna</span> -->
-                    </h2>
-                    <div class="mrs-film-tags">
-                        <span class="fantasy">Fantasy</span>
-                        <span class="scifi">Sci Fi</span>
-                    </div>
-                    <div class="mrs-film-info mrs-paragraph">
-                         <p>After Voldemort takes over the Ministry of Magic, Harry, Ron and Hermione are forced into hiding. They try to decipher the clues left to them by Dumbledore to find and destroy Voldemort's Horcruxes.</p>
-                    </div>
-                    <a class="mrs-film-reserve btn" href="film.html">Reserve</a>
-                </div>
-            </div>
-
-            <div class="card mrs-film col-lg-3 col-md-6">
-                <div class="mrs-film-img"><img src="img/dh/dh2-lo.jpg"></div>
-                <div class="mrs-film-details">
-                    <h2>Harry Potter and the Deathly Hollows Part 2<br>
-                    <!-- <span>Juiced By Jimmy Heuangpangna</span> -->
-                  </h2>
+        <div id="mrs-films-list" class="mrs-films row">
+            <div class="mrs-film card col-lg-3 col-md-6">
+                <div class="mrs-film-img"><img class="mrs-film-img" src="img/dh/dh2-lo.jpg"></div>
+                <div class="mrs-film-details container mx-1">
+                    <h3 class="mrs-film-title">Harry Potter and the Deathly Hollows Part 2</h3>
                     <div class="mrs-film-tags">
                         <span class="fantasy">Fantasy</span>
                         <span class="scifi">Sci Fi</span>
@@ -93,24 +46,7 @@
                     <div class="mrs-film-info mrs-paragraph">
                         <p>Harry, Ron, and Hermione search for Voldemort's remaining Horcruxes in their effort to destroy the Dark Lord as the final battle rages on at Hogwarts.</p>
                     </div>
-                    <a class="mrs-film-reserve btn" href="film.html">Reserve</a>
-                </div>
-            </div>
-
-            <div class="card mrs-film col-lg-3 col-md-6">
-                <div class="mrs-film-img"><img src="img/lfb/lfb-lo.jpg"></div>
-                <div class="mrs-film-details">
-                    <h2>La Famille Belier<br>
-                    <!-- <span>Juiced By Jimmy Heuangpangna</span> -->
-                  </h2>
-                    <div class="mrs-film-tags">
-                        <span class="fantasy">Comedy</span>
-                        <span class="scifi">Drama</span>
-                    </div>
-                    <div class="mrs-film-info mrs-paragraph">
-                        <p>A young woman with deaf parents discovers she has an amazing singing voice.</p>
-                    </div>
-                    <a class="mrs-film-reserve btn" href="film.html">Reserve</a>
+                    <a class="mrs-film-reserve mrs-rounded-btn" href="film.html">Reserve</a>
                 </div>
             </div>
         </div>
@@ -119,56 +55,35 @@
     <script src="js/jquery-3.4.1.slim.min.js"></script>
     <script src="js/popper.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
+    <script src="js/script.js"></script>
 
-    <footer class="mrs-footer row">
-        <div class="mrs-footer-addr col-sm">
-            <h1 class="mrs-brand footer-logo">Reserved</h1>
-            <p class="mrs-footer-desc mrs-paragraph">Provides online reservation services for cinemas here in the City.</p>
-            <h2>Contact</h2>
-            <address>
-                  4 Privet Drive, Little Whinging, SURREY<br>
-                  <a class="mrs-footer-btn btn btn-primary" href="mailto:jalane.rivera.aws@gmail.com">Email Us</a>
-            </address>
+    <footer class="mrs-footer text-light bg-dark">
+        <div class="row">
+            <div class="mrs-footer-col col-md-4">
+                <h4 class="mrs-brand">Reserved</h4>
+                <p class="mrs-footer-desc mrs-paragraph">Provides online reservation services for cinemas here in the City.</p>
+            </div>
+
+            <div class="mrs-footer-col col-md-4">
+                        <h4 class="nav-title">Legal</h4>
+                        <ul class="nav-ul">
+                            <li><a href="#">Privacy Policy</a></li>
+                            <li><a href="#">Terms of Use</a></li>
+                            <li><a href="#">Sitemap</a></li>
+                        </ul>
+            </div>
+
+            <div class="mrs-footer-col col-md-4">
+                        <h4 class="nav-title">Development Team</h4>
+                        <ul class="nav-ul">
+                            <li><a href="#">Mary Beth Arañas</a></li>
+                            <li><a href="#">Jalane Chrissia Rivera</a></li>
+                        </ul>
+            </div>
         </div>
 
-        <ul class="mrs-footer-nav col-sm">
-            <li class="nav-item">
-                <h2 class="nav-title">Developers</h2>
-
-                <ul class="nav-ul">
-                    <li>
-                        <a>Mary Beth Arañas</a>
-                    </li>
-
-                    <li>
-                        <a>Jalane Chrissia Rivera</a>
-                    </li>
-                </ul>
-            </li>
-            <li class="nav-item nav-item-extra">
-                <h2 class="nav-title">Technology</h2>
-                <ul class="nav-ul nav-ul-extra">
-                    <li><a href="#">Hardware Design</a></li>
-                    <li><a href="#">Software Design</a></li>
-                    <li><a href="#">Digital Signage</a></li>
-                    <li><a href="#">Automation</a></li>
-                    <li><a href="#">Artificial Intelligence</a></li>
-                    <li><a href="#">IoT</a></li>
-                </ul>
-            </li>
-
-            <li class="nav-item">
-                <h2 class="nav-title">Legal</h2>
-                <ul class="nav-ul">
-                    <li><a href="#">Privacy Policy</a></li>
-                    <li><a href="#">Terms of Use</a></li>
-                    <li><a href="#">Sitemap</a></li>
-                </ul>
-            </li>
-        </ul>
-
-        <div class="mrs-footer-copy">
-            <span>&copy; 2020 <span class="mrs-brand">Reserved</span> All rights reserved.</span>
+        <div class="mrs-footer-copy-wrapper">
+            <div class="mrs-footer-copy">&copy; 2020 <span class="mrs-brand">Reserved</span> All rights reserved.</div>
         </div>
     </footer>
 </body>

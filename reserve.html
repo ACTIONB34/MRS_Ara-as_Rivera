@@ -4,6 +4,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/search.css">
+    <link rel="stylesheet" href="css/films.css">
     <title>Reserved</title>
 </head>
 
@@ -21,17 +23,6 @@
                 <li class="mrs-navigation-link mrs-navigation-link-reserve nav-item active">
                     <a class="nav-link" href="reserve.html">Reserve Seats<span class="sr-only">(current)</span></a>
                 </li>
-                <!--li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                      Dropdown
-                    </a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="#">Action</a>
-                        <a class="dropdown-item" href="#">Another action</a>
-                        <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="#">Something else here</a>
-                    </div>
-                </li-->
             </ul>
             <section class="mrs-user navigation-link">
                 <img class="mrs-user-avatar" src="img/user-avatar.png">
@@ -45,18 +36,18 @@
     </nav>
 
     <main>
-        <div class="mrs-reserve mrs-section container">
+        <div class="mrs-section container">
             <h2 class="mrs-reserve-title">Search a Film</h2>
 
-            <form class="mrs-reserve-search form-inline">
+            <form class="mrs-reserve-search form-inline" method="get" target="reserve.html">
                 <div class="form-group d-flex flex-row">                    
-                    <input class="form-control form-control-lg flex-grow-1 mr-2" type="search" placeholder="Type in a film title..." aria-label="Search">
+                    <input class="form-control form-control-lg flex-grow-1 mr-2" type="search" name="search" placeholder="Type in a film title..." aria-label="Search">
                     <button class="btn btn-lg btn-success" type="submit">Search</button>
                 </div>
             </form>
-
-            <div class="mrs-reserve-search-results">
-                <span>No result</span>
+            <span id="mrs-result-counter">No result</span>
+            <div id="mrs-search-results" class="mrs-films row">
+                
             </div>
         </div>
     </main>
@@ -64,48 +55,35 @@
     <script src="js/jquery-3.4.1.slim.min.js"></script>
     <script src="js/popper.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
+    <script src="js/script.js"></script>
 
-    <footer class="mrs-footer row">
-        <div class="mrs-footer-addr col-sm">
-            <h1 class="mrs-brand footer-logo">Reserved</h1>
-            <p class="mrs-footer-desc mrs-paragraph">Provides online reservation services for cinemas here in the City.</p>
-            <h2>Contact</h2>
-            <address>
-                  4 Privet Drive, Little Whinging, SURREY<br>
-                  <a class="mrs-footer-btn btn btn-primary" href="mailto:jalane.rivera.aws@gmail.com">Email Us</a>
-            </address>
+    <footer class="mrs-footer text-light bg-dark">
+        <div class="row">
+            <div class="mrs-footer-col col-md-4">
+                <h4 class="mrs-brand">Reserved</h4>
+                <p class="mrs-footer-desc mrs-paragraph">Provides online reservation services for cinemas here in the City.</p>
+            </div>
+
+            <div class="mrs-footer-col col-md-4">
+                        <h4 class="nav-title">Legal</h4>
+                        <ul class="nav-ul">
+                            <li><a href="#">Privacy Policy</a></li>
+                            <li><a href="#">Terms of Use</a></li>
+                            <li><a href="#">Sitemap</a></li>
+                        </ul>
+            </div>
+
+            <div class="mrs-footer-col col-md-4">
+                        <h4 class="nav-title">Development Team</h4>
+                        <ul class="nav-ul">
+                            <li><a href="#">Mary Beth Arañas</a></li>
+                            <li><a href="#">Jalane Chrissia Rivera</a></li>
+                        </ul>
+            </div>
         </div>
 
-        <ul class="mrs-footer-nav col-sm">
-            <li class="nav-item">
-                <h2 class="nav-title">Developers</h2>
-                <ul class="nav-ul">
-                    <li><a>Mary Beth Arañas</a></li>
-                    <li><a>Jalane Chrissia Rivera</a></li>
-                </ul>
-            </li>
-            <li class="nav-item nav-item-extra">
-                <h2 class="nav-title">Technology</h2>
-                <ul class="nav-ul nav-ul-extra">
-                    <li><a href="#">Hardware Design</a></li>
-                    <li><a href="#">Software Design</a></li>
-                    <li><a href="#">Digital Signage</a></li>
-                    <li><a href="#">Automation</a></li>
-                    <li><a href="#">Artificial Intelligence</a></li>
-                    <li><a href="#">IoT</a></li>
-                </ul>
-            </li>
-            <li class="nav-item">
-                <h2 class="nav-title">Legal</h2>
-                <ul class="nav-ul">
-                    <li><a href="#">Privacy Policy</a></li>
-                    <li><a href="#">Terms of Use</a></li>
-                    <li><a href="#">Sitemap</a></li>
-                </ul>
-            </li>
-        </ul>
-        <div class="mrs-footer-copy">
-            <span>&copy; 2020 <span class="mrs-brand">Reserved</span> All rights reserved.</span>
+        <div class="mrs-footer-copy-wrapper">
+            <div class="mrs-footer-copy">&copy; 2020 <span class="mrs-brand">Reserved</span> All rights reserved.</div>
         </div>
     </footer>
 </body>
