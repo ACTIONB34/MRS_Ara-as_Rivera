@@ -29,7 +29,8 @@ $(document).ready(function(){
 	var data = {
 	"films":
 		[{
-			"id": "d155a20f3e281399966bbe0f2a9b7568",
+			"id" : 0,
+			"hash_code": "d155a20f3e281399966bbe0f2a9b7568",
 			"title": "Harry Potter and the Deathly Hallows - Part 1",
 			"description": "As Harry, Ron, and Hermione race against time and evil to destroy the Horcruxes, they uncover the existence of the three most powerful objects in the wizarding world: the Deathly Hallows.",
 			"rating": 4.5,
@@ -39,7 +40,8 @@ $(document).ready(function(){
 			"lg_pic": "dh/dh1-lg.jfif",
 			"lo_pic": "dh/dh1-lo.jfif"
 		}, {
-			"id": "ea0039c94a8e5c399136fb53ef667fbe",
+			"id" : 1,
+			"hash_code": "ea0039c94a8e5c399136fb53ef667fbe",
 			"title": "On Vodka, Beer and Regrets",
 			"description": "(no description)",
 			"rating": 3.8,
@@ -49,7 +51,8 @@ $(document).ready(function(){
 			"lg_pic": "vbr/vbr-lg.png",
 			"lo_pic": "vbr/vbr-lo.jpeg"
 		}, {
-			"id": "5482dbff97af995c574927a4c3e9cc3a",
+			"id" : 2,
+			"hash_code": "5482dbff97af995c574927a4c3e9cc3a",
 			"title": "La Famille Belier",
 			"description": "A girl, who lives with her deaf parents, discovers that she has the gift of singing.",
 			"rating": 3.5,
@@ -59,7 +62,8 @@ $(document).ready(function(){
 			"lg_pic": "lfb/lfb-lg.jpeg",
 			"lo_pic": "lfb/lfb-lo.jpg"
 		}, {
-			"id": "aa649334c24f3954c2dd6d9602459bf9",
+			"id" : 3,
+			"hash_code": "aa649334c24f3954c2dd6d9602459bf9",
 			"title": "Avengers: Endgame",
 			"description": "After the devastating events of Avengers: Infinity War (2018), the universe is in ruins. With the help of remaining allies, the Avengers assemble once more in order to reverse Thanos' actions and restore balance to the universe.",
 			"rating": 4.6,
@@ -69,7 +73,8 @@ $(document).ready(function(){
 			"lg_pic": "ae/ae-lg.jpeg",
 			"lo_pic": "ae/ae-lo.jpg"
 		}, {
-			"id": "89b8e6dcea0b9a4ef24304c33f35911c",
+			"id" : 4,
+			"hash_code": "89b8e6dcea0b9a4ef24304c33f35911c",
 			"title": "Harry Potter and the Deathly Hallows - Part 2",
 			"description": "Harry, Ron, and Hermione search for Voldemort's remaining Horcruxes in their effort to destroy the Dark Lord as the final battle rages on at Hogwarts.",
 			"rating": 4.2,
@@ -79,7 +84,8 @@ $(document).ready(function(){
 			"lg_pic": "dh/dh2-lg.jpg",
 			"lo_pic": "dh/dh2-lo.jpg"
 		}, {
-			"id": "3870e1e46a68667857120bde8736f2c1",
+			"id" : 5,
+			"hash_code": "3870e1e46a68667857120bde8736f2c1",
 			"title": "Argo",
 			"description": "Acting under the cover of a Hollywood producer scouting a location for a science fiction film, a CIA agent launches a dangerous operation to rescue six Americans in Tehran during the U.S. hostage crisis in Iran in 1979.",
 			"rating": 4.2,
@@ -89,7 +95,8 @@ $(document).ready(function(){
 			"lg_pic": "ar/ar-lg.jpg",
 			"lo_pic": "ar/ar-lo.jpg"
 		}, {
-			"id": "3ccb9602c00bf09bd53318e7e4cec584",
+			"id" : 6,
+			"hash_code": "3ccb9602c00bf09bd53318e7e4cec584",
 			"title": "100 Tula Para Kay Stella",
 			"description": "Throughout his four years in college, Fidel, a stuttering student, tries to finish 100 poems dedicated to Stella, an aspiring but frustrated rock star, to win her heart.",
 			"rating": 4.1,
@@ -155,7 +162,7 @@ $(document).ready(function(){
 	}else if(sPage  == "films.html"){
 		var result = "";
 		for(var i in films){
-			var id = films[i].id;
+			var hash_code = films[i].hash_code;
 			var title = films[i].title;
 			var description = films[i].description;
 			var image = films[i].lo_pic;
@@ -196,7 +203,7 @@ $(document).ready(function(){
                     <div class="mrs-film-info mrs-paragraph">
                         <p>${description}</p>
                     </div>
-                    <a class="mrs-film-reserve mrs-rounded-btn" href="film.html?id=${id}">Reserve</a>
+                    <a class="mrs-film-reserve mrs-rounded-btn" href="film.html?v=${hash_code}">Reserve</a>
                 </div>
             </div>`;
 		}
@@ -212,7 +219,7 @@ $(document).ready(function(){
 				var result = "";
 				for(var i = 0; i < films.length; i++){
 					if(query.test(films[i].title.toLowerCase())){
-						var id = films[i].id;
+						var hash_code = films[i].hash_code;
 						var title = films[i].title;
 						var description = films[i].description;
 						var image = films[i].lo_pic;
@@ -254,7 +261,7 @@ $(document).ready(function(){
 			                    <div class="mrs-film-info mrs-paragraph">
 			                        <p>${description}</p>
 			                    </div>
-			                    <a class="mrs-film-reserve mrs-rounded-btn" href="film.html?id=${id}">Reserve</a>
+			                    <a class="mrs-film-reserve mrs-rounded-btn" href="film.html?v=${hash_code}">Reserve</a>
 			                </div>
 			            </div>`;
 					}
@@ -277,12 +284,12 @@ $(document).ready(function(){
 	   
 		let params = new URLSearchParams(location.search);
 		try{
-			var id = params.get("id");
-			if(id != null){;
+			var hash_code = params.get("v");
+			if(hash_code != null){;
 				var isExisting = false;
 				var result = "";
 				for(var i = 0; i < films.length; i++){
-					if(id == films[i].id){
+					if(hash_code == films[i].hash_code){
 						var title = films[i].title;
 						var description = films[i].description;
 						var image = films[i].sm_pic;
