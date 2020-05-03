@@ -34,6 +34,7 @@ $(document).ready(function(){
 	var sPage = sPath.substring(sPath.lastIndexOf('/') + 1);
 	console.log(sPage);
 
+
 	var data = {
 	"films":
 		[{
@@ -353,7 +354,7 @@ $(document).ready(function(){
 		}
 	}else if(sPage  == "order.html"){
 		function getNumofRemainingSeats(seatsTaken, maxNum){
-			maxNum = MAX - seatsTaken.length;
+			maxNum = CAPACITY - seatsTaken.length;
 		}
 
 	   	$(".mrs-seat").click(function(){
@@ -388,11 +389,6 @@ $(document).ready(function(){
 		// When the user clicks on the button, open the modal
 		btn.onclick = function() {
 			modal.style.display = "block";
-		}
-
-		// When the user clicks on <span> (x), close the modal
-		span.onclick = function() {
-			modal.style.display = "none";
 		}
 
 		// When the user clicks anywhere outside of the modal, close it
