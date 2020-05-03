@@ -580,6 +580,7 @@ $(document).ready(function(){
 
 	var films = data.films;
 	var scheds = data.film_schedules;
+	var users = data.users;
 
 	if(sPage == "index.html"){
 
