@@ -1,5 +1,9 @@
 $(document).ready(function(){
 
+	const ROWS = 9;
+	const COLUMNS = 8;
+	const CAPACITY = 72;
+
 	const MRS_GENRE = [{"code" : "family",
 						"text" : "Family"},
 					   {"code" : "action",
@@ -208,25 +212,51 @@ $(document).ready(function(){
 				var result = "";
 				for(var i = 0; i < films.length; i++){
 					if(query.test(films[i].title.toLowerCase())){
+						var id = films[i].id;
 						var title = films[i].title;
 						var description = films[i].description;
 						var image = films[i].lo_pic;
 						result_counter++;
+						var rating = "";
+						var tags = "";
+
+						for(let counter = 1; counter <= films[i].rating; counter++){
+							rating += String.raw`
+			                            <span class="full"></span>`;
+						}
+						if((films[i].rating % 1) != 0){
+							rating += String.raw`
+			                            <span class="half"></span>`;
+						}
+						rating += String.raw`
+			                            <span class="numeric">${films[i].rating}</span>`;
+
+						for(let film_genre of films[i].genre){				
+							for(let genre of MRS_GENRE){
+								if(genre.code == film_genre){
+									tags += String.raw`
+				                        <span class="${genre.code}">${genre.text}</span>`;
+								}
+							}
+						}
+
 						result += String.raw`
 						<div class="mrs-film card col-lg-3 col-md-6">
-		                    <div class="mrs-film-img"><img class="mrs-film-img" src="img/${image}"></div>
-		                    <div class="mrs-film-details container mx-1">
-		                        <h3 class="mrs-film-title">${title}</h3>
-		                        <div class="mrs-film-tags">
-		                            <span class="fantasy">Fantasy</span>
-		                            <span class="scifi">Sci Fi</span>
-		                        </div>
-		                        <div class="mrs-film-info mrs-paragraph">
-		                            <p>${description}</p>
-		                        </div>
-		                        <a class="mrs-film-reserve mrs-rounded-btn" href="film.html">Reserve</a>
-		                    </div>
-		                </div>`;
+			                <div class="mrs-film-img"><img class="mrs-film-img" src="img/${image}"></div>
+			                <div class="mrs-film-details container mx-1">
+			                    <h3 class="mrs-film-title">${title}</h3>
+			                        <div class="mrs-rating">
+			                            ${rating}
+			                        </div>
+			                    <div class="mrs-film-tags">
+			                        ${tags}
+			                    </div>
+			                    <div class="mrs-film-info mrs-paragraph">
+			                        <p>${description}</p>
+			                    </div>
+			                    <a class="mrs-film-reserve mrs-rounded-btn" href="film.html?id=${id}">Reserve</a>
+			                </div>
+			            </div>`;
 					}
 				}
 

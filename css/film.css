@@ -15,7 +15,7 @@
 }
 
 .mrs-rating{
-	padding: 4px
+	padding: 4px;
 	display: block;
 	text-align: center;
 }
@@ -55,15 +55,15 @@
 }
 
 .mrs-film-tags span.fantasy{
-    background-color: #573280; 
+    background-color: #5603AD; 
 }
 
 .mrs-film-tags span.action{
-    background-color: #873D48; 
+    background-color: #FF7733; 
 }
 
-.mrs-film-tags span.romance{
-    background-color: #F7717D; 
+.mrs-film-tags span.drama{
+    background-color: #8B7F81; 
 }
 
 .mrs-film-tags span.comedy{
@@ -71,17 +71,17 @@
 }
 
 .mrs-film-tags span.romance{
-    background-color: #F7717D; 
+    background-color: #EC0868; 
 }
 
 .mrs-film-tags span.thriller{
-    background-color: #F75C03; 
+    background-color: #F13030; 
 }
 
 .mrs-film-tags span.scifi{
-    background-color: #118AB2; 
+    background-color: #0D3B66; 
 }
 
 .mrs-film-tags span.family{
-    background-color: #118AB2; 
+    background-color: #256EFF; 
 }
