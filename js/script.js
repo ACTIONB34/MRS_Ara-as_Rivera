@@ -129,36 +129,421 @@ $(document).ready(function(){
 			"sched_id": 1,
 			"movie_id": 1,
 			"date": "2020-04-30",
-			"time": "14:00",
+			"time": "9:00",
 			"cinema_no": 1,
 			"reserved": []
 		},{
 			"sched_id": 2,
-			"movie_id": 3,
+			"movie_id": 1,
 			"date": "2020-04-30",
-			"time": "12:00",
-			"cinema_no": 2,
+			"time": "11:00",
+			"cinema_no": 1,
 			"reserved": []
 		},{
 			"sched_id": 3,
-			"movie_id": 4,
+			"movie_id": 1,
 			"date": "2020-04-30",
-			"time": "14:00",
-			"cinema_no": 2,
+			"time": "13:00",
+			"cinema_no": 1,
 			"reserved": []
 		},{
 			"sched_id": 4,
-			"movie_id": 5,
+			"movie_id": 1,
 			"date": "2020-04-30",
-			"time": "12:00",
-			"cinema_no": 3,
+			"time": "15:00",
+			"cinema_no": 1,
 			"reserved": []
 		},{
 			"sched_id": 5,
-			"movie_id": 6,
+			"movie_id": 2,
 			"date": "2020-04-30",
-			"time": "14:00",
+			"time": "9:00",
+			"cinema_no": 2,
+			"reserved": []
+		},{
+			"sched_id": 6,
+			"movie_id": 2,
+			"date": "2020-04-30",
+			"time": "11:00",
+			"cinema_no": 2,
+			"reserved": []
+		},{
+			"sched_id": 7,
+			"movie_id": 2,
+			"date": "2020-04-30",
+			"time": "13:00",
+			"cinema_no": 2,
+			"reserved": []
+		},{
+			"sched_id": 8,
+			"movie_id": 2,
+			"date": "2020-04-30",
+			"time": "15:00",
+			"cinema_no": 2,
+			"reserved": []
+		},{
+			"sched_id": 9,
+			"movie_id": 3,
+			"date": "2020-04-30",
+			"time": "9:00",
 			"cinema_no": 3,
+			"reserved": []
+		},{
+			"sched_id": 10,
+			"movie_id": 3,
+			"date": "2020-04-30",
+			"time": "11:00",
+			"cinema_no": 3,
+			"reserved": []
+		},{
+			"sched_id": 11,
+			"movie_id": 3,
+			"date": "2020-04-30",
+			"time": "13:00",
+			"cinema_no": 3,
+			"reserved": []
+		},{
+			"sched_id": 12,
+			"movie_id": 3,
+			"date": "2020-04-30",
+			"time": "15:00",
+			"cinema_no": 3,
+			"reserved": []
+		},{
+			"sched_id": 13,
+			"movie_id": 1,
+			"date": "2020-05-05",
+			"time": "9:00",
+			"cinema_no": 1,
+			"reserved": []
+		},{
+			"sched_id": 14,
+			"movie_id": 1,
+			"date": "2020-05-05",
+			"time": "11:00",
+			"cinema_no": 1,
+			"reserved": []
+		},{
+			"sched_id": 15,
+			"movie_id": 1,
+			"date": "2020-05-05",
+			"time": "13:00",
+			"cinema_no": 1,
+			"reserved": []
+		},{
+			"sched_id": 16,
+			"movie_id": 1,
+			"date": "2020-05-05",
+			"time": "15:00",
+			"cinema_no": 1,
+			"reserved": []
+		},{
+			"sched_id": 17,
+			"movie_id": 2,
+			"date": "2020-05-05",
+			"time": "9:00",
+			"cinema_no": 2,
+			"reserved": []
+		},{
+			"sched_id": 18,
+			"movie_id": 2,
+			"date": "2020-05-05",
+			"time": "11:00",
+			"cinema_no": 2,
+			"reserved": []
+		},{
+			"sched_id": 19,
+			"movie_id": 2,
+			"date": "2020-05-05",
+			"time": "13:00",
+			"cinema_no": 2,
+			"reserved": []
+		},{
+			"sched_id": 20,
+			"movie_id": 2,
+			"date": "2020-05-05",
+			"time": "15:00",
+			"cinema_no": 2,
+			"reserved": []
+		},{
+			"sched_id": 21,
+			"movie_id": 3,
+			"date": "2020-05-05",
+			"time": "9:00",
+			"cinema_no": 3,
+			"reserved": []
+		},{
+			"sched_id": 22,
+			"movie_id": 3,
+			"date": "2020-05-05",
+			"time": "11:00",
+			"cinema_no": 3,
+			"reserved": []
+		},{
+			"sched_id": 23,
+			"movie_id": 3,
+			"date": "2020-05-05",
+			"time": "13:00",
+			"cinema_no": 3,
+			"reserved": []
+		},{
+			"sched_id": 24,
+			"movie_id": 3,
+			"date": "2020-05-05",
+			"time": "15:00",
+			"cinema_no": 3,
+			"reserved": []
+		},{
+			"sched_id": 25,
+			"movie_id": 4,
+			"date": "2020-05-05",
+			"time": "9:00",
+			"cinema_no": 4,
+			"reserved": []
+		},{
+			"sched_id": 26,
+			"movie_id": 4,
+			"date": "2020-05-05",
+			"time": "11:00",
+			"cinema_no": 4,
+			"reserved": []
+		},{
+			"sched_id": 27,
+			"movie_id": 4,
+			"date": "2020-05-05",
+			"time": "13:00",
+			"cinema_no": 4,
+			"reserved": []
+		},{
+			"sched_id": 28,
+			"movie_id": 4,
+			"date": "2020-05-05",
+			"time": "15:00",
+			"cinema_no": 4,
+			"reserved": []
+		},{
+			"sched_id": 29,
+			"movie_id": 5,
+			"date": "2020-05-05",
+			"time": "9:00",
+			"cinema_no": 5,
+			"reserved": []
+		},{
+			"sched_id": 30,
+			"movie_id": 5,
+			"date": "2020-05-05",
+			"time": "11:00",
+			"cinema_no": 5,
+			"reserved": []
+		},{
+			"sched_id": 31,
+			"movie_id": 5,
+			"date": "2020-05-05",
+			"time": "13:00",
+			"cinema_no": 5,
+			"reserved": []
+		},{
+			"sched_id": 32,
+			"movie_id": 5,
+			"date": "2020-05-05",
+			"time": "15:00",
+			"cinema_no": 5,
+			"reserved": []
+		},{
+			"sched_id": 33,
+			"movie_id": 6,
+			"date": "2020-05-05",
+			"time": "9:00",
+			"cinema_no": 6,
+			"reserved": []
+		},{
+			"sched_id": 34,
+			"movie_id": 6,
+			"date": "2020-05-05",
+			"time": "11:00",
+			"cinema_no": 6,
+			"reserved": []
+		},{
+			"sched_id": 35,
+			"movie_id": 6,
+			"date": "2020-05-05",
+			"time": "13:00",
+			"cinema_no": 6,
+			"reserved": []
+		},{
+			"sched_id": 36,
+			"movie_id": 6,
+			"date": "2020-05-05",
+			"time": "15:00",
+			"cinema_no": 6,
+			"reserved": []
+		},{
+			"sched_id": 37,
+			"movie_id": 1,
+			"date": "2020-05-06",
+			"time": "9:00",
+			"cinema_no": 1,
+			"reserved": []
+		},{
+			"sched_id": 38,
+			"movie_id": 1,
+			"date": "2020-05-06",
+			"time": "11:00",
+			"cinema_no": 1,
+			"reserved": []
+		},{
+			"sched_id": 39,
+			"movie_id": 1,
+			"date": "2020-05-06",
+			"time": "13:00",
+			"cinema_no": 1,
+			"reserved": []
+		},{
+			"sched_id": 40,
+			"movie_id": 1,
+			"date": "2020-05-06",
+			"time": "15:00",
+			"cinema_no": 1,
+			"reserved": []
+		},{
+			"sched_id": 41,
+			"movie_id": 2,
+			"date": "2020-05-06",
+			"time": "9:00",
+			"cinema_no": 2,
+			"reserved": []
+		},{
+			"sched_id": 42,
+			"movie_id": 2,
+			"date": "2020-05-06",
+			"time": "11:00",
+			"cinema_no": 2,
+			"reserved": []
+		},{
+			"sched_id": 43,
+			"movie_id": 2,
+			"date": "2020-05-06",
+			"time": "13:00",
+			"cinema_no": 2,
+			"reserved": []
+		},{
+			"sched_id": 44,
+			"movie_id": 2,
+			"date": "2020-05-06",
+			"time": "15:00",
+			"cinema_no": 2,
+			"reserved": []
+		},{
+			"sched_id": 45,
+			"movie_id": 3,
+			"date": "2020-05-06",
+			"time": "9:00",
+			"cinema_no": 3,
+			"reserved": []
+		},{
+			"sched_id": 47,
+			"movie_id": 3,
+			"date": "2020-05-06",
+			"time": "11:00",
+			"cinema_no": 3,
+			"reserved": []
+		},{
+			"sched_id": 48,
+			"movie_id": 3,
+			"date": "2020-05-06",
+			"time": "13:00",
+			"cinema_no": 3,
+			"reserved": []
+		},{
+			"sched_id": 49,
+			"movie_id": 3,
+			"date": "2020-05-06",
+			"time": "15:00",
+			"cinema_no": 3,
+			"reserved": []
+		},{
+			"sched_id": 50,
+			"movie_id": 4,
+			"date": "2020-05-06",
+			"time": "9:00",
+			"cinema_no": 4,
+			"reserved": []
+		},{
+			"sched_id": 51,
+			"movie_id": 4,
+			"date": "2020-05-06",
+			"time": "11:00",
+			"cinema_no": 4,
+			"reserved": []
+		},{
+			"sched_id": 52,
+			"movie_id": 4,
+			"date": "2020-05-06",
+			"time": "13:00",
+			"cinema_no": 4,
+			"reserved": []
+		},{
+			"sched_id": 53,
+			"movie_id": 4,
+			"date": "2020-05-06",
+			"time": "15:00",
+			"cinema_no": 4,
+			"reserved": []
+		},{
+			"sched_id": 54,
+			"movie_id": 5,
+			"date": "2020-05-06",
+			"time": "9:00",
+			"cinema_no": 5,
+			"reserved": []
+		},{
+			"sched_id": 55,
+			"movie_id": 5,
+			"date": "2020-05-06",
+			"time": "11:00",
+			"cinema_no": 5,
+			"reserved": []
+		},{
+			"sched_id": 56,
+			"movie_id": 5,
+			"date": "2020-05-06",
+			"time": "13:00",
+			"cinema_no": 5,
+			"reserved": []
+		},{
+			"sched_id": 57,
+			"movie_id": 5,
+			"date": "2020-05-06",
+			"time": "15:00",
+			"cinema_no": 5,
+			"reserved": []
+		},{
+			"sched_id": 58,
+			"movie_id": 6,
+			"date": "2020-05-06",
+			"time": "9:00",
+			"cinema_no": 6,
+			"reserved": []
+		},{
+			"sched_id": 59,
+			"movie_id": 6,
+			"date": "2020-05-06",
+			"time": "11:00",
+			"cinema_no": 6,
+			"reserved": []
+		},{
+			"sched_id": 60,
+			"movie_id": 6,
+			"date": "2020-05-06",
+			"time": "13:00",
+			"cinema_no": 6,
+			"reserved": []
+		},{
+			"sched_id": 61,
+			"movie_id": 6,
+			"date": "2020-05-06",
+			"time": "15:00",
+			"cinema_no": 6,
 			"reserved": []
 		}]
 	}
