@@ -3,7 +3,15 @@ $(document).ready(function(){
 	const ROWS = 9;
 	const COLUMNS = 8;
 	const CAPACITY = 72;
-	const SEATS = ["a1", "1", "1", "1", "1", "1", "1", "1"]
+	const SEATS = ["a1", "a2", "a3", "a4", "a5", "a6", "a7", "a8",
+				   "b1", "b2", "b3", "b4", "b5", "b6", "b7", "b8",
+				   "c1", "c2", "c3", "c4", "c5", "c6", "c7", "c8",
+				   "d1", "d2", "d3", "d4", "d5", "d6", "d7", "d8",
+				   "e1", "e2", "e3", "e4", "e5", "e6", "e7", "e8",
+				   "f1", "f2", "f3", "f4", "f5", "f6", "f7", "f8",
+				   "g1", "g2", "g3", "g4", "g5", "g6", "g7", "g8",
+				   "h1", "h2", "h3", "h4", "h5", "h6", "h7", "h8",
+				   "i1", "i2", "i3", "i4", "i5", "i6", "i7", "i8"];
 
 	const MRS_GENRE = [{"code" : "family",
 						"text" : "Family"},
@@ -25,7 +33,6 @@ $(document).ready(function(){
 	var sPath = window.location.pathname;
 	var sPage = sPath.substring(sPath.lastIndexOf('/') + 1);
 	console.log(sPage);
-
 
 	var data = {
 	"films":
@@ -345,6 +352,10 @@ $(document).ready(function(){
 			console.log(e);
 		}
 	}else if(sPage  == "order.html"){
+		function getNumofRemainingSeats(seatsTaken, maxNum){
+			maxNum = MAX - seatsTaken.length;
+		}
+
 	   	$(".mrs-seat").click(function(){
 			if($(this).hasClass("mrs-seat-available")){
 			    $(this).removeClass("mrs-seat-available");
@@ -354,6 +365,15 @@ $(document).ready(function(){
 			    $(this).addClass("mrs-seat-available");
 			}
 		})
+
+		var regulars = document.getElementById("mrs-order-regulars");
+		regulars.max = 5; 
+
+		var kids = document.getElementById("mrs-order-kids");
+		kids.max = 5; 
+
+		var seniors = document.getElementById("mrs-order-seniors");
+		seniors.max = 5; 
 
 
 	  	// Get the modal

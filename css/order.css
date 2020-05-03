@@ -1,13 +1,14 @@
 @import "style.css";
 
-.mrs-seat{    
+button.mrs-seat{
+    border-radius: 4px;
     padding-top: 4px;
     padding-bottom: 4px;
 }
 
 .mrs-seat > span{
     display: none;
-    font-weight: bold;
+    font-weight: 500;
 }
 
 .mrs-seat-selected{
@@ -17,9 +18,9 @@
 }
 
 .mrs-seat-taken{
-    background-color: #9999FF; 
-    color: #333333;
-    border-color: #9999FF; 
+    background-color: #118AB2; 
+    color: #CCCCCC;
+    border-color: #118AB2; 
 }
 
 .mrs-seat-available{
