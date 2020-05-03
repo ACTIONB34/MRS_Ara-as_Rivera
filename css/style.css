@@ -77,7 +77,7 @@ main.mrs-home{
 }
 
 .mrs-navigation-link.mrs-navigation-link-reserve > a{
-    color: #6EA4BF !important;
+    color: #118AB2 !important;
 }
 
 .mrs-navigation-link.mrs-navigation-link-reserve:hover > a{
@@ -146,15 +146,14 @@ main.mrs-home{
     color: white;
     padding: 0.5rem 2.0rem;
     border-radius: 1.5rem;
-    background-color: #6EA4BF;
+    background-color: #118AB2;
     text-align: center;
     text-transform: uppercase;
-    border: 2px solid #6EA4BF;
+    border: 2px solid #118AB2;
 }
 
 .mrs-rounded-btn:hover{
     text-decoration: none;
-    color: inherit;
     background-color: transparent;
 }
 
@@ -183,14 +182,13 @@ main.mrs-home{
 .mrs-table a{
     text-decoration: none;
     padding: .2rem 1.2rem;
-    color: #000000;
-    background-color: #6EA4BF;
+    color: white;
+    background-color: #118AB2;
     border-radius: 1.0rem;
-    border: 2px solid #6EA4BF;
+    border: 2px solid #118AB2;
 }
 
 .mrs-table a:hover{
-    color: white;
     background-color: transparent;
 }
 

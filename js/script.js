@@ -1,5 +1,22 @@
 $(document).ready(function(){
 
+	const MRS_GENRE = [{"code" : "family",
+						"text" : "Family"},
+					   {"code" : "action",
+						"text" : "Action"},
+					   {"code" : "romance",
+						"text" : "Romance"},
+					   {"code" : "drama",
+						"text" : "Drama"},
+					   {"code" : "scifi",
+						"text" : "Sci-Fi"},
+					   {"code" : "fantasy",
+						"text" : "Fantasy"},
+					   {"code" : "comedy",
+						"text" : "Comedy"},
+					   {"code" : "thriller",
+						"text" : "Thriller"}];
+
 	var sPath = window.location.pathname;
 	var sPage = sPath.substring(sPath.lastIndexOf('/') + 1);
 	console.log(sPage);
@@ -11,8 +28,9 @@ $(document).ready(function(){
 			"id": "d155a20f3e281399966bbe0f2a9b7568",
 			"title": "Harry Potter and the Deathly Hallows - Part 1",
 			"description": "As Harry, Ron, and Hermione race against time and evil to destroy the Horcruxes, they uncover the existence of the three most powerful objects in the wizarding world: the Deathly Hallows.",
-			"rating": "",
+			"rating": 4.5,
 			"length": 146,
+			"genre" : ["fantasy", "drama", "action"],
 			"sm_pic": "dh/dh1-sm.jfif",
 			"lg_pic": "dh/dh1-lg.jfif",
 			"lo_pic": "dh/dh1-lo.jfif"
@@ -20,8 +38,9 @@ $(document).ready(function(){
 			"id": "ea0039c94a8e5c399136fb53ef667fbe",
 			"title": "On Vodka, Beer and Regrets",
 			"description": "(no description)",
-			"rating": "",
+			"rating": 3.8,
 			"length": 94,
+			"genre" : ["drama", "romance"],
 			"sm_pic": "vbr/vbr-sm.png",
 			"lg_pic": "vbr/vbr-lg.png",
 			"lo_pic": "vbr/vbr-lo.jpeg"
@@ -29,8 +48,9 @@ $(document).ready(function(){
 			"id": "5482dbff97af995c574927a4c3e9cc3a",
 			"title": "La Famille Belier",
 			"description": "A girl, who lives with her deaf parents, discovers that she has the gift of singing.",
-			"rating": "",
+			"rating": 3.5,
 			"length": 106,
+			"genre" : ["family"],
 			"sm_pic": "lfb/lfb-sm.jpg",
 			"lg_pic": "lfb/lfb-lg.jpeg",
 			"lo_pic": "lfb/lfb-lo.jpg"
@@ -38,8 +58,9 @@ $(document).ready(function(){
 			"id": "aa649334c24f3954c2dd6d9602459bf9",
 			"title": "Avengers: Endgame",
 			"description": "After the devastating events of Avengers: Infinity War (2018), the universe is in ruins. With the help of remaining allies, the Avengers assemble once more in order to reverse Thanos' actions and restore balance to the universe.",
-			"rating": "",
+			"rating": 4.6,
 			"length": 181,
+			"genre" : ["scifi", "fantasy", "action"],
 			"sm_pic": "ae/ae-sm.jpg",
 			"lg_pic": "ae/ae-lg.jpeg",
 			"lo_pic": "ae/ae-lo.jpg"
@@ -47,8 +68,9 @@ $(document).ready(function(){
 			"id": "89b8e6dcea0b9a4ef24304c33f35911c",
 			"title": "Harry Potter and the Deathly Hallows - Part 2",
 			"description": "Harry, Ron, and Hermione search for Voldemort's remaining Horcruxes in their effort to destroy the Dark Lord as the final battle rages on at Hogwarts.",
-			"rating": "",
+			"rating": 4.2,
 			"length": 130,
+			"genre" : ["fantasy", "drama", "action"],
 			"sm_pic": "dh/dh2-sm.jpg",
 			"lg_pic": "dh/dh2-lg.jpg",
 			"lo_pic": "dh/dh2-lo.jpg"
@@ -56,8 +78,9 @@ $(document).ready(function(){
 			"id": "3870e1e46a68667857120bde8736f2c1",
 			"title": "Argo",
 			"description": "Acting under the cover of a Hollywood producer scouting a location for a science fiction film, a CIA agent launches a dangerous operation to rescue six Americans in Tehran during the U.S. hostage crisis in Iran in 1979.",
-			"rating": "",
+			"rating": 4.2,
 			"length": 130,
+			"genre" : ["action", "thriller"],
 			"sm_pic": "ar/ar-sm.jpeg",
 			"lg_pic": "ar/ar-lg.jpg",
 			"lo_pic": "ar/ar-lo.jpg"
@@ -65,8 +88,9 @@ $(document).ready(function(){
 			"id": "3ccb9602c00bf09bd53318e7e4cec584",
 			"title": "100 Tula Para Kay Stella",
 			"description": "Throughout his four years in college, Fidel, a stuttering student, tries to finish 100 poems dedicated to Stella, an aspiring but frustrated rock star, to win her heart.",
-			"rating": "",
+			"rating": 4.1,
 			"length": 123,
+			"genre" : ["drama", "romance"],
 			"sm_pic": "tpks/tpks-sm.jpg",
 			"lg_pic": "tpks/tpks-lg.jpg",
 			"lo_pic": "tpks/tpks-lo.jpg"
@@ -126,18 +150,44 @@ $(document).ready(function(){
 
 	}else if(sPage  == "films.html"){
 		var result = "";
-		for(var i = 0; i < films.length; i++){
+		for(var i in films){
 			var id = films[i].id;
 			var title = films[i].title;
 			var description = films[i].description;
 			var image = films[i].lo_pic;
-			result += String.raw`<div class="mrs-film card col-lg-3 col-md-6">
+			var rating = "";
+			var tags = "";
+
+			for(let counter = 1; counter <= films[i].rating; counter++){
+				rating += String.raw`
+                            <span class="full"></span>`;
+			}
+			if((films[i].rating % 1) != 0){
+				rating += String.raw`
+                            <span class="half"></span>`;
+			}
+			rating += String.raw`
+                            <span class="numeric">${films[i].rating}</span>`;
+
+			for(let film_genre of films[i].genre){				
+				for(let genre of MRS_GENRE){
+					if(genre.code == film_genre){
+						tags += String.raw`
+	                        <span class="${genre.code}">${genre.text}</span>`;
+					}
+				}
+			}
+
+			result += String.raw`
+			<div class="mrs-film card col-lg-3 col-md-6">
                 <div class="mrs-film-img"><img class="mrs-film-img" src="img/${image}"></div>
                 <div class="mrs-film-details container mx-1">
                     <h3 class="mrs-film-title">${title}</h3>
+                        <div class="mrs-rating">
+                            ${rating}
+                        </div>
                     <div class="mrs-film-tags">
-                        <span class="fantasy">Fantasy</span>
-                        <span class="scifi">Sci Fi</span>
+                        ${tags}
                     </div>
                     <div class="mrs-film-info mrs-paragraph">
                         <p>${description}</p>
@@ -149,10 +199,6 @@ $(document).ready(function(){
 		document.getElementById("mrs-films-list").innerHTML = result;
 	   
 	}else if(sPage  == "reserve.html"){
-		//console.log(films);
-
-
-		// SEARCH FUNCTION
 		let params = new URLSearchParams(location.search);
 		try{
 			let query = new RegExp(params.get("search").toLowerCase());
@@ -166,7 +212,8 @@ $(document).ready(function(){
 						var description = films[i].description;
 						var image = films[i].lo_pic;
 						result_counter++;
-						result += String.raw`<div class="mrs-film card col-lg-3 col-md-6">
+						result += String.raw`
+						<div class="mrs-film card col-lg-3 col-md-6">
 		                    <div class="mrs-film-img"><img class="mrs-film-img" src="img/${image}"></div>
 		                    <div class="mrs-film-details container mx-1">
 		                        <h3 class="mrs-film-title">${title}</h3>
@@ -209,19 +256,37 @@ $(document).ready(function(){
 						var title = films[i].title;
 						var description = films[i].description;
 						var image = films[i].sm_pic;
+						var rating = "";
+						var tags = "";
+
+						for(let counter = 1; counter <= films[i].rating; counter++){
+							rating += String.raw`
+			                            <span class="full"></span>`;
+						}
+						if((films[i].rating % 1) != 0){
+							rating += String.raw`
+			                            <span class="half"></span>`;
+						}
+						rating += String.raw`
+			                            <span class="numeric">${films[i].rating}</span>`;
+
+						for(let film_genre of films[i].genre){				
+							for(let genre of MRS_GENRE){
+								if(genre.code == film_genre){
+									tags += String.raw`
+				                        <span class="${genre.code}">${genre.text}</span>`;
+								}
+							}
+						}
+
 						result = String.raw`<img src="img/${image}" class="card-img-top" alt="...">
 						                    <div class="card-body">
 						                        <h4 class="mrs-film-title card-title">${title}</h4>
 						                        <div class="mrs-rating">
-						                            <span class="full"></span>
-						                            <span class="full"></span>
-						                            <span class="full"></span>
-						                            <span class="half"></span>
-						                            <span class="numeric">3.5</span>
+						                            ${rating}
 						                        </div>
 						                        <div class="mrs-film-tags">
-						                            <span class="fantasy">Fantasy</span>
-						                            <span class="scifi">Sci Fi</span>
+						                            ${tags}
 						                        </div>
 						                        <p class="card-text mrs-paragraph">${description}</p>
 						                    </div>`;
