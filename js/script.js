@@ -124,10 +124,24 @@ $(document).ready(function(){
 			"date": "2020-04-30",
 			"time": "12:00",
 			"cinema_no": 1,
-			"reserved": [{ "seat" : [],
-						   "owner_id": "01"},
-							{ "seat" : "a1",
-							"owner": "Mary"}]
+			"reserved": [{
+							"seat" : "b4",
+						   	"owner_id": 120001
+						},{
+							"seat" : "b5",
+						   	"owner_id": 120001
+						},{
+							"seat" : "a1",
+						   	"owner_id": 120002
+						},{
+							"seat" : "a2",
+						   	"owner_id": 120002
+						},{
+							"seat" : "a3",
+						   	"owner_id": 120002
+						},{
+							"seat" : "d5",
+						   	"owner_id": 120003}]
 		},{
 			"sched_id": 1,
 			"movie_id": 1,
@@ -548,7 +562,20 @@ $(document).ready(function(){
 			"time": "15:00",
 			"cinema_no": 6,
 			"reserved": []
+		}],
+
+	"users" : 
+		[{
+			"id" : 120001,
+			"name" : "John Smith"
+		},{
+			"id" : 120002,
+			"name" : "Jalane Rivera"
+		},{
+			"id" : 120003,
+			"name" : "Mary Aranas"
 		}]
+
 	}
 
 	var films = data.films;
