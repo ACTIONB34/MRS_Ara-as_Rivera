@@ -3,6 +3,7 @@ $(document).ready(function(){
 	const ROWS = 9;
 	const COLUMNS = 8;
 	const CAPACITY = 72;
+	const SEATS = ["a1", "1", "1", "1", "1", "1", "1", "1"]
 
 	const MRS_GENRE = [{"code" : "family",
 						"text" : "Family"},

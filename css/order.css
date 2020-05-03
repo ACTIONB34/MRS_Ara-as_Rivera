@@ -1,0 +1,52 @@
+@import "style.css";
+
+.mrs-seat{    
+    padding-top: 4px;
+    padding-bottom: 4px;
+}
+
+.mrs-seat > span{
+    display: none;
+    font-weight: bold;
+}
+
+.mrs-seat-selected{
+    background-color: #FFFD82; 
+    color: #333333;
+    border-color: #FFFD82; 
+}
+
+.mrs-seat-taken{
+    background-color: #9999FF; 
+    color: #333333;
+    border-color: #9999FF; 
+}
+
+.mrs-seat-available{
+    background-color: #FFFFFF; 
+    color: #333333;
+    border-color: #FFFFFF; 
+}
+
+/* Adjustments using Bootstrap breakpoints */
+
+@media (min-width: 576px) {
+    .mrs-seat > span{
+        display: inline;
+    }
+}
+
+@media (min-width: 768px) {
+
+}
+
+@media (min-width: 992px) {
+
+}
+
+@media (min-width: 1200px) {
+
+}
+
+/* Temp */
+
