@@ -124,7 +124,10 @@ $(document).ready(function(){
 			"date": "2020-04-30",
 			"time": "12:00",
 			"cinema_no": 1,
-			"reserved": ["a5","a6","d4"]
+			"reserved": [{ "seat" : [],
+						   "owner_id": "01"},
+							{ "seat" : "a1",
+							"owner": "Mary"}]
 		},{
 			"sched_id": 1,
 			"movie_id": 1,
@@ -509,7 +512,7 @@ $(document).ready(function(){
 			"date": "2020-05-06",
 			"time": "13:00",
 			"cinema_no": 5,
-			"reserved": []
+			"reserved": ["a1"]
 		},{
 			"sched_id": 57,
 			"movie_id": 5,
