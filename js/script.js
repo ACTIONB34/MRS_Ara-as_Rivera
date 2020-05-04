@@ -1,5 +1,556 @@
 $(document).ready(function(){
 
+	if (localStorage.getItem("mrs-data") === null) {
+
+		let initial_data = {
+			"films":
+				[{
+					"id" : 0,
+					"hash_code": "d155a20f3e281399966bbe0f2a9b7568",
+					"title": "Harry Potter and the Deathly Hallows - Part 1",
+					"description": "As Harry, Ron, and Hermione race against time and evil to destroy the Horcruxes, they uncover the existence of the three most powerful objects in the wizarding world: the Deathly Hallows.",
+					"rating": 4.5,
+					"length": 146,
+					"genre" : ["fantasy", "drama", "action"],
+					"sm_pic": "dh/dh1-sm.jfif",
+					"lg_pic": "dh/dh1-lg.jfif",
+					"lo_pic": "dh/dh1-lo.jfif"
+				}, {
+					"id" : 1,
+					"hash_code": "ea0039c94a8e5c399136fb53ef667fbe",
+					"title": "On Vodka, Beer and Regrets",
+					"description": "(no description)",
+					"rating": 3.8,
+					"length": 94,
+					"genre" : ["drama", "romance"],
+					"sm_pic": "vbr/vbr-sm.png",
+					"lg_pic": "vbr/vbr-lg.png",
+					"lo_pic": "vbr/vbr-lo.jpeg"
+				}, {
+					"id" : 2,
+					"hash_code": "5482dbff97af995c574927a4c3e9cc3a",
+					"title": "La Famille Belier",
+					"description": "A girl, who lives with her deaf parents, discovers that she has the gift of singing.",
+					"rating": 3.5,
+					"length": 106,
+					"genre" : ["family"],
+					"sm_pic": "lfb/lfb-sm.jpg",
+					"lg_pic": "lfb/lfb-lg.jpeg",
+					"lo_pic": "lfb/lfb-lo.jpg"
+				}, {
+					"id" : 3,
+					"hash_code": "aa649334c24f3954c2dd6d9602459bf9",
+					"title": "Avengers: Endgame",
+					"description": "After the devastating events of Avengers: Infinity War (2018), the universe is in ruins. With the help of remaining allies, the Avengers assemble once more in order to reverse Thanos' actions and restore balance to the universe.",
+					"rating": 4.6,
+					"length": 181,
+					"genre" : ["scifi", "fantasy", "action"],
+					"sm_pic": "ae/ae-sm.jpg",
+					"lg_pic": "ae/ae-lg.jpeg",
+					"lo_pic": "ae/ae-lo.jpg"
+				}, {
+					"id" : 4,
+					"hash_code": "89b8e6dcea0b9a4ef24304c33f35911c",
+					"title": "Harry Potter and the Deathly Hallows - Part 2",
+					"description": "Harry, Ron, and Hermione search for Voldemort's remaining Horcruxes in their effort to destroy the Dark Lord as the final battle rages on at Hogwarts.",
+					"rating": 4.2,
+					"length": 130,
+					"genre" : ["fantasy", "drama", "action"],
+					"sm_pic": "dh/dh2-sm.jpg",
+					"lg_pic": "dh/dh2-lg.jpg",
+					"lo_pic": "dh/dh2-lo.jpg"
+				}, {
+					"id" : 5,
+					"hash_code": "3870e1e46a68667857120bde8736f2c1",
+					"title": "Argo",
+					"description": "Acting under the cover of a Hollywood producer scouting a location for a science fiction film, a CIA agent launches a dangerous operation to rescue six Americans in Tehran during the U.S. hostage crisis in Iran in 1979.",
+					"rating": 4.2,
+					"length": 130,
+					"genre" : ["action", "thriller"],
+					"sm_pic": "ar/ar-sm.jpeg",
+					"lg_pic": "ar/ar-lg.jpg",
+					"lo_pic": "ar/ar-lo.jpg"
+				}, {
+					"id" : 6,
+					"hash_code": "3ccb9602c00bf09bd53318e7e4cec584",
+					"title": "100 Tula Para Kay Stella",
+					"description": "Throughout his four years in college, Fidel, a stuttering student, tries to finish 100 poems dedicated to Stella, an aspiring but frustrated rock star, to win her heart.",
+					"rating": 4.1,
+					"length": 123,
+					"genre" : ["drama", "romance"],
+					"sm_pic": "tpks/tpks-sm.jpg",
+					"lg_pic": "tpks/tpks-lg.jpg",
+					"lo_pic": "tpks/tpks-lo.jpg"
+				}],
+
+			"film_schedules":
+
+				[{
+					"sched_id": 0,
+					"movie_id": 0,
+					"date": "2020-04-30",
+					"time": "12:00",
+					"cinema_no": 1,
+					"reserved": [{
+									"seat" : "b4",
+								   	"owner_id": 120001
+								},{
+									"seat" : "b5",
+								   	"owner_id": 120001
+								},{
+									"seat" : "a1",
+								   	"owner_id": 120002
+								},{
+									"seat" : "a2",
+								   	"owner_id": 120002
+								},{
+									"seat" : "a3",
+								   	"owner_id": 120002
+								},{
+									"seat" : "d5",
+								   	"owner_id": 120003}]
+				},{
+					"sched_id": 1,
+					"movie_id": 1,
+					"date": "2020-04-30",
+					"time": "9:00",
+					"cinema_no": 1,
+					"reserved": []
+				},{
+					"sched_id": 2,
+					"movie_id": 1,
+					"date": "2020-04-30",
+					"time": "11:00",
+					"cinema_no": 1,
+					"reserved": []
+				},{
+					"sched_id": 3,
+					"movie_id": 1,
+					"date": "2020-04-30",
+					"time": "13:00",
+					"cinema_no": 1,
+					"reserved": []
+				},{
+					"sched_id": 4,
+					"movie_id": 1,
+					"date": "2020-04-30",
+					"time": "15:00",
+					"cinema_no": 1,
+					"reserved": []
+				},{
+					"sched_id": 5,
+					"movie_id": 2,
+					"date": "2020-04-30",
+					"time": "9:00",
+					"cinema_no": 2,
+					"reserved": []
+				},{
+					"sched_id": 6,
+					"movie_id": 2,
+					"date": "2020-04-30",
+					"time": "11:00",
+					"cinema_no": 2,
+					"reserved": []
+				},{
+					"sched_id": 7,
+					"movie_id": 2,
+					"date": "2020-04-30",
+					"time": "13:00",
+					"cinema_no": 2,
+					"reserved": []
+				},{
+					"sched_id": 8,
+					"movie_id": 2,
+					"date": "2020-04-30",
+					"time": "15:00",
+					"cinema_no": 2,
+					"reserved": []
+				},{
+					"sched_id": 9,
+					"movie_id": 3,
+					"date": "2020-04-30",
+					"time": "9:00",
+					"cinema_no": 3,
+					"reserved": []
+				},{
+					"sched_id": 10,
+					"movie_id": 3,
+					"date": "2020-04-30",
+					"time": "11:00",
+					"cinema_no": 3,
+					"reserved": []
+				},{
+					"sched_id": 11,
+					"movie_id": 3,
+					"date": "2020-04-30",
+					"time": "13:00",
+					"cinema_no": 3,
+					"reserved": []
+				},{
+					"sched_id": 12,
+					"movie_id": 3,
+					"date": "2020-04-30",
+					"time": "15:00",
+					"cinema_no": 3,
+					"reserved": []
+				},{
+					"sched_id": 13,
+					"movie_id": 1,
+					"date": "2020-05-05",
+					"time": "9:00",
+					"cinema_no": 1,
+					"reserved": []
+				},{
+					"sched_id": 14,
+					"movie_id": 1,
+					"date": "2020-05-05",
+					"time": "11:00",
+					"cinema_no": 1,
+					"reserved": []
+				},{
+					"sched_id": 15,
+					"movie_id": 1,
+					"date": "2020-05-05",
+					"time": "13:00",
+					"cinema_no": 1,
+					"reserved": []
+				},{
+					"sched_id": 16,
+					"movie_id": 1,
+					"date": "2020-05-05",
+					"time": "15:00",
+					"cinema_no": 1,
+					"reserved": []
+				},{
+					"sched_id": 17,
+					"movie_id": 2,
+					"date": "2020-05-05",
+					"time": "9:00",
+					"cinema_no": 2,
+					"reserved": []
+				},{
+					"sched_id": 18,
+					"movie_id": 2,
+					"date": "2020-05-05",
+					"time": "11:00",
+					"cinema_no": 2,
+					"reserved": []
+				},{
+					"sched_id": 19,
+					"movie_id": 2,
+					"date": "2020-05-05",
+					"time": "13:00",
+					"cinema_no": 2,
+					"reserved": []
+				},{
+					"sched_id": 20,
+					"movie_id": 2,
+					"date": "2020-05-05",
+					"time": "15:00",
+					"cinema_no": 2,
+					"reserved": []
+				},{
+					"sched_id": 21,
+					"movie_id": 3,
+					"date": "2020-05-05",
+					"time": "9:00",
+					"cinema_no": 3,
+					"reserved": []
+				},{
+					"sched_id": 22,
+					"movie_id": 3,
+					"date": "2020-05-05",
+					"time": "11:00",
+					"cinema_no": 3,
+					"reserved": []
+				},{
+					"sched_id": 23,
+					"movie_id": 3,
+					"date": "2020-05-05",
+					"time": "13:00",
+					"cinema_no": 3,
+					"reserved": []
+				},{
+					"sched_id": 24,
+					"movie_id": 3,
+					"date": "2020-05-05",
+					"time": "15:00",
+					"cinema_no": 3,
+					"reserved": []
+				},{
+					"sched_id": 25,
+					"movie_id": 4,
+					"date": "2020-05-05",
+					"time": "9:00",
+					"cinema_no": 4,
+					"reserved": []
+				},{
+					"sched_id": 26,
+					"movie_id": 4,
+					"date": "2020-05-05",
+					"time": "11:00",
+					"cinema_no": 4,
+					"reserved": []
+				},{
+					"sched_id": 27,
+					"movie_id": 4,
+					"date": "2020-05-05",
+					"time": "13:00",
+					"cinema_no": 4,
+					"reserved": []
+				},{
+					"sched_id": 28,
+					"movie_id": 4,
+					"date": "2020-05-05",
+					"time": "15:00",
+					"cinema_no": 4,
+					"reserved": []
+				},{
+					"sched_id": 29,
+					"movie_id": 5,
+					"date": "2020-05-05",
+					"time": "9:00",
+					"cinema_no": 5,
+					"reserved": []
+				},{
+					"sched_id": 30,
+					"movie_id": 5,
+					"date": "2020-05-05",
+					"time": "11:00",
+					"cinema_no": 5,
+					"reserved": []
+				},{
+					"sched_id": 31,
+					"movie_id": 5,
+					"date": "2020-05-05",
+					"time": "13:00",
+					"cinema_no": 5,
+					"reserved": []
+				},{
+					"sched_id": 32,
+					"movie_id": 5,
+					"date": "2020-05-05",
+					"time": "15:00",
+					"cinema_no": 5,
+					"reserved": []
+				},{
+					"sched_id": 33,
+					"movie_id": 6,
+					"date": "2020-05-05",
+					"time": "9:00",
+					"cinema_no": 6,
+					"reserved": []
+				},{
+					"sched_id": 34,
+					"movie_id": 6,
+					"date": "2020-05-05",
+					"time": "11:00",
+					"cinema_no": 6,
+					"reserved": []
+				},{
+					"sched_id": 35,
+					"movie_id": 6,
+					"date": "2020-05-05",
+					"time": "13:00",
+					"cinema_no": 6,
+					"reserved": []
+				},{
+					"sched_id": 36,
+					"movie_id": 6,
+					"date": "2020-05-05",
+					"time": "15:00",
+					"cinema_no": 6,
+					"reserved": []
+				},{
+					"sched_id": 37,
+					"movie_id": 1,
+					"date": "2020-05-06",
+					"time": "9:00",
+					"cinema_no": 1,
+					"reserved": []
+				},{
+					"sched_id": 38,
+					"movie_id": 1,
+					"date": "2020-05-06",
+					"time": "11:00",
+					"cinema_no": 1,
+					"reserved": []
+				},{
+					"sched_id": 39,
+					"movie_id": 1,
+					"date": "2020-05-06",
+					"time": "13:00",
+					"cinema_no": 1,
+					"reserved": []
+				},{
+					"sched_id": 40,
+					"movie_id": 1,
+					"date": "2020-05-06",
+					"time": "15:00",
+					"cinema_no": 1,
+					"reserved": []
+				},{
+					"sched_id": 41,
+					"movie_id": 2,
+					"date": "2020-05-06",
+					"time": "9:00",
+					"cinema_no": 2,
+					"reserved": []
+				},{
+					"sched_id": 42,
+					"movie_id": 2,
+					"date": "2020-05-06",
+					"time": "11:00",
+					"cinema_no": 2,
+					"reserved": []
+				},{
+					"sched_id": 43,
+					"movie_id": 2,
+					"date": "2020-05-06",
+					"time": "13:00",
+					"cinema_no": 2,
+					"reserved": []
+				},{
+					"sched_id": 44,
+					"movie_id": 2,
+					"date": "2020-05-06",
+					"time": "15:00",
+					"cinema_no": 2,
+					"reserved": []
+				},{
+					"sched_id": 45,
+					"movie_id": 3,
+					"date": "2020-05-06",
+					"time": "9:00",
+					"cinema_no": 3,
+					"reserved": []
+				},{
+					"sched_id": 47,
+					"movie_id": 3,
+					"date": "2020-05-06",
+					"time": "11:00",
+					"cinema_no": 3,
+					"reserved": []
+				},{
+					"sched_id": 48,
+					"movie_id": 3,
+					"date": "2020-05-06",
+					"time": "13:00",
+					"cinema_no": 3,
+					"reserved": []
+				},{
+					"sched_id": 49,
+					"movie_id": 3,
+					"date": "2020-05-06",
+					"time": "15:00",
+					"cinema_no": 3,
+					"reserved": []
+				},{
+					"sched_id": 50,
+					"movie_id": 4,
+					"date": "2020-05-06",
+					"time": "9:00",
+					"cinema_no": 4,
+					"reserved": []
+				},{
+					"sched_id": 51,
+					"movie_id": 4,
+					"date": "2020-05-06",
+					"time": "11:00",
+					"cinema_no": 4,
+					"reserved": []
+				},{
+					"sched_id": 52,
+					"movie_id": 4,
+					"date": "2020-05-06",
+					"time": "13:00",
+					"cinema_no": 4,
+					"reserved": []
+				},{
+					"sched_id": 53,
+					"movie_id": 4,
+					"date": "2020-05-06",
+					"time": "15:00",
+					"cinema_no": 4,
+					"reserved": []
+				},{
+					"sched_id": 54,
+					"movie_id": 5,
+					"date": "2020-05-06",
+					"time": "9:00",
+					"cinema_no": 5,
+					"reserved": []
+				},{
+					"sched_id": 55,
+					"movie_id": 5,
+					"date": "2020-05-06",
+					"time": "11:00",
+					"cinema_no": 5,
+					"reserved": []
+				},{
+					"sched_id": 56,
+					"movie_id": 5,
+					"date": "2020-05-06",
+					"time": "13:00",
+					"cinema_no": 5,
+					"reserved": ["a1"]
+				},{
+					"sched_id": 57,
+					"movie_id": 5,
+					"date": "2020-05-06",
+					"time": "15:00",
+					"cinema_no": 5,
+					"reserved": []
+				},{
+					"sched_id": 58,
+					"movie_id": 6,
+					"date": "2020-05-06",
+					"time": "9:00",
+					"cinema_no": 6,
+					"reserved": []
+				},{
+					"sched_id": 59,
+					"movie_id": 6,
+					"date": "2020-05-06",
+					"time": "11:00",
+					"cinema_no": 6,
+					"reserved": []
+				},{
+					"sched_id": 60,
+					"movie_id": 6,
+					"date": "2020-05-06",
+					"time": "13:00",
+					"cinema_no": 6,
+					"reserved": []
+				},{
+					"sched_id": 61,
+					"movie_id": 6,
+					"date": "2020-05-06",
+					"time": "15:00",
+					"cinema_no": 6,
+					"reserved": []
+				}],
+
+			"users" : 
+				[{
+					"id" : 120001,
+					"name" : "John Smith"
+				},{
+					"id" : 120002,
+					"name" : "Jalane Rivera"
+				},{
+					"id" : 120003,
+					"name" : "Mary Aranas"
+				}]
+
+			}
+
+		localStorage.setItem("mrs-data", JSON.stringify(initial_data));
+	
+	}
+
+	var data = JSON.parse(localStorage.getItem("mrs-data"));
+
 	const ROWS = 9;
 	const COLUMNS = 8;
 	const CAPACITY = 72;
@@ -35,548 +586,7 @@ $(document).ready(function(){
 	console.log(sPage);
 
 
-	var data = {
-	"films":
-		[{
-			"id" : 0,
-			"hash_code": "d155a20f3e281399966bbe0f2a9b7568",
-			"title": "Harry Potter and the Deathly Hallows - Part 1",
-			"description": "As Harry, Ron, and Hermione race against time and evil to destroy the Horcruxes, they uncover the existence of the three most powerful objects in the wizarding world: the Deathly Hallows.",
-			"rating": 4.5,
-			"length": 146,
-			"genre" : ["fantasy", "drama", "action"],
-			"sm_pic": "dh/dh1-sm.jfif",
-			"lg_pic": "dh/dh1-lg.jfif",
-			"lo_pic": "dh/dh1-lo.jfif"
-		}, {
-			"id" : 1,
-			"hash_code": "ea0039c94a8e5c399136fb53ef667fbe",
-			"title": "On Vodka, Beer and Regrets",
-			"description": "(no description)",
-			"rating": 3.8,
-			"length": 94,
-			"genre" : ["drama", "romance"],
-			"sm_pic": "vbr/vbr-sm.png",
-			"lg_pic": "vbr/vbr-lg.png",
-			"lo_pic": "vbr/vbr-lo.jpeg"
-		}, {
-			"id" : 2,
-			"hash_code": "5482dbff97af995c574927a4c3e9cc3a",
-			"title": "La Famille Belier",
-			"description": "A girl, who lives with her deaf parents, discovers that she has the gift of singing.",
-			"rating": 3.5,
-			"length": 106,
-			"genre" : ["family"],
-			"sm_pic": "lfb/lfb-sm.jpg",
-			"lg_pic": "lfb/lfb-lg.jpeg",
-			"lo_pic": "lfb/lfb-lo.jpg"
-		}, {
-			"id" : 3,
-			"hash_code": "aa649334c24f3954c2dd6d9602459bf9",
-			"title": "Avengers: Endgame",
-			"description": "After the devastating events of Avengers: Infinity War (2018), the universe is in ruins. With the help of remaining allies, the Avengers assemble once more in order to reverse Thanos' actions and restore balance to the universe.",
-			"rating": 4.6,
-			"length": 181,
-			"genre" : ["scifi", "fantasy", "action"],
-			"sm_pic": "ae/ae-sm.jpg",
-			"lg_pic": "ae/ae-lg.jpeg",
-			"lo_pic": "ae/ae-lo.jpg"
-		}, {
-			"id" : 4,
-			"hash_code": "89b8e6dcea0b9a4ef24304c33f35911c",
-			"title": "Harry Potter and the Deathly Hallows - Part 2",
-			"description": "Harry, Ron, and Hermione search for Voldemort's remaining Horcruxes in their effort to destroy the Dark Lord as the final battle rages on at Hogwarts.",
-			"rating": 4.2,
-			"length": 130,
-			"genre" : ["fantasy", "drama", "action"],
-			"sm_pic": "dh/dh2-sm.jpg",
-			"lg_pic": "dh/dh2-lg.jpg",
-			"lo_pic": "dh/dh2-lo.jpg"
-		}, {
-			"id" : 5,
-			"hash_code": "3870e1e46a68667857120bde8736f2c1",
-			"title": "Argo",
-			"description": "Acting under the cover of a Hollywood producer scouting a location for a science fiction film, a CIA agent launches a dangerous operation to rescue six Americans in Tehran during the U.S. hostage crisis in Iran in 1979.",
-			"rating": 4.2,
-			"length": 130,
-			"genre" : ["action", "thriller"],
-			"sm_pic": "ar/ar-sm.jpeg",
-			"lg_pic": "ar/ar-lg.jpg",
-			"lo_pic": "ar/ar-lo.jpg"
-		}, {
-			"id" : 6,
-			"hash_code": "3ccb9602c00bf09bd53318e7e4cec584",
-			"title": "100 Tula Para Kay Stella",
-			"description": "Throughout his four years in college, Fidel, a stuttering student, tries to finish 100 poems dedicated to Stella, an aspiring but frustrated rock star, to win her heart.",
-			"rating": 4.1,
-			"length": 123,
-			"genre" : ["drama", "romance"],
-			"sm_pic": "tpks/tpks-sm.jpg",
-			"lg_pic": "tpks/tpks-lg.jpg",
-			"lo_pic": "tpks/tpks-lo.jpg"
-		}],
-
-	"film_schedules":
-
-		[{
-			"sched_id": 0,
-			"movie_id": 0,
-			"date": "2020-04-30",
-			"time": "12:00",
-			"cinema_no": 1,
-			"reserved": [{
-							"seat" : "b4",
-						   	"owner_id": 120001
-						},{
-							"seat" : "b5",
-						   	"owner_id": 120001
-						},{
-							"seat" : "a1",
-						   	"owner_id": 120002
-						},{
-							"seat" : "a2",
-						   	"owner_id": 120002
-						},{
-							"seat" : "a3",
-						   	"owner_id": 120002
-						},{
-							"seat" : "d5",
-						   	"owner_id": 120003}]
-		},{
-			"sched_id": 1,
-			"movie_id": 1,
-			"date": "2020-04-30",
-			"time": "9:00",
-			"cinema_no": 1,
-			"reserved": []
-		},{
-			"sched_id": 2,
-			"movie_id": 1,
-			"date": "2020-04-30",
-			"time": "11:00",
-			"cinema_no": 1,
-			"reserved": []
-		},{
-			"sched_id": 3,
-			"movie_id": 1,
-			"date": "2020-04-30",
-			"time": "13:00",
-			"cinema_no": 1,
-			"reserved": []
-		},{
-			"sched_id": 4,
-			"movie_id": 1,
-			"date": "2020-04-30",
-			"time": "15:00",
-			"cinema_no": 1,
-			"reserved": []
-		},{
-			"sched_id": 5,
-			"movie_id": 2,
-			"date": "2020-04-30",
-			"time": "9:00",
-			"cinema_no": 2,
-			"reserved": []
-		},{
-			"sched_id": 6,
-			"movie_id": 2,
-			"date": "2020-04-30",
-			"time": "11:00",
-			"cinema_no": 2,
-			"reserved": []
-		},{
-			"sched_id": 7,
-			"movie_id": 2,
-			"date": "2020-04-30",
-			"time": "13:00",
-			"cinema_no": 2,
-			"reserved": []
-		},{
-			"sched_id": 8,
-			"movie_id": 2,
-			"date": "2020-04-30",
-			"time": "15:00",
-			"cinema_no": 2,
-			"reserved": []
-		},{
-			"sched_id": 9,
-			"movie_id": 3,
-			"date": "2020-04-30",
-			"time": "9:00",
-			"cinema_no": 3,
-			"reserved": []
-		},{
-			"sched_id": 10,
-			"movie_id": 3,
-			"date": "2020-04-30",
-			"time": "11:00",
-			"cinema_no": 3,
-			"reserved": []
-		},{
-			"sched_id": 11,
-			"movie_id": 3,
-			"date": "2020-04-30",
-			"time": "13:00",
-			"cinema_no": 3,
-			"reserved": []
-		},{
-			"sched_id": 12,
-			"movie_id": 3,
-			"date": "2020-04-30",
-			"time": "15:00",
-			"cinema_no": 3,
-			"reserved": []
-		},{
-			"sched_id": 13,
-			"movie_id": 1,
-			"date": "2020-05-05",
-			"time": "9:00",
-			"cinema_no": 1,
-			"reserved": []
-		},{
-			"sched_id": 14,
-			"movie_id": 1,
-			"date": "2020-05-05",
-			"time": "11:00",
-			"cinema_no": 1,
-			"reserved": []
-		},{
-			"sched_id": 15,
-			"movie_id": 1,
-			"date": "2020-05-05",
-			"time": "13:00",
-			"cinema_no": 1,
-			"reserved": []
-		},{
-			"sched_id": 16,
-			"movie_id": 1,
-			"date": "2020-05-05",
-			"time": "15:00",
-			"cinema_no": 1,
-			"reserved": []
-		},{
-			"sched_id": 17,
-			"movie_id": 2,
-			"date": "2020-05-05",
-			"time": "9:00",
-			"cinema_no": 2,
-			"reserved": []
-		},{
-			"sched_id": 18,
-			"movie_id": 2,
-			"date": "2020-05-05",
-			"time": "11:00",
-			"cinema_no": 2,
-			"reserved": []
-		},{
-			"sched_id": 19,
-			"movie_id": 2,
-			"date": "2020-05-05",
-			"time": "13:00",
-			"cinema_no": 2,
-			"reserved": []
-		},{
-			"sched_id": 20,
-			"movie_id": 2,
-			"date": "2020-05-05",
-			"time": "15:00",
-			"cinema_no": 2,
-			"reserved": []
-		},{
-			"sched_id": 21,
-			"movie_id": 3,
-			"date": "2020-05-05",
-			"time": "9:00",
-			"cinema_no": 3,
-			"reserved": []
-		},{
-			"sched_id": 22,
-			"movie_id": 3,
-			"date": "2020-05-05",
-			"time": "11:00",
-			"cinema_no": 3,
-			"reserved": []
-		},{
-			"sched_id": 23,
-			"movie_id": 3,
-			"date": "2020-05-05",
-			"time": "13:00",
-			"cinema_no": 3,
-			"reserved": []
-		},{
-			"sched_id": 24,
-			"movie_id": 3,
-			"date": "2020-05-05",
-			"time": "15:00",
-			"cinema_no": 3,
-			"reserved": []
-		},{
-			"sched_id": 25,
-			"movie_id": 4,
-			"date": "2020-05-05",
-			"time": "9:00",
-			"cinema_no": 4,
-			"reserved": []
-		},{
-			"sched_id": 26,
-			"movie_id": 4,
-			"date": "2020-05-05",
-			"time": "11:00",
-			"cinema_no": 4,
-			"reserved": []
-		},{
-			"sched_id": 27,
-			"movie_id": 4,
-			"date": "2020-05-05",
-			"time": "13:00",
-			"cinema_no": 4,
-			"reserved": []
-		},{
-			"sched_id": 28,
-			"movie_id": 4,
-			"date": "2020-05-05",
-			"time": "15:00",
-			"cinema_no": 4,
-			"reserved": []
-		},{
-			"sched_id": 29,
-			"movie_id": 5,
-			"date": "2020-05-05",
-			"time": "9:00",
-			"cinema_no": 5,
-			"reserved": []
-		},{
-			"sched_id": 30,
-			"movie_id": 5,
-			"date": "2020-05-05",
-			"time": "11:00",
-			"cinema_no": 5,
-			"reserved": []
-		},{
-			"sched_id": 31,
-			"movie_id": 5,
-			"date": "2020-05-05",
-			"time": "13:00",
-			"cinema_no": 5,
-			"reserved": []
-		},{
-			"sched_id": 32,
-			"movie_id": 5,
-			"date": "2020-05-05",
-			"time": "15:00",
-			"cinema_no": 5,
-			"reserved": []
-		},{
-			"sched_id": 33,
-			"movie_id": 6,
-			"date": "2020-05-05",
-			"time": "9:00",
-			"cinema_no": 6,
-			"reserved": []
-		},{
-			"sched_id": 34,
-			"movie_id": 6,
-			"date": "2020-05-05",
-			"time": "11:00",
-			"cinema_no": 6,
-			"reserved": []
-		},{
-			"sched_id": 35,
-			"movie_id": 6,
-			"date": "2020-05-05",
-			"time": "13:00",
-			"cinema_no": 6,
-			"reserved": []
-		},{
-			"sched_id": 36,
-			"movie_id": 6,
-			"date": "2020-05-05",
-			"time": "15:00",
-			"cinema_no": 6,
-			"reserved": []
-		},{
-			"sched_id": 37,
-			"movie_id": 1,
-			"date": "2020-05-06",
-			"time": "9:00",
-			"cinema_no": 1,
-			"reserved": []
-		},{
-			"sched_id": 38,
-			"movie_id": 1,
-			"date": "2020-05-06",
-			"time": "11:00",
-			"cinema_no": 1,
-			"reserved": []
-		},{
-			"sched_id": 39,
-			"movie_id": 1,
-			"date": "2020-05-06",
-			"time": "13:00",
-			"cinema_no": 1,
-			"reserved": []
-		},{
-			"sched_id": 40,
-			"movie_id": 1,
-			"date": "2020-05-06",
-			"time": "15:00",
-			"cinema_no": 1,
-			"reserved": []
-		},{
-			"sched_id": 41,
-			"movie_id": 2,
-			"date": "2020-05-06",
-			"time": "9:00",
-			"cinema_no": 2,
-			"reserved": []
-		},{
-			"sched_id": 42,
-			"movie_id": 2,
-			"date": "2020-05-06",
-			"time": "11:00",
-			"cinema_no": 2,
-			"reserved": []
-		},{
-			"sched_id": 43,
-			"movie_id": 2,
-			"date": "2020-05-06",
-			"time": "13:00",
-			"cinema_no": 2,
-			"reserved": []
-		},{
-			"sched_id": 44,
-			"movie_id": 2,
-			"date": "2020-05-06",
-			"time": "15:00",
-			"cinema_no": 2,
-			"reserved": []
-		},{
-			"sched_id": 45,
-			"movie_id": 3,
-			"date": "2020-05-06",
-			"time": "9:00",
-			"cinema_no": 3,
-			"reserved": []
-		},{
-			"sched_id": 47,
-			"movie_id": 3,
-			"date": "2020-05-06",
-			"time": "11:00",
-			"cinema_no": 3,
-			"reserved": []
-		},{
-			"sched_id": 48,
-			"movie_id": 3,
-			"date": "2020-05-06",
-			"time": "13:00",
-			"cinema_no": 3,
-			"reserved": []
-		},{
-			"sched_id": 49,
-			"movie_id": 3,
-			"date": "2020-05-06",
-			"time": "15:00",
-			"cinema_no": 3,
-			"reserved": []
-		},{
-			"sched_id": 50,
-			"movie_id": 4,
-			"date": "2020-05-06",
-			"time": "9:00",
-			"cinema_no": 4,
-			"reserved": []
-		},{
-			"sched_id": 51,
-			"movie_id": 4,
-			"date": "2020-05-06",
-			"time": "11:00",
-			"cinema_no": 4,
-			"reserved": []
-		},{
-			"sched_id": 52,
-			"movie_id": 4,
-			"date": "2020-05-06",
-			"time": "13:00",
-			"cinema_no": 4,
-			"reserved": []
-		},{
-			"sched_id": 53,
-			"movie_id": 4,
-			"date": "2020-05-06",
-			"time": "15:00",
-			"cinema_no": 4,
-			"reserved": []
-		},{
-			"sched_id": 54,
-			"movie_id": 5,
-			"date": "2020-05-06",
-			"time": "9:00",
-			"cinema_no": 5,
-			"reserved": []
-		},{
-			"sched_id": 55,
-			"movie_id": 5,
-			"date": "2020-05-06",
-			"time": "11:00",
-			"cinema_no": 5,
-			"reserved": []
-		},{
-			"sched_id": 56,
-			"movie_id": 5,
-			"date": "2020-05-06",
-			"time": "13:00",
-			"cinema_no": 5,
-			"reserved": ["a1"]
-		},{
-			"sched_id": 57,
-			"movie_id": 5,
-			"date": "2020-05-06",
-			"time": "15:00",
-			"cinema_no": 5,
-			"reserved": []
-		},{
-			"sched_id": 58,
-			"movie_id": 6,
-			"date": "2020-05-06",
-			"time": "9:00",
-			"cinema_no": 6,
-			"reserved": []
-		},{
-			"sched_id": 59,
-			"movie_id": 6,
-			"date": "2020-05-06",
-			"time": "11:00",
-			"cinema_no": 6,
-			"reserved": []
-		},{
-			"sched_id": 60,
-			"movie_id": 6,
-			"date": "2020-05-06",
-			"time": "13:00",
-			"cinema_no": 6,
-			"reserved": []
-		},{
-			"sched_id": 61,
-			"movie_id": 6,
-			"date": "2020-05-06",
-			"time": "15:00",
-			"cinema_no": 6,
-			"reserved": []
-		}],
-
-	"users" : 
-		[{
-			"id" : 120001,
-			"name" : "John Smith"
-		},{
-			"id" : 120002,
-			"name" : "Jalane Rivera"
-		},{
-			"id" : 120003,
-			"name" : "Mary Aranas"
-		}]
-
-	}
+	
 
 	var films = data.films;
 	var scheds = data.film_schedules;
