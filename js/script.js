@@ -1,5 +1,5 @@
 $(document).ready(function(){
-	localStorage.removeItem("mrs-data");
+	//localStorage.removeItem("mrs-data");
 
 	if (localStorage.getItem("mrs-data") === null) {
 
@@ -929,15 +929,15 @@ $(document).ready(function(){
 	const ROWS = 9;
 	const COLUMNS = 8;
 	const CAPACITY = 72;
-	const SEATS = ["a1", "a2", "a3", "a4", "a5", "a6", "a7", "a8",
-				   "b1", "b2", "b3", "b4", "b5", "b6", "b7", "b8",
-				   "c1", "c2", "c3", "c4", "c5", "c6", "c7", "c8",
-				   "d1", "d2", "d3", "d4", "d5", "d6", "d7", "d8",
-				   "e1", "e2", "e3", "e4", "e5", "e6", "e7", "e8",
-				   "f1", "f2", "f3", "f4", "f5", "f6", "f7", "f8",
-				   "g1", "g2", "g3", "g4", "g5", "g6", "g7", "g8",
-				   "h1", "h2", "h3", "h4", "h5", "h6", "h7", "h8",
-				   "i1", "i2", "i3", "i4", "i5", "i6", "i7", "i8"];
+	const SEATS = ["mrs-seats-a1", "mrs-seats-a2", "mrs-seats-a3", "mrs-seats-a4", "mrs-seats-a5", "mrs-seats-a6", "mrs-seats-a7", "mrs-seats-a8",
+				   "mrs-seats-b1", "mrs-seats-b2", "mrs-seats-b3", "mrs-seats-b4", "mrs-seats-b5", "mrs-seats-b6", "mrs-seats-b7", "mrs-seats-b8",
+				   "mrs-seats-c1", "mrs-seats-c2", "mrs-seats-c3", "mrs-seats-c4", "mrs-seats-c5", "mrs-seats-c6", "mrs-seats-c7", "mrs-seats-c8",
+				   "mrs-seats-d1", "mrs-seats-d2", "mrs-seats-d3", "mrs-seats-d4", "mrs-seats-d5", "mrs-seats-d6", "mrs-seats-d7", "mrs-seats-d8",
+				   "mrs-seats-e1", "mrs-seats-e2", "mrs-seats-e3", "mrs-seats-e4", "mrs-seats-e5", "mrs-seats-e6", "mrs-seats-e7", "mrs-seats-e8",
+				   "mrs-seats-f1", "mrs-seats-f2", "mrs-seats-f3", "mrs-seats-f4", "mrs-seats-f5", "mrs-seats-f6", "mrs-seats-f7", "mrs-seats-f8",
+				   "mrs-seats-g1", "mrs-seats-g2", "mrs-seats-g3", "mrs-seats-g4", "mrs-seats-g5", "mrs-seats-g6", "mrs-seats-g7", "mrs-seats-g8",
+				   "mrs-seats-h1", "mrs-seats-h2", "mrs-seats-h3", "mrs-seats-h4", "mrs-seats-h5", "mrs-seats-h6", "mrs-seats-h7", "mrs-seats-h8",
+				   "mrs-seats-i1", "mrs-seats-i2", "mrs-seats-i3", "mrs-seats-i4", "mrs-seats-i5", "mrs-seats-i6", "mrs-seats-i7", "mrs-seats-i8"];
 
 	const MRS_GENRE = [{"code" : "family",
 						"text" : "Family"},
@@ -1194,13 +1194,18 @@ $(document).ready(function(){
 			console.log(e);
 		}
 	}else if(sPage  == "order.html"){
+		let selectedSeatCount = 0; 
 	   	$(".mrs-seat").click(function(){
 			if($(this).hasClass("mrs-seat-available")){
 			    $(this).removeClass("mrs-seat-available");
 			    $(this).addClass("mrs-seat-selected");
+			    selectedSeatCount++;
+				console.log(selectedSeatCount);
 			}else if($(this).hasClass("mrs-seat-selected")){			
 			    $(this).removeClass("mrs-seat-selected");
 			    $(this).addClass("mrs-seat-available");
+			    selectedSeatCount--;
+				console.log(selectedSeatCount);
 			}
 		})
 
@@ -1228,7 +1233,13 @@ $(document).ready(function(){
 					document.getElementById("mrs-order-film").value = current_film.title;
 					document.getElementById("mrs-order-cinema").value = current_sched.cinema_no;
 					document.getElementById("mrs-order-time").value = current_sched.time;
-					document.getElementById("mrs-order-date").value = current_sched.date;	
+					document.getElementById("mrs-order-date").value = current_sched.date;
+					for(let current_seat of current_sched.reserved){
+						let seatName = "mrs-seat-"+ current_seat.seat;
+						document.getElementById(seatName).disabled = true;
+						$("#" + seatName).addClass("mrs-seat-taken");
+						$("#" + seatName).removeClass("mrs-seat-available");
+					}
 
 					let availableSeatCount = getAvailableSeatCount(current_sched.reserved.length);				
 
@@ -1249,9 +1260,6 @@ $(document).ready(function(){
 		}catch(e){
 			console.log(e);
 		}
-
-
-
 
 
 	  	// Get the modal
