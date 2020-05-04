@@ -920,7 +920,9 @@ $(document).ready(function(){
 
 			}
 
-		localStorage.setItem("mrs-data", JSON.stringify(initial_data));
+		if(localStorage.getItem("mrs-data")===null){
+			localStorage.setItem("mrs-data", JSON.stringify(initial_data));
+		}
 	
 	}
 
@@ -1282,6 +1284,79 @@ $(document).ready(function(){
 		    	modal.style.display = "none";
 		    }
 		}
+	}else if(sPage  == "reserved-seats.html"){
+		console.log(scheds);
+		var result;
+		var qty;
+		var isExisting;
+		var hasReservation = false;
+
+		for(var i = 0; i < scheds.length; i++){
+			qty = 0;
+			isExisting = false;
+			result = "";
+			for(var j in scheds[i].reserved){
+				if(scheds[i].reserved[j].owner_id == 120001){
+					isExisting = true;
+					hasReservation = true;
+					for(var x in films){
+						if(films[x].id == scheds[i].movie_id){
+							result = String.raw`<tr id="${scheds[i].sched_id}">
+                                					<th scope="row">${films[x].title}</th>`;
+						}
+					}
+					qty++;
+				} else {
+
+				}
+			}
+			if(isExisting){
+				console.log(scheds[i].sched_id);
+				result += String.raw`<td>${scheds[i].date}</td>
+	                                <td>${scheds[i].time}</td>
+	                                <td>${scheds[i].cinema_no}</td>
+	                                <td>${qty}</td>
+	                                <td class="reservation-list-button">
+	                                    <button class="edit-reservation edit-list-button edit-reservation-btn">Edit</button>
+	                                </td>
+	                                <td class="reservation-list-button">
+	                                    <button class="cancel-reservation cancel-list-button cancel-reservation-btn">Cancel</button>
+	                                </td>
+	                            </tr>`;
+	            document.getElementById("reserved-movie-list").innerHTML += result;
+				
+			}
+
+		}
+
+		if(hasReservation){
+
+		} else {
+			document.getElementById("reserved-movie-list").innerHTML = '<span class="mrs-no-result">You have no reserved seats..</span>';
+		}
+
+		$(".cancel-reservation-btn").click(function(){
+			var tr = $(this).parent().parent();
+			var schedID = tr.attr("id");
+			
+
+			for(var i = 0; i < data.film_schedules.length; i++){
+				if(data.film_schedules[i].sched_id == schedID) {
+					for(var j = 0; j < data.film_schedules[i].reserved.length; j++){
+						if(data.film_schedules[i].reserved[j].owner_id == 120001){
+							data.film_schedules[i].reserved.splice(j,1);
+							j--;
+							console.log(data.film_schedules[i]);
+						}
+					}
+				}
+			}
+
+			localStorage.setItem("mrs-data", JSON.stringify(data));
+
+			tr.remove();
+		});
+
 	}
 	/****/
 
