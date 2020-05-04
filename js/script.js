@@ -1,4 +1,5 @@
 $(document).ready(function(){
+	//localStorage.removeItem("mrs-data");
 
 	if (localStorage.getItem("mrs-data") === null) {
 
@@ -93,22 +94,28 @@ $(document).ready(function(){
 					"cinema_no": 1,
 					"reserved": [{
 									"seat" : "b4",
-								   	"owner_id": 120001
+								   	"owner_id": 120001,
+								   	"price" : 150
 								},{
 									"seat" : "b5",
-								   	"owner_id": 120001
+								   	"owner_id": 120001,
+								   	"price" : 150
 								},{
 									"seat" : "a1",
-								   	"owner_id": 120002
+								   	"owner_id": 120002,
+								   	"price" : 150
 								},{
 									"seat" : "a2",
-								   	"owner_id": 120002
+								   	"owner_id": 120002,
+								   	"price" : 100
 								},{
 									"seat" : "a3",
-								   	"owner_id": 120002
+								   	"owner_id": 120002,
+								   	"price" : 150
 								},{
 									"seat" : "d5",
-								   	"owner_id": 120003}]
+								   	"owner_id": 120003,
+								   	"price" : 120}]
 				},{
 					"sched_id": 1,
 					"movie_id": 1,
@@ -129,7 +136,30 @@ $(document).ready(function(){
 					"date": "2020-04-30",
 					"time": "13:00",
 					"cinema_no": 1,
-					"reserved": []
+					"reserved": [{
+									"seat" : "b4",
+								   	"owner_id": 120003,
+								   	"price" : 150
+								},{
+									"seat" : "b5",
+								   	"owner_id": 120003,
+								   	"price" : 150
+								},{
+									"seat" : "a1",
+								   	"owner_id": 120001,
+								   	"price" : 150
+								},{
+									"seat" : "a2",
+								   	"owner_id": 120001,
+								   	"price" : 100
+								},{
+									"seat" : "a3",
+								   	"owner_id": 120002,
+								   	"price" : 150
+								},{
+									"seat" : "d5",
+								   	"owner_id": 120002,
+								   	"price" : 120}]
 				},{
 					"sched_id": 4,
 					"movie_id": 1,
@@ -143,42 +173,180 @@ $(document).ready(function(){
 					"date": "2020-04-30",
 					"time": "9:00",
 					"cinema_no": 2,
-					"reserved": []
+					"reserved": [{
+									"seat" : "b4",
+								   	"owner_id": 120001,
+								   	"price" : 150
+								},{
+									"seat" : "b5",
+								   	"owner_id": 120001,
+								   	"price" : 150
+								},{
+									"seat" : "a1",
+								   	"owner_id": 120002,
+								   	"price" : 150
+								},{
+									"seat" : "a2",
+								   	"owner_id": 120002,
+								   	"price" : 150
+								},{
+									"seat" : "a3",
+								   	"owner_id": 120002,
+								   	"price" : 150
+								},{
+									"seat" : "d5",
+								   	"owner_id": 120003,
+								   	"price" : 150}]
 				},{
 					"sched_id": 6,
 					"movie_id": 2,
 					"date": "2020-04-30",
 					"time": "11:00",
 					"cinema_no": 2,
-					"reserved": []
+					"reserved": [{
+									"seat" : "b4",
+								   	"owner_id": 120001,
+								   	"price" : 150
+								},{
+									"seat" : "b5",
+								   	"owner_id": 120001,
+								   	"price" : 150
+								},{
+									"seat" : "a1",
+								   	"owner_id": 120002,
+								   	"price" : 150
+								},{
+									"seat" : "a2",
+								   	"owner_id": 120002,
+								   	"price" : 100
+								},{
+									"seat" : "a3",
+								   	"owner_id": 120002,
+								   	"price" : 150
+								},{
+									"seat" : "d5",
+								   	"owner_id": 120003,
+								   	"price" : 120}]
 				},{
 					"sched_id": 7,
 					"movie_id": 2,
 					"date": "2020-04-30",
 					"time": "13:00",
 					"cinema_no": 2,
-					"reserved": []
+					"reserved": [{
+									"seat" : "b4",
+								   	"owner_id": 120003,
+								   	"price" : 150
+								},{
+									"seat" : "b5",
+								   	"owner_id": 120003,
+								   	"price" : 150
+								},{
+									"seat" : "a1",
+								   	"owner_id": 120001,
+								   	"price" : 150
+								},{
+									"seat" : "a2",
+								   	"owner_id": 120001,
+								   	"price" : 100
+								},{
+									"seat" : "a3",
+								   	"owner_id": 120002,
+								   	"price" : 150
+								},{
+									"seat" : "d5",
+								   	"owner_id": 120002,
+								   	"price" : 120}]
 				},{
 					"sched_id": 8,
 					"movie_id": 2,
 					"date": "2020-04-30",
 					"time": "15:00",
 					"cinema_no": 2,
-					"reserved": []
+					"reserved": [{
+									"seat" : "b4",
+								   	"owner_id": 120001,
+								   	"price" : 150
+								},{
+									"seat" : "b5",
+								   	"owner_id": 120001,
+								   	"price" : 150
+								},{
+									"seat" : "a1",
+								   	"owner_id": 120002,
+								   	"price" : 150
+								},{
+									"seat" : "a2",
+								   	"owner_id": 120002,
+								   	"price" : 100
+								},{
+									"seat" : "a3",
+								   	"owner_id": 120002,
+								   	"price" : 150
+								},{
+									"seat" : "d5",
+								   	"owner_id": 120003,
+								   	"price" : 120}]
 				},{
 					"sched_id": 9,
 					"movie_id": 3,
 					"date": "2020-04-30",
 					"time": "9:00",
 					"cinema_no": 3,
-					"reserved": []
+					"reserved": [{
+									"seat" : "b4",
+								   	"owner_id": 120003,
+								   	"price" : 150
+								},{
+									"seat" : "b5",
+								   	"owner_id": 120003,
+								   	"price" : 150
+								},{
+									"seat" : "a1",
+								   	"owner_id": 120001,
+								   	"price" : 150
+								},{
+									"seat" : "a2",
+								   	"owner_id": 120001,
+								   	"price" : 100
+								},{
+									"seat" : "a3",
+								   	"owner_id": 120002,
+								   	"price" : 150
+								},{
+									"seat" : "d5",
+								   	"owner_id": 120002,
+								   	"price" : 120}]
 				},{
 					"sched_id": 10,
 					"movie_id": 3,
 					"date": "2020-04-30",
 					"time": "11:00",
 					"cinema_no": 3,
-					"reserved": []
+					"reserved": [{
+									"seat" : "b4",
+								   	"owner_id": 120001,
+								   	"price" : 150
+								},{
+									"seat" : "b5",
+								   	"owner_id": 120001,
+								   	"price" : 150
+								},{
+									"seat" : "a1",
+								   	"owner_id": 120002,
+								   	"price" : 150
+								},{
+									"seat" : "a2",
+								   	"owner_id": 120002,
+								   	"price" : 100
+								},{
+									"seat" : "a3",
+								   	"owner_id": 120002,
+								   	"price" : 150
+								},{
+									"seat" : "d5",
+								   	"owner_id": 120003,
+								   	"price" : 120}]
 				},{
 					"sched_id": 11,
 					"movie_id": 3,
@@ -227,7 +395,30 @@ $(document).ready(function(){
 					"date": "2020-05-05",
 					"time": "9:00",
 					"cinema_no": 2,
-					"reserved": []
+					"reserved": [{
+									"seat" : "b4",
+								   	"owner_id": 120001,
+								   	"price" : 150
+								},{
+									"seat" : "b5",
+								   	"owner_id": 120001,
+								   	"price" : 150
+								},{
+									"seat" : "a1",
+								   	"owner_id": 120002,
+								   	"price" : 150
+								},{
+									"seat" : "a2",
+								   	"owner_id": 120002,
+								   	"price" : 100
+								},{
+									"seat" : "a3",
+								   	"owner_id": 120002,
+								   	"price" : 150
+								},{
+									"seat" : "d5",
+								   	"owner_id": 120003,
+								   	"price" : 120}]
 				},{
 					"sched_id": 18,
 					"movie_id": 2,
@@ -262,7 +453,30 @@ $(document).ready(function(){
 					"date": "2020-05-05",
 					"time": "11:00",
 					"cinema_no": 3,
-					"reserved": []
+					"reserved": [{
+									"seat" : "b4",
+								   	"owner_id": 120001,
+								   	"price" : 150
+								},{
+									"seat" : "b5",
+								   	"owner_id": 120001,
+								   	"price" : 150
+								},{
+									"seat" : "a1",
+								   	"owner_id": 120002,
+								   	"price" : 150
+								},{
+									"seat" : "a2",
+								   	"owner_id": 120002,
+								   	"price" : 100
+								},{
+									"seat" : "a3",
+								   	"owner_id": 120002,
+								   	"price" : 150
+								},{
+									"seat" : "d5",
+								   	"owner_id": 120003,
+								   	"price" : 120}]
 				},{
 					"sched_id": 23,
 					"movie_id": 3,
@@ -283,7 +497,30 @@ $(document).ready(function(){
 					"date": "2020-05-05",
 					"time": "9:00",
 					"cinema_no": 4,
-					"reserved": []
+					"reserved": [{
+									"seat" : "b4",
+								   	"owner_id": 120001,
+								   	"price" : 150
+								},{
+									"seat" : "b5",
+								   	"owner_id": 120001,
+								   	"price" : 150
+								},{
+									"seat" : "a1",
+								   	"owner_id": 120002,
+								   	"price" : 150
+								},{
+									"seat" : "a2",
+								   	"owner_id": 120002,
+								   	"price" : 100
+								},{
+									"seat" : "a3",
+								   	"owner_id": 120002,
+								   	"price" : 150
+								},{
+									"seat" : "d5",
+								   	"owner_id": 120003,
+								   	"price" : 120}]
 				},{
 					"sched_id": 26,
 					"movie_id": 4,
@@ -297,14 +534,60 @@ $(document).ready(function(){
 					"date": "2020-05-05",
 					"time": "13:00",
 					"cinema_no": 4,
-					"reserved": []
+					"reserved": [{
+									"seat" : "b4",
+								   	"owner_id": 120001,
+								   	"price" : 150
+								},{
+									"seat" : "b5",
+								   	"owner_id": 120001,
+								   	"price" : 150
+								},{
+									"seat" : "a1",
+								   	"owner_id": 120002,
+								   	"price" : 150
+								},{
+									"seat" : "a2",
+								   	"owner_id": 120002,
+								   	"price" : 100
+								},{
+									"seat" : "a3",
+								   	"owner_id": 120002,
+								   	"price" : 150
+								},{
+									"seat" : "d5",
+								   	"owner_id": 120003,
+								   	"price" : 120}]
 				},{
 					"sched_id": 28,
 					"movie_id": 4,
 					"date": "2020-05-05",
 					"time": "15:00",
 					"cinema_no": 4,
-					"reserved": []
+					"reserved": [{
+									"seat" : "b4",
+								   	"owner_id": 120001,
+								   	"price" : 150
+								},{
+									"seat" : "b5",
+								   	"owner_id": 120001,
+								   	"price" : 150
+								},{
+									"seat" : "a1",
+								   	"owner_id": 120002,
+								   	"price" : 150
+								},{
+									"seat" : "a2",
+								   	"owner_id": 120002,
+								   	"price" : 100
+								},{
+									"seat" : "a3",
+								   	"owner_id": 120002,
+								   	"price" : 150
+								},{
+									"seat" : "d5",
+								   	"owner_id": 120003,
+								   	"price" : 120}]
 				},{
 					"sched_id": 29,
 					"movie_id": 5,
@@ -332,7 +615,30 @@ $(document).ready(function(){
 					"date": "2020-05-05",
 					"time": "15:00",
 					"cinema_no": 5,
-					"reserved": []
+					"reserved": [{
+									"seat" : "b4",
+								   	"owner_id": 120001,
+								   	"price" : 150
+								},{
+									"seat" : "b5",
+								   	"owner_id": 120001,
+								   	"price" : 150
+								},{
+									"seat" : "a1",
+								   	"owner_id": 120002,
+								   	"price" : 150
+								},{
+									"seat" : "a2",
+								   	"owner_id": 120002,
+								   	"price" : 100
+								},{
+									"seat" : "i3",
+								   	"owner_id": 120002,
+								   	"price" : 150
+								},{
+									"seat" : "i5",
+								   	"owner_id": 120003,
+								   	"price" : 120}]
 				},{
 					"sched_id": 33,
 					"movie_id": 6,
@@ -346,7 +652,30 @@ $(document).ready(function(){
 					"date": "2020-05-05",
 					"time": "11:00",
 					"cinema_no": 6,
-					"reserved": []
+					"reserved": [{
+									"seat" : "b4",
+								   	"owner_id": 120001,
+								   	"price" : 150
+								},{
+									"seat" : "b5",
+								   	"owner_id": 120001,
+								   	"price" : 150
+								},{
+									"seat" : "a1",
+								   	"owner_id": 120002,
+								   	"price" : 150
+								},{
+									"seat" : "e2",
+								   	"owner_id": 120002,
+								   	"price" : 100
+								},{
+									"seat" : "e3",
+								   	"owner_id": 120002,
+								   	"price" : 150
+								},{
+									"seat" : "d5",
+								   	"owner_id": 120003,
+								   	"price" : 120}]
 				},{
 					"sched_id": 35,
 					"movie_id": 6,
@@ -374,7 +703,30 @@ $(document).ready(function(){
 					"date": "2020-05-06",
 					"time": "11:00",
 					"cinema_no": 1,
-					"reserved": []
+					"reserved": [{
+									"seat" : "b4",
+								   	"owner_id": 120001,
+								   	"price" : 150
+								},{
+									"seat" : "b5",
+								   	"owner_id": 120001,
+								   	"price" : 150
+								},{
+									"seat" : "d1",
+								   	"owner_id": 120002,
+								   	"price" : 150
+								},{
+									"seat" : "d2",
+								   	"owner_id": 120002,
+								   	"price" : 100
+								},{
+									"seat" : "d3",
+								   	"owner_id": 120002,
+								   	"price" : 150
+								},{
+									"seat" : "d5",
+								   	"owner_id": 120003,
+								   	"price" : 120}]
 				},{
 					"sched_id": 39,
 					"movie_id": 1,
@@ -388,7 +740,30 @@ $(document).ready(function(){
 					"date": "2020-05-06",
 					"time": "15:00",
 					"cinema_no": 1,
-					"reserved": []
+					"reserved": [{
+									"seat" : "b4",
+								   	"owner_id": 120001,
+								   	"price" : 150
+								},{
+									"seat" : "b5",
+								   	"owner_id": 120001,
+								   	"price" : 150
+								},{
+									"seat" : "a1",
+								   	"owner_id": 120002,
+								   	"price" : 150
+								},{
+									"seat" : "a2",
+								   	"owner_id": 120002,
+								   	"price" : 100
+								},{
+									"seat" : "a3",
+								   	"owner_id": 120002,
+								   	"price" : 150
+								},{
+									"seat" : "d5",
+								   	"owner_id": 120003,
+								   	"price" : 120}]
 				},{
 					"sched_id": 41,
 					"movie_id": 2,
@@ -402,7 +777,30 @@ $(document).ready(function(){
 					"date": "2020-05-06",
 					"time": "11:00",
 					"cinema_no": 2,
-					"reserved": []
+					"reserved": [{
+									"seat" : "b4",
+								   	"owner_id": 120003,
+								   	"price" : 150
+								},{
+									"seat" : "b5",
+								   	"owner_id": 120003,
+								   	"price" : 150
+								},{
+									"seat" : "a1",
+								   	"owner_id": 120001,
+								   	"price" : 150
+								},{
+									"seat" : "a2",
+								   	"owner_id": 120001,
+								   	"price" : 100
+								},{
+									"seat" : "a3",
+								   	"owner_id": 120002,
+								   	"price" : 150
+								},{
+									"seat" : "d5",
+								   	"owner_id": 120002,
+								   	"price" : 120}]
 				},{
 					"sched_id": 43,
 					"movie_id": 2,
@@ -423,7 +821,30 @@ $(document).ready(function(){
 					"date": "2020-05-06",
 					"time": "9:00",
 					"cinema_no": 3,
-					"reserved": []
+					"reserved": [{
+									"seat" : "b4",
+								   	"owner_id": 120001,
+								   	"price" : 150
+								},{
+									"seat" : "b5",
+								   	"owner_id": 120001,
+								   	"price" : 150
+								},{
+									"seat" : "a1",
+								   	"owner_id": 120002,
+								   	"price" : 150
+								},{
+									"seat" : "a2",
+								   	"owner_id": 120002,
+								   	"price" : 100
+								},{
+									"seat" : "a3",
+								   	"owner_id": 120002,
+								   	"price" : 150
+								},{
+									"seat" : "d5",
+								   	"owner_id": 120003,
+								   	"price" : 120}]
 				},{
 					"sched_id": 47,
 					"movie_id": 3,
@@ -458,7 +879,30 @@ $(document).ready(function(){
 					"date": "2020-05-06",
 					"time": "11:00",
 					"cinema_no": 4,
-					"reserved": []
+					"reserved": [{
+									"seat" : "b4",
+								   	"owner_id": 120003,
+								   	"price" : 150
+								},{
+									"seat" : "b5",
+								   	"owner_id": 120003,
+								   	"price" : 150
+								},{
+									"seat" : "a1",
+								   	"owner_id": 120001,
+								   	"price" : 150
+								},{
+									"seat" : "a2",
+								   	"owner_id": 120001,
+								   	"price" : 100
+								},{
+									"seat" : "a3",
+								   	"owner_id": 120002,
+								   	"price" : 150
+								},{
+									"seat" : "d5",
+								   	"owner_id": 120002,
+								   	"price" : 120}]
 				},{
 					"sched_id": 52,
 					"movie_id": 4,
@@ -486,14 +930,37 @@ $(document).ready(function(){
 					"date": "2020-05-06",
 					"time": "11:00",
 					"cinema_no": 5,
-					"reserved": []
+					"reserved": [{
+									"seat" : "b4",
+								   	"owner_id": 120001,
+								   	"price" : 150
+								},{
+									"seat" : "b5",
+								   	"owner_id": 120001,
+								   	"price" : 150
+								},{
+									"seat" : "a1",
+								   	"owner_id": 120002,
+								   	"price" : 150
+								},{
+									"seat" : "a2",
+								   	"owner_id": 120002,
+								   	"price" : 100
+								},{
+									"seat" : "a3",
+								   	"owner_id": 120002,
+								   	"price" : 150
+								},{
+									"seat" : "d5",
+								   	"owner_id": 120003,
+								   	"price" : 120}]
 				},{
 					"sched_id": 56,
 					"movie_id": 5,
 					"date": "2020-05-06",
 					"time": "13:00",
 					"cinema_no": 5,
-					"reserved": ["a1"]
+					"reserved": []
 				},{
 					"sched_id": 57,
 					"movie_id": 5,
@@ -514,7 +981,30 @@ $(document).ready(function(){
 					"date": "2020-05-06",
 					"time": "11:00",
 					"cinema_no": 6,
-					"reserved": []
+					"reserved": [{
+									"seat" : "b4",
+								   	"owner_id": 120001,
+								   	"price" : 150
+								},{
+									"seat" : "b5",
+								   	"owner_id": 120001,
+								   	"price" : 150
+								},{
+									"seat" : "a1",
+								   	"owner_id": 120002,
+								   	"price" : 150
+								},{
+									"seat" : "a2",
+								   	"owner_id": 120002,
+								   	"price" : 100
+								},{
+									"seat" : "a3",
+								   	"owner_id": 120002,
+								   	"price" : 150
+								},{
+									"seat" : "d5",
+								   	"owner_id": 120003,
+								   	"price" : 120}]
 				},{
 					"sched_id": 60,
 					"movie_id": 6,
