@@ -983,9 +983,48 @@ $(document).ready(function(){
 		return CAPACITY - taken;
 	}
 
+	function shuffle(arra1) {
+    var ctr = arra1.length, temp, index;
+
+	// While there are elements in the array
+	    while (ctr > 0) {
+	// Pick a random index
+	        index = Math.floor(Math.random() * ctr);
+	// Decrease ctr by 1
+	        ctr--;
+	// And swap the last element with it
+	        temp = arra1[ctr];
+	        arra1[ctr] = arra1[index];
+	        arra1[index] = temp;
+	    }
+	    return arra1;
+	}
+
 
 	if(sPage == "index.html"){
+		var result = "";
+		var shuffleFilms = shuffle(films);
 
+		for(var i = 0 ; i < 3 ; i++){
+			var hash_code = shuffleFilms[i].hash_code;
+			var title = shuffleFilms[i].title;
+			var description = shuffleFilms[i].description;
+			var image = shuffleFilms[i].sm_pic;
+
+			result += String.raw`
+								<div class="mrs-featured-film card col-sm bg-dark">
+				                    <img src="img/${image}" class="card-img-top" alt="...">
+				                    <div class="card-body">
+				                        <h5 class="card-title">${title}</h5>
+				                        <p class="card-text">${description}</p>
+				                        <a class="mrs-film-reserve mrs-rounded-btn" href="film.html?v=${hash_code}">View Details</a>
+				                    </div>
+				                </div>`;
+			// document.getElementById("featured-films-section").innerHTML += result;
+		}
+
+		document.getElementById("featured-films-section").innerHTML = result;
+		
 	}else if(sPage  == "films.html"){
 		var result = "";
 		for(var i in films){
@@ -1284,7 +1323,7 @@ $(document).ready(function(){
 		    	modal.style.display = "none";
 		    }
 		}
-	}else if(sPage  == "reserved-seats.html"){
+	}else if(sPage == "reserved-seats.html"){
 		var result;
 		var qty;
 		var isExisting;
