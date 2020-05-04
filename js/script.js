@@ -1,5 +1,5 @@
 $(document).ready(function(){
-	//localStorage.removeItem("mrs-data");
+	localStorage.removeItem("mrs-data");
 
 	if (localStorage.getItem("mrs-data") === null) {
 
@@ -1073,10 +1073,7 @@ $(document).ready(function(){
 
 	var sPath = window.location.pathname;
 	var sPage = sPath.substring(sPath.lastIndexOf('/') + 1);
-	console.log(sPage);
-
-
-	
+	console.log(sPage);	
 
 	var films = data.films;
 	var scheds = data.film_schedules;
@@ -1215,6 +1212,7 @@ $(document).ready(function(){
 				var result = "";
 				for(var i = 0; i < films.length; i++){
 					if(hash_code == films[i].hash_code){
+						var id = films[i].id;
 						var title = films[i].title;
 						var description = films[i].description;
 						var image = films[i].sm_pic;
@@ -1253,12 +1251,36 @@ $(document).ready(function(){
 						                        <p class="card-text mrs-paragraph">${description}</p>
 						                    </div>`;
 						isExisting = true;
+
+						// FOR THE SCHEDS
+
+						var film_scheds = "";
+								console.log(scheds);
+
+						for(let s of scheds){
+								console.log(s);
+							if(s.movie_id == id){
+								let freeCount = CAPACITY - s.reserved.length;
+
+								film_scheds += String.raw`
+                            <tr>
+                                <th scope="row">${s.cinema_no}</th>
+                                <td>${s.time}</td>
+                                <td>${s.date}</td>
+                                <td>${freeCount}/${CAPACITY}</td>
+                                <td><a href="order.html?schedule=${s.sched_id}">Reserve</a></td>
+                            </tr>`;
+
+							}
+						}
+
 						break;
 					}
 				}
 
 				if(isExisting){
 					document.getElementById("mrs-current-film-info").innerHTML = result;
+					document.getElementById("mrs-film-scheds").innerHTML = film_scheds;
 				}else{
 					document.getElementById("mrs-current-film-info").innerHTML = '<span class="mrs-no-result">Error: We do not have that film</span>';
 				}
