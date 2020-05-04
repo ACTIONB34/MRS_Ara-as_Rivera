@@ -1285,23 +1285,22 @@ $(document).ready(function(){
 		    }
 		}
 	}else if(sPage  == "reserved-seats.html"){
-		console.log(scheds);
 		var result;
 		var qty;
 		var isExisting;
 		var hasReservation = false;
 
-		for(var i = 0; i < scheds.length; i++){
+		for(var i = 0; i < data.film_schedules.length; i++){
 			qty = 0;
 			isExisting = false;
 			result = "";
-			for(var j in scheds[i].reserved){
-				if(scheds[i].reserved[j].owner_id == 120001){
+			for(var j in data.film_schedules[i].reserved){
+				if(data.film_schedules[i].reserved[j].owner_id == 120001){
 					isExisting = true;
 					hasReservation = true;
 					for(var x in films){
-						if(films[x].id == scheds[i].movie_id){
-							result = String.raw`<tr id="${scheds[i].sched_id}">
+						if(films[x].id == data.film_schedules[i].movie_id){
+							result = String.raw`<tr id="${data.film_schedules[i].sched_id}">
                                 					<th scope="row">${films[x].title}</th>`;
 						}
 					}
@@ -1311,10 +1310,10 @@ $(document).ready(function(){
 				}
 			}
 			if(isExisting){
-				console.log(scheds[i].sched_id);
-				result += String.raw`<td>${scheds[i].date}</td>
-	                                <td>${scheds[i].time}</td>
-	                                <td>${scheds[i].cinema_no}</td>
+				console.log(data.film_schedules[i].sched_id);
+				result += String.raw`<td>${data.film_schedules[i].date}</td>
+	                                <td>${data.film_schedules[i].time}</td>
+	                                <td>${data.film_schedules[i].cinema_no}</td>
 	                                <td>${qty}</td>
 	                                <td class="reservation-list-button">
 	                                    <button class="edit-reservation edit-list-button edit-reservation-btn">Edit</button>
