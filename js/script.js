@@ -1005,6 +1005,14 @@ $(document).ready(function(){
 		var result = "";
 		var shuffleFilms = shuffle(films);
 
+		var today = new Date();
+		var dd = String(today.getDate()).padStart(2, '0');
+		var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+		var yyyy = today.getFullYear();
+
+		today = yyyy + '-' + mm + '-' + dd;
+		console.log(today);
+
 		for(var i = 0 ; i < 3 ; i++){
 			var hash_code = shuffleFilms[i].hash_code;
 			var title = shuffleFilms[i].title;
@@ -1020,11 +1028,53 @@ $(document).ready(function(){
 				                        <a class="mrs-film-reserve mrs-rounded-btn" href="film.html?v=${hash_code}">View Details</a>
 				                    </div>
 				                </div>`;
-			// document.getElementById("featured-films-section").innerHTML += result;
 		}
 
 		document.getElementById("featured-films-section").innerHTML = result;
-		
+
+		result = "";
+		var now_showing_movies = [];
+		for(var i in scheds){
+			var dateShowing = scheds[i].date;
+
+			if(dateShowing == today){
+				var todayMovieID = scheds[i].movie_id;
+				for(var j in films){
+					if(films[j].id == todayMovieID){
+						if(now_showing_movies.length == 0){
+							now_showing_movies.push(films[j].id);
+							var hash_code = films[j].hash_code;
+							var image = films[j].lg_pic;
+							var nTitle = films[j].title;
+							result += String.raw`
+												<div class="carousel-item">
+						                            <img src="img/${image}" class="d-block w-100" alt="...">
+						                            <div class="carousel-caption d-none d-md-block">
+													    <h2>${nTitle}</h2>
+													</div>
+						                        </div>`;
+						} else {
+							if(!now_showing_movies.includes(films[j].id)){
+								now_showing_movies.push(films[j].id);
+								var hash_code = films[j].hash_code;
+								var image = films[j].lg_pic;
+								var nTitle = films[j].title;
+								result += String.raw`
+													<div class="carousel-item">
+							                            <img src="img/${image}" class="d-block w-100" alt="...">
+								                            <div class="carousel-caption d-none d-md-block">
+														    <h2>${nTitle}</h2>
+														</div>
+							                        </div>`;
+							}
+						}
+					}
+				}
+			}
+		}
+
+		document.getElementById("now-showing-container").innerHTML += result;
+
 	}else if(sPage  == "films.html"){
 		var result = "";
 		for(var i in films){
