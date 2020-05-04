@@ -983,6 +983,23 @@ $(document).ready(function(){
 		return CAPACITY - taken;
 	}
 
+	function generatePriceList(regularNum, seniorNum, kidNum){
+		let priceList = [];
+		for(let i = 0; i < regularNum; i++){
+			priceList.push(150);
+		}
+
+		for(let i = 0; i < seniorNum; i++){
+			priceList.push(120);
+		}
+
+		for(let i = 0; i < kidNum; i++){
+			priceList.push(100);
+		}
+		return priceList;
+	}
+
+
 	function shuffle(arra1) {
     var ctr = arra1.length, temp, index;
 
@@ -1285,21 +1302,6 @@ $(document).ready(function(){
 			console.log(e);
 		}
 	}else if(sPage  == "order.html"){
-		let selectedSeatCount = 0; 
-	   	$(".mrs-seat").click(function(){
-			if($(this).hasClass("mrs-seat-available")){
-			    $(this).removeClass("mrs-seat-available");
-			    $(this).addClass("mrs-seat-selected");
-			    selectedSeatCount++;
-				console.log(selectedSeatCount);
-			}else if($(this).hasClass("mrs-seat-selected")){			
-			    $(this).removeClass("mrs-seat-selected");
-			    $(this).addClass("mrs-seat-available");
-			    selectedSeatCount--;
-				console.log(selectedSeatCount);
-			}
-		})
-
 		let current_sched;
 		let current_film;
 
@@ -1353,26 +1355,162 @@ $(document).ready(function(){
 		}
 
 
-	  	// Get the modal
-		var modal = document.getElementById("mrs-summary");
+		let selectedSeatCount = 0; 
+	   	$(".mrs-seat").click(function(){
+			if($(this).hasClass("mrs-seat-available")){
+			    $(this).removeClass("mrs-seat-available");
+			    $(this).addClass("mrs-seat-selected");
+			    selectedSeatCount++;
+				//console.log(selectedSeatCount);
+			}else if($(this).hasClass("mrs-seat-selected")){			
+			    $(this).removeClass("mrs-seat-selected");
+			    $(this).addClass("mrs-seat-available");
+			    selectedSeatCount--;
+				//console.log(selectedSeatCount);
+			}
+		})
 
-	  	// Get the button that opens the modal
-	  	var btn = document.getElementById("mrs-proceed");
+		$("#mrs-order-proceed").click(function(){
+			let isValid = false;
 
-		// Get the <span> element that closes the modal
-		var span = document.getElementsByClassName("close")[0];
 
-		// When the user clicks on the button, open the modal
-		btn.onclick = function() {
-			modal.style.display = "block";
-		}
+			let title = "";
+			let content = "";
+			let successLabel = "";
+			let cancelLabel = "";
 
-		// When the user clicks anywhere outside of the modal, close it
-		window.onclick = function(event) {
-			if (event.target == modal) {
-		    	modal.style.display = "none";
-		    }
-		}
+			let regularCount = parseInt(document.getElementById("mrs-order-seniors").value);
+			let seniorCount = parseInt(document.getElementById("mrs-order-regulars").value);
+			let kidCount = parseInt(document.getElementById("mrs-order-kids").value);
+			let totalCount = regularCount + seniorCount + kidCount;
+
+			let regularAmount = "₱ " + (regularCount * 150);
+			let seniorAmount = "₱ " + (seniorCount * 120);
+			let kidAmount = "₱ " + (kidCount * 100);
+			let totalAmount = "₱ " + ((regularCount * 150) + (seniorCount * 120) + (kidCount * 100));
+
+			let selectedSeatsText = "";
+			let selectedSeats = []
+			$(".mrs-seat-selected").each(function() {
+				let seatCode = $(this).find("span").text()
+		        selectedSeatsText += seatCode + " ";
+		        selectedSeats.push(seatCode.toLowerCase());
+
+		    });
+
+			if(totalCount == selectedSeatCount){
+				isValid = true;
+				successLabel = "Proceed";
+				cancelLabel = "Cancel";
+
+				title = "Reservation Order Summary";
+				content = String.raw`<div class="form-group row">
+                                <label for="mrs-summary-name" class="col-sm-2 col-form-label">Name</label>
+                                <div class="col-sm-6">
+                                    <input type="text" class="form-control" id="mrs-summary-name" value="John Smith" disabled>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="mrs-summary-film" class="col-sm-2 col-form-label">Film</label>
+                                <div class="col-sm-6">
+                                    <input type="text" class="form-control" id="mrs-summary-film" value="${current_film.title}" disabled>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="mrs-summary-cinema" class="col-sm-2 col-form-label">Cinema</label>
+                                <div class="col-sm-2">
+                                    <input type="text" class="form-control" id="mrs-summary-cinema" value="${current_sched.cinema_no}" disabled>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="mrs-summary-datetime" class="col-sm-2 col-form-label">Time/Date</label>
+                                <div class="col-sm-3">
+                                    <input type="time" class="form-control" id="mrs-summary-time" value="${current_sched.time}" disabled>
+                                </div>
+                                <div class="col-sm-3">
+                                    <input type="date" class="form-control" id="mrs-summary-date" value="${current_sched.date}" disabled>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="mrs-summary-seats" class="col-sm-2 col-form-label">Cinema</label>
+                                <div class="col-sm-8">
+                                    <input type="text" class="form-control" id="mrs-summary-seats" value="${selectedSeatsText}" disabled>
+                                </div>
+                            </div>
+                            
+							<table class="table">
+                                <thead class="thead">
+                                    <tr>
+                                        <th scope="col">Type</th>
+                                        <th scope="col">Quantity</th>
+                                        <th scope="col">Unit Price</th>
+                                        <th scope="col">Amount</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="mrs-summary-price">
+                                    <tr>
+                                        <td>Regular</td>
+                                        <td>${regularCount}</td>
+                                        <td>₱ 150</td>
+                                        <td>${regularAmount}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Senior</td>
+                                        <td>${seniorCount}</td>
+                                        <td>₱ 120</td>
+                                        <td>${seniorAmount}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Kid</td>
+                                        <td>${kidCount}</td>
+                                        <td>₱ 100</td>
+                                        <td>${kidAmount}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Total</td>
+                                        <td>${totalCount}</td>
+                                        <td></td>
+                                        <td>${totalAmount}</td>
+                                    </tr>
+                                    
+                                </tbody>
+                            </table>`;
+			}else{
+				successLabel = "Ok";
+				cancelLabel = "Try Again";
+
+				title = "Error";
+				content = "<p>The number of to reserve seats and the number of selected seats does NOT match</p>";
+			}
+
+
+			document.getElementById("mrs-order-modal-title").innerHTML = title;
+			document.getElementById("mrs-order-modal-body").innerHTML = content;
+			document.getElementById("mrs-order-modal-btn-success").innerHTML = successLabel;
+			document.getElementById("mrs-order-modal-btn-cancel").innerHTML = cancelLabel;
+
+			$("#mrs-order-modal-btn-success").each(function() {
+				if(isValid){
+					let priceList = generatePriceList(regularCount, seniorCount, kidCount);
+					for(let i = 0;  s < selectedSeats.length; i++){
+						current_sched.reserved.push({
+							"seat" : selectedSeats[i],
+							"owner_id": 120001,
+							"price" : priceList[i]
+						})
+					}
+
+					localStorage.setItem("mrs-data", JSON.stringify(data));
+
+					document.getElementById("mrs-order-modal-title").innerHTML = "Success";
+					document.getElementById("mrs-order-modal-body").innerHTML = "You have sucessfully reserved ${} seat(s).";
+					document.getElementById("mrs-order-modal-btn-success").innerHTML = "See Reservations";
+					document.getElementById("mrs-order-modal-btn-cancel").innerHTML = "close";
+				}
+
+		    });
+
+		});
 	}else if(sPage == "reserved-seats.html"){
 		var result;
 		var qty;

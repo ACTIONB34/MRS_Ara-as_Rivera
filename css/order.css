@@ -29,6 +29,25 @@ button.mrs-seat{
     border-color: #FFFFFF; 
 }
 
+
+#mrs-order-modal{
+    color: black;
+}
+
+
+#mrs-order-modal .form-control, #mrs-order-modal .btn{
+    font-size: 0.8rem;
+}
+
+#mrs-order-modal label{
+    font-size: 0.8rem;
+    color: black;
+}
+
+#mrs-order-modal-title{
+    color: black;
+}
+
 /* Adjustments using Bootstrap breakpoints */
 
 @media (min-width: 576px) {

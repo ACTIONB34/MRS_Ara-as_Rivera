@@ -68,14 +68,18 @@
                     </div>
                     <div class="form-group row">
                         <label for="mrs-order-seatnum" class="col-sm-2 col-form-label">No. of seats</label>
-                        <div class="col-sm-3">
-                            <input type="number" min="0" class="form-control" id="mrs-order-regulars" placeholder="Regulars">
+
+                        <label for="mrs-order-regulars" class="col-sm-1 col-form-label">Regular</label>
+                        <div class="col-sm-1">
+                            <input type="number" min="0" class="form-control" id="mrs-order-regulars" placeholder="Regulars" value="0">
                         </div>
-                        <div class="col-sm-3">
-                            <input type="number" min="0" class="form-control" id="mrs-order-kids" placeholder="Kids">
+                        <label for="mrs-order-kids" class="col-sm-1 col-form-label">Kid</label>
+                        <div class="col-sm-1">
+                            <input type="number" min="0" class="form-control" id="mrs-order-kids" placeholder="Kids" value="0">
                         </div>
-                        <div class="col-sm-3">
-                            <input type="number" min="0" class="form-control" id="mrs-order-seniors" placeholder="Seniors">
+                        <label for="mrs-order-seniors" class="col-sm-1 col-form-label">Senior</label>
+                        <div class="col-sm-1">
+                            <input type="number" min="0" class="form-control" id="mrs-order-seniors" placeholder="Seniors" value="0">
                         </div>
                     </div>
                     <div class="form-group row">
@@ -200,66 +204,29 @@
                     </div>                 
                     <div class="form-group row">
                         <div class="col-sm-12">
-                            <button type="button" class="btn btn-primary float-right" id="mrs-proceed">Proceed to Checkout</button>
+                            <button id="mrs-order-proceed" type="button" class="btn btn-primary float-right" data-toggle="modal" data-target="#mrs-order-modal">Checkout</button>
                         </div>
                     </div>
                 </form>
 
                  <!-- The Modal -->
-                <div id="mrs-summary" class="container modal face">
 
-                    <!-- Modal content -->
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                            </button>
-                        </div>
-                        <div class="modal-body">
-                            <div class="form-group row">
-                                <label for="mrs-order-name" class="col-sm-2 col-form-label">Name</label>
-                                <div class="col-sm-6">
-                                    <input type="text" class="form-control" id="mrs-order-name" value="John Smith" disabled>
-                                </div>
+                <div id="mrs-order-modal" class="modal" tabindex="-1" role="dialog">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 id="mrs-order-modal-title" class="modal-title"></h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
                             </div>
-                            <div class="form-group row">
-                                <label for="mrs-order-film" class="col-sm-2 col-form-label">Film</label>
-                                <div class="col-sm-6">
-                                    <input type="text" class="form-control" id="mrs-order-film" value="Argo" disabled>
-                                </div>
+                            <div id="mrs-order-modal-body" class="modal-body">
+
                             </div>
-                            <div class="form-group row">
-                                <label for="mrs-order-cinema" class="col-sm-2 col-form-label">Cinema</label>
-                                <div class="col-sm-2">
-                                    <input type="text" class="form-control" id="mrs-order-cinema" value="1" disabled>
-                                </div>
+                            <div class="modal-footer">
+                                <button id="mrs-order-modal-btn-success" type="button" class="btn btn-primary">/button>
+                                <button id="mrs-order-modal-btn-cancel" type="button" class="btn btn-secondary" data-dismiss="modal"></button>
                             </div>
-                            <div class="form-group row">
-                                <label for="mrs-order-datetime" class="col-sm-2 col-form-label">Time/Date</label>
-                                <div class="col-sm-3">
-                                    <input type="time" class="form-control" id="mrs-order-time" value="12:00" disabled>
-                                </div>
-                                <div class="col-sm-3">
-                                    <input type="date" class="form-control" id="mrs-order-date" value="2020-05-20" disabled>
-                                </div>
-                            </div>
-                            <div class="form-group row">
-                                <label for="mrs-order-seatnum" class="col-sm-2 col-form-label">No. of seats</label>
-                                <div class="col-sm-3">
-                                    <input type="number" min="0" class="form-control" id="mrs-order-regulars" placeholder="Regulars">
-                                </div>
-                                <div class="col-sm-3">
-                                    <input type="number" min="0" class="form-control" id="mrs-order-kids" placeholder="Kids">
-                                </div>
-                                <div class="col-sm-3">
-                                    <input type="number" min="0" class="form-control" id="mrs-order-seniors" placeholder="Seniors">
-                                </div>
-                            </div>  
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                            <button type="button" class="btn btn-primary">Save changes</button>
                         </div>
                     </div>
                 </div>
