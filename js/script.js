@@ -1385,6 +1385,10 @@ $(document).ready(function(){
 			//close();
 		}
 
+
+		let selectedSeatsText = "";
+		let selectedSeats = [];
+
 		$("#mrs-order-proceed").click(function(){
 			let isValid = false;
 
@@ -1404,12 +1408,11 @@ $(document).ready(function(){
 			let kidAmount = "₱ " + (kidCount * 100);
 			let totalAmount = "₱ " + ((regularCount * 150) + (seniorCount * 120) + (kidCount * 100));
 
-			let selectedSeatsText = "";
-			let selectedSeats = []
 			$(".mrs-seat-selected").each(function() {
 				let seatCode = $(this).find("span").text()
 		        selectedSeatsText += seatCode + " ";
 		        selectedSeats.push(seatCode.toLowerCase());
+		        console.log(selectedSeats);
 
 		    });
 
@@ -1516,13 +1519,18 @@ $(document).ready(function(){
 			$("#mrs-order-modal-btn-success").click(function() {
 				if(isValid){
 					let priceList = generatePriceList(regularCount, seniorCount, kidCount);
-					for(let i = 0;  s < selectedSeats.length; i++){
+
+						console.log(selectedSeats.length);
+					for(let i = 0;  i < selectedSeats.length; i++){
+						console.log(selectedSeats.length);
 						current_sched.reserved.push({
 							"seat" : selectedSeats[i],
 							"owner_id": 120001,
 							"price" : priceList[i]
 						})
 					}
+
+					console.log(current_sched.reserved);
 
 					localStorage.setItem("mrs-data", JSON.stringify(data));
 
