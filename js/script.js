@@ -1541,6 +1541,7 @@ $(document).ready(function(){
 					document.getElementById("mrs-order-modal-btn-cancel").innerHTML = "Exit";
 					document.getElementById("mrs-order-modal-btn-cancel").onclick = goExit;
 				}
+				isValid = false;
 		    });
 
 		});
