@@ -1146,7 +1146,7 @@ $(document).ready(function(){
 		let params = new URLSearchParams(location.search);
 		try{
 			let query = new RegExp(params.get("search").toLowerCase());
-			if(query != null){
+			if(query != null && params.get("search") !== ""){
 				//console.log(query);
 				var result_counter = 0;
 				var result = "";
@@ -1201,10 +1201,10 @@ $(document).ready(function(){
 				}
 
 				if(result_counter == 0){
-					document.getElementById("mrs-result-counter").innerHTML = '<span class="mrs-no-result">No result</span>';
+					document.getElementById("mrs-result-counter").innerHTML = '<span class="mrs-no-result">No result for \"' + params.get("search") + '\"</span>';
 				}else{
 					document.getElementById("mrs-search-results").innerHTML = result;
-					document.getElementById("mrs-result-counter").innerHTML = "You got " + result_counter + " result(s)";
+					document.getElementById("mrs-result-counter").innerHTML = "You got " + result_counter + " result(s) for \"" + params.get("search") + "\"";
 				}
 			}else{
 				document.getElementById("mrs-result-counter").innerHTML = '<span class="mrs-no-result">No result</span>';
@@ -1368,7 +1368,22 @@ $(document).ready(function(){
 			    selectedSeatCount--;
 				//console.log(selectedSeatCount);
 			}
-		})
+		});
+
+		function gotToReservedSeats() {
+
+			window.location.replace("reserved-seats.html");
+			//window.location.reload();
+			//window.open("reserved-seats.html");
+			//close();
+		}
+
+		function goExit() {
+			window.location.replace("film.html?v=" + current_film.hash_code);
+			//window.location.reload();
+			//window.open("film.html?v=" + current_film.hash_code);
+			//close();
+		}
 
 		$("#mrs-order-proceed").click(function(){
 			let isValid = false;
@@ -1379,8 +1394,8 @@ $(document).ready(function(){
 			let successLabel = "";
 			let cancelLabel = "";
 
-			let regularCount = parseInt(document.getElementById("mrs-order-seniors").value);
-			let seniorCount = parseInt(document.getElementById("mrs-order-regulars").value);
+			let regularCount = parseInt(document.getElementById("mrs-order-regulars").value);
+			let seniorCount = parseInt(document.getElementById("mrs-order-seniors").value);
 			let kidCount = parseInt(document.getElementById("mrs-order-kids").value);
 			let totalCount = regularCount + seniorCount + kidCount;
 
@@ -1398,7 +1413,10 @@ $(document).ready(function(){
 
 		    });
 
-			if(totalCount == selectedSeatCount){
+
+			document.getElementById("mrs-order-modal-btn-success").href = "#";
+
+			if(totalCount == selectedSeatCount && selectedSeatCount > 0){
 				isValid = true;
 				successLabel = "Proceed";
 				cancelLabel = "Cancel";
@@ -1432,7 +1450,7 @@ $(document).ready(function(){
                                 </div>
                             </div>
                             <div class="form-group row">
-                                <label for="mrs-summary-seats" class="col-sm-2 col-form-label">Cinema</label>
+                                <label for="mrs-summary-seats" class="col-sm-2 col-form-label">Seats</label>
                                 <div class="col-sm-8">
                                     <input type="text" class="form-control" id="mrs-summary-seats" value="${selectedSeatsText}" disabled>
                                 </div>
@@ -1475,7 +1493,14 @@ $(document).ready(function(){
                                     
                                 </tbody>
                             </table>`;
-			}else{
+			}else if(selectedSeatCount == 0 || totalCount == 0){
+				successLabel = "Ok";
+				cancelLabel = "Try Again";
+
+				title = "Error";
+				content = "<p>Make sure you entered at least 1 valid for any of the guest type and/or selected at least one seat to reserve.</p>";
+			}
+			else{
 				successLabel = "Ok";
 				cancelLabel = "Try Again";
 
@@ -1483,13 +1508,12 @@ $(document).ready(function(){
 				content = "<p>The number of to reserve seats and the number of selected seats does NOT match</p>";
 			}
 
-
 			document.getElementById("mrs-order-modal-title").innerHTML = title;
 			document.getElementById("mrs-order-modal-body").innerHTML = content;
 			document.getElementById("mrs-order-modal-btn-success").innerHTML = successLabel;
 			document.getElementById("mrs-order-modal-btn-cancel").innerHTML = cancelLabel;
 
-			$("#mrs-order-modal-btn-success").each(function() {
+			$("#mrs-order-modal-btn-success").click(function() {
 				if(isValid){
 					let priceList = generatePriceList(regularCount, seniorCount, kidCount);
 					for(let i = 0;  s < selectedSeats.length; i++){
@@ -1503,11 +1527,12 @@ $(document).ready(function(){
 					localStorage.setItem("mrs-data", JSON.stringify(data));
 
 					document.getElementById("mrs-order-modal-title").innerHTML = "Success";
-					document.getElementById("mrs-order-modal-body").innerHTML = "You have sucessfully reserved ${} seat(s).";
+					document.getElementById("mrs-order-modal-body").innerHTML = "You have sucessfully reserved " + selectedSeatCount + " seat(s).";
 					document.getElementById("mrs-order-modal-btn-success").innerHTML = "See Reservations";
-					document.getElementById("mrs-order-modal-btn-cancel").innerHTML = "close";
+					document.getElementById("mrs-order-modal-btn-success").onclick = gotToReservedSeats;
+					document.getElementById("mrs-order-modal-btn-cancel").innerHTML = "Exit";
+					document.getElementById("mrs-order-modal-btn-cancel").onclick = goExit;
 				}
-
 		    });
 
 		});
